@@ -1,7 +1,8 @@
 extends CharacterBody2D
 @onready var sprite_2d = $Sprite2D
 
-const SPEED = 300.0
+const VSPEED = 50.0
+const HSPEED = 100.0
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -15,13 +16,13 @@ func _physics_process(delta):
 		sprite_2d.flip_h = false
 	
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * HSPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, HSPEED)
 	if updown:
-		velocity.y = updown * SPEED
+		velocity.y = updown * VSPEED
 	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+		velocity.y = move_toward(velocity.y, 0, VSPEED)
 		
 
 	move_and_slide()

@@ -2,20 +2,26 @@
 
 [ext_resource type="PackedScene" uid="uid://c08h2lhpkvxht" path="res://Scripts/GeoffScripts/player.tscn" id="1_j8jey"]
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/lawn_game_manager.gd" id="1_t6kvw"]
-[ext_resource type="Script" path="res://Scripts/GeoffScripts/LawnMover.gd" id="3_l4ip0"]
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/GrassSpawner.gd" id="4_uvx30"]
+[ext_resource type="PackedScene" uid="uid://b2f5ynnfdrbe3" path="res://Scripts/GeoffScripts/mowing_grass.tscn" id="5_v4il5"]
 
 [node name="LawnMowingMinigame" type="Node2D"]
 script = ExtResource("1_t6kvw")
 
-[node name="GameManager" type="Node" parent="."]
+[node name="LawnGameManager" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("1_t6kvw")
 
 [node name="Player" parent="." instance=ExtResource("1_j8jey")]
-script = ExtResource("3_l4ip0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="GrassSpawner" type="Timer" parent="."]
+wait_time = 1.916
 autostart = true
 script = ExtResource("4_uvx30")
+
+[node name="MowingGrass" parent="GrassSpawner" instance=ExtResource("5_v4il5")]
+position = Vector2(-232, -11)
+
+[connection signal="timeout" from="GrassSpawner" to="GrassSpawner" method="_on_timeout"]

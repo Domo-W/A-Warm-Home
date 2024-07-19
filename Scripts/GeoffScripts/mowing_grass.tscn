@@ -7,6 +7,7 @@
 size = Vector2(59, 38)
 
 [node name="MowingGrass" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_ylyjv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -17,3 +18,5 @@ shape = SubResource("RectangleShape2D_7romg")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(3.7, 3.7)
 texture = ExtResource("1_d0uja")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
