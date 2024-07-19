@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c08h2lhpkvxht"]
 
-[ext_resource type="Script" path="res://LawnMover.gd" id="1_xornc"]
-[ext_resource type="Texture2D" uid="uid://bdhrfskm2irck" path="res://icon.svg" id="2_u28s3"]
+[ext_resource type="Script" path="res://Scripts/GeoffScripts/LawnMover.gd" id="1_xornc"]
+[ext_resource type="Texture2D" uid="uid://dtgr1xbaf7c0k" path="res://Assets/GeoffAssets/mowing_man.png" id="2_bvc5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_240x3"]
 size = Vector2(120, 120)
@@ -15,4 +15,6 @@ script = ExtResource("1_xornc")
 shape = SubResource("RectangleShape2D_240x3")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("2_u28s3")
+position = Vector2(0.400002, 0)
+scale = Vector2(3.7, 3.7)
+texture = ExtResource("2_bvc5k")

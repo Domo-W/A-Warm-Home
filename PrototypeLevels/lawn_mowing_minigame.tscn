@@ -1,5 +1,9 @@
-[gd_scene format=3 uid="uid://cw58w2k2i75i3"]
+[gd_scene load_steps=2 format=3 uid="uid://cw58w2k2i75i3"]
+
+[ext_resource type="PackedScene" uid="uid://c08h2lhpkvxht" path="res://Scripts/GeoffScripts/player.tscn" id="1_j8jey"]
 
 [node name="LawnMowingMinigame" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_j8jey")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
