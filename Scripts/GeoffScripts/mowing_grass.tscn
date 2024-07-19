@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://b2f5ynnfdrbe3"]
+[gd_scene load_steps=4 format=3 uid="uid://b2f5ynnfdrbe3"]
 
-[node name="MowingGrass" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://clg15xni5gs16" path="res://Assets/GeoffAssets/mowable_grass.png" id="1_d0uja"]
+[ext_resource type="Script" path="res://Scripts/GeoffScripts/mowing_grass.gd" id="1_ylyjv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7romg"]
+size = Vector2(59, 38)
+
+[node name="MowingGrass" type="Area2D"]
+script = ExtResource("1_ylyjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, 40)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_7romg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3.7, 3.7)
+texture = ExtResource("1_d0uja")

@@ -1,9 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://cw58w2k2i75i3"]
+[gd_scene load_steps=5 format=3 uid="uid://cw58w2k2i75i3"]
 
 [ext_resource type="PackedScene" uid="uid://c08h2lhpkvxht" path="res://Scripts/GeoffScripts/player.tscn" id="1_j8jey"]
+[ext_resource type="Script" path="res://Scripts/GeoffScripts/lawn_game_manager.gd" id="1_t6kvw"]
+[ext_resource type="Script" path="res://Scripts/GeoffScripts/LawnMover.gd" id="3_l4ip0"]
+[ext_resource type="Script" path="res://Scripts/GeoffScripts/GrassSpawner.gd" id="4_uvx30"]
 
 [node name="LawnMowingMinigame" type="Node2D"]
+script = ExtResource("1_t6kvw")
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("1_t6kvw")
 
 [node name="Player" parent="." instance=ExtResource("1_j8jey")]
+script = ExtResource("3_l4ip0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="GrassSpawner" type="Timer" parent="."]
+autostart = true
+script = ExtResource("4_uvx30")
