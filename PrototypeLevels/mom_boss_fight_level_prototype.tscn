@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c06ltddb6oafb"]
+[gd_scene load_steps=13 format=3 uid="uid://c06ltddb6oafb"]
 
 [ext_resource type="PackedScene" uid="uid://c08h2lhpkvxht" path="res://Assets/JeremyAssets/player.tscn" id="1_w1xc5"]
 [ext_resource type="PackedScene" uid="uid://b88hj3jx7jg33" path="res://Assets/JeremyAssets/objects_for_hiding.tscn" id="2_bg7kl"]
 [ext_resource type="PackedScene" uid="uid://duiq0ihwaivdj" path="res://Assets/JeremyAssets/mom_boss_char.tscn" id="3_oek4w"]
+[ext_resource type="Texture2D" uid="uid://chkvv4pcjbste" path="res://Assets/Taby Assets/door.png" id="4_dfat4"]
+[ext_resource type="Script" path="res://PrototypeLevels/exitable_script.gd" id="4_vtcpc"]
+[ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="5_1mgh0"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_kd05s"]
 
@@ -15,6 +18,11 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-7, 515, 1150, 836, 115
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhr68"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3i7b"]
+size = Vector2(53, 47)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ls1vl"]
 
 [node name="MomBossFightLevelPrototype" type="Node2D"]
 
@@ -50,7 +58,7 @@ scale = Vector2(1, 1.5)
 player = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("1_w1xc5")]
-position = Vector2(631, 740)
+position = Vector2(631, 755)
 
 [node name="MomBossChar" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_oek4w")]
 position = Vector2(84, 783)
@@ -66,6 +74,13 @@ scale = Vector2(100, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionWall"]
 shape = SubResource("RectangleShape2D_bhr68")
 
+[node name="CollisionWall4" type="StaticBody2D" parent="."]
+position = Vector2(300, 465)
+scale = Vector2(100, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionWall4"]
+shape = SubResource("RectangleShape2D_bhr68")
+
 [node name="CollisionWall2" type="StaticBody2D" parent="."]
 position = Vector2(-10, 10)
 scale = Vector2(1, 100)
@@ -79,3 +94,64 @@ scale = Vector2(1, 100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionWall3"]
 shape = SubResource("RectangleShape2D_bhr68")
+
+[node name="RandomRoomDoor" type="Area2D" parent="." node_paths=PackedStringArray("boss") groups=["Doors"]]
+position = Vector2(36, 500)
+scale = Vector2(3, 3)
+script = ExtResource("4_vtcpc")
+boss = NodePath("../MomBossChar")
+
+[node name="Sprite2D" type="Sprite2D" parent="RandomRoomDoor"]
+position = Vector2(0, -39.3)
+texture = ExtResource("4_dfat4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RandomRoomDoor"]
+shape = SubResource("RectangleShape2D_s3i7b")
+
+[node name="Random Label" type="Label" parent="RandomRoomDoor"]
+offset_left = -53.0
+offset_top = 15.0
+offset_right = 59.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("5_1mgh0")
+theme_override_font_sizes/font_size = 8
+text = "SOME RANDOM ROOM"
+horizontal_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="RandomRoomDoor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RandomRoomDoor/Area2D"]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_ls1vl")
+
+[node name="RandomRoomDoor2" type="Area2D" parent="." node_paths=PackedStringArray("boss") groups=["Doors"]]
+position = Vector2(950, 800)
+scale = Vector2(3, 3)
+script = ExtResource("4_vtcpc")
+boss = NodePath("../MomBossChar")
+
+[node name="Sprite2D" type="Sprite2D" parent="RandomRoomDoor2"]
+position = Vector2(0, -39.3)
+texture = ExtResource("4_dfat4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RandomRoomDoor2"]
+shape = SubResource("RectangleShape2D_s3i7b")
+
+[node name="Random Label" type="Label" parent="RandomRoomDoor2"]
+offset_left = -53.0
+offset_top = 15.0
+offset_right = 59.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("5_1mgh0")
+theme_override_font_sizes/font_size = 8
+text = "SOME RANDOM ROOM"
+horizontal_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="RandomRoomDoor2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RandomRoomDoor2/Area2D"]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_ls1vl")
+
+[connection signal="body_entered" from="RandomRoomDoor/Area2D" to="RandomRoomDoor" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="RandomRoomDoor2/Area2D" to="RandomRoomDoor2" method="_on_area_2d_body_entered"]

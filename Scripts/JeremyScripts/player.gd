@@ -1,6 +1,7 @@
 extends CharacterBody2D
 @onready var sprite = $Sprite2D
 @onready var interact_label = $InteractLabel
+@onready var collision = $CollisionShape2D
 
 const VSPEED = 200.0
 const HSPEED = 200.0
