@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ce7twlrque3k4"
+path="res://.godot/imported/Kiwi Jam Task Music Normal.mp3-3776f11776f2a85a8c802c5482eb8e4b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound Assets/Kiwi Jam Task Music Normal.mp3"
+dest_files=["res://.godot/imported/Kiwi Jam Task Music Normal.mp3-3776f11776f2a85a8c802c5482eb8e4b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

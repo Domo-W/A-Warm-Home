@@ -7,12 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://c2jt4pqenae4c" path="res://Assets/Taby Assets/sidedoor.png" id="5_fkvoe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qp1a4"]
-size = Vector2(78, 64.5)
+size = Vector2(78, 68.5)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6eetd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4l52"]
-size = Vector2(87, 81)
+size = Vector2(87, 98)
 
 [node name="LivingRoom" type="Node2D"]
 script = ExtResource("1_0hlaw")
@@ -31,7 +31,7 @@ position = Vector2(-2, -16)
 texture = ExtResource("2_5gf51")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs"]
-position = Vector2(1, -15.25)
+position = Vector2(1, -13.25)
 shape = SubResource("RectangleShape2D_qp1a4")
 
 [node name="StairsLabel" type="Label" parent="Stairs"]
@@ -46,7 +46,7 @@ text = "Go upstairs?"
 [node name="Ground" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2(0, 15)
+position = Vector2(0, 38)
 shape = SubResource("WorldBoundaryShape2D_6eetd")
 
 [node name="KitchenDoor" type="Area2D" parent="."]
@@ -57,7 +57,7 @@ position = Vector2(0, -11)
 texture = ExtResource("5_fkvoe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenDoor"]
-position = Vector2(-20.5, -22.5)
+position = Vector2(-20.5, -14)
 shape = SubResource("RectangleShape2D_v4l52")
 
 [node name="KitchenLabel" type="Label" parent="KitchenDoor"]

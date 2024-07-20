@@ -23,7 +23,7 @@ func _process(delta):
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lq1t"]
-size = Vector2(159, 65)
+size = Vector2(82, 59)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_b1amx"]
 normal = Vector2(-0.99973, -0.0232495)
@@ -32,13 +32,14 @@ normal = Vector2(-0.99973, -0.0232495)
 script = ExtResource("1_uv7jl")
 
 [node name="stickplayer" parent="." instance=ExtResource("1_wcn88")]
-position = Vector2(41, 15)
+position = Vector2(37, 81)
 
 [node name="Camera2D" type="Camera2D" parent="stickplayer"]
 position = Vector2(-5, -3)
 zoom = Vector2(4, 4)
 
 [node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(-12, 43)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 position = Vector2(1, 95)
@@ -52,7 +53,7 @@ script = SubResource("GDScript_qtutp")
 texture = ExtResource("2_fs664")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HallwayDoor"]
-position = Vector2(-2.5, 27.5)
+position = Vector2(2, 46.5)
 shape = SubResource("RectangleShape2D_5lq1t")
 
 [node name="InteractHintLabel" type="Label" parent="HallwayDoor"]

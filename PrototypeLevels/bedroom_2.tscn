@@ -25,19 +25,19 @@ func _process(delta):
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lq1t"]
-size = Vector2(159, 65)
+size = Vector2(98, 55)
 
 [node name="Bedroom2" type="Node2D"]
 script = ExtResource("1_vcnu2")
 
 [node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2(323, 1)
+position = Vector2(323, 21)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 shape = SubResource("WorldBoundaryShape2D_gf5dq")
 
 [node name="stickplayer" parent="." instance=ExtResource("1_lgsly")]
-position = Vector2(318, -61)
+position = Vector2(312, -12)
 
 [node name="Camera2D" type="Camera2D" parent="stickplayer"]
 zoom = Vector2(4, 4)
@@ -57,7 +57,7 @@ position = Vector2(0, 5)
 texture = ExtResource("3_m3npe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HallwayDoor"]
-position = Vector2(-2.5, 27.5)
+position = Vector2(-6, 46.5)
 shape = SubResource("RectangleShape2D_5lq1t")
 
 [node name="InteractHintLabel" type="Label" parent="HallwayDoor"]
