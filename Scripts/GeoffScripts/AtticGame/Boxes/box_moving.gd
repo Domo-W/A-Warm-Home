@@ -20,6 +20,7 @@ func _process(delta):
 			if is_in_bin:
 				if bin_ref.stack == []:
 					print("gamer")
+					bin_ref.stack.append(1)
 					tween.tween_property(self, "position", bin_ref.position, 0.2).set_ease(Tween.EASE_OUT)
 				elif bin_ref.stack[len(bin_ref.stack)-1] >= 1:
 					print("wowee")

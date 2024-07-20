@@ -38,7 +38,6 @@ position = Vector2(387, 235)
 position = Vector2(-447, -175)
 
 [node name="MovingBox2" parent="HanoiManager/Boxes" instance=ExtResource("6_shxet")]
-visible = false
 position = Vector2(-449, -66)
 script = ExtResource("7_vkbqk")
 

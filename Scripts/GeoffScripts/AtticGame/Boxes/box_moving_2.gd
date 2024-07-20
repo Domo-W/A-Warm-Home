@@ -18,7 +18,18 @@ func _process(delta):
 			Global.is_dragging_box=false
 			var tween = get_tree().create_tween()
 			if is_in_bin:
-				tween.tween_property(self, "position", bin_ref.position, 0.2).set_ease(Tween.EASE_OUT)
+				if bin_ref.stack == []:
+					print("gamer")
+					bin_ref.stack.append(2)
+					print(str(bin_ref.stack))
+					tween.tween_property(self, "position", bin_ref.position, 0.2).set_ease(Tween.EASE_OUT)
+					
+				elif bin_ref.stack[len(bin_ref.stack)-1] >= 2:
+					print("wowee")
+					tween.tween_property(self, "position", Vector2(bin_ref.position[0], bin_ref.position[1] + ((len(bin_ref.stack)-1)*-110)), 0.2).set_ease(Tween.EASE_OUT)
+					bin_ref.stack.append(2)
+					print(str(bin_ref.stack))
+				
 			else:
 				tween.tween_property(self, "global_position", Vector2(randi_range(-150,150),randi_range(-150,150)),0.2).set_ease(Tween.EASE_OUT)
 
