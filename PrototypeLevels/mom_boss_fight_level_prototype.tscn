@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://c06ltddb6oafb"]
+
+[ext_resource type="PackedScene" uid="uid://c08h2lhpkvxht" path="res://Scripts/JeremyScripts/player.tscn" id="1_w1xc5"]
+[ext_resource type="PackedScene" uid="uid://b88hj3jx7jg33" path="res://Assets/JeremyAssets/objects_for_hiding.tscn" id="2_bg7kl"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kd05s"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_t7y1q"]
+
+[node name="MomBossFightLevelPrototype" type="Node2D"]
+
+[node name="Wall" type="TextureRect" parent="."]
+modulate = Color(0.981719, 0.909227, 0.39632, 1)
+offset_left = -225.0
+offset_right = 1454.0
+offset_bottom = 621.0
+texture = SubResource("CanvasTexture_kd05s")
+
+[node name="Floor" type="TextureRect" parent="."]
+modulate = Color(0.324417, 0.0979215, 0.0551417, 1)
+offset_left = -5.0
+offset_top = 516.0
+offset_right = 1152.0
+offset_bottom = 655.0
+texture = SubResource("CanvasTexture_t7y1q")
+
+[node name="Closet" parent="." instance=ExtResource("2_bg7kl")]
+position = Vector2(1102, 505)
+scale = Vector2(0.75, 1.5)
+
+[node name="Dresser" parent="." instance=ExtResource("2_bg7kl")]
+position = Vector2(718, 501)
+scale = Vector2(2, 0.75)
+
+[node name="Player" parent="." instance=ExtResource("1_w1xc5")]
+position = Vector2(431, 540)
