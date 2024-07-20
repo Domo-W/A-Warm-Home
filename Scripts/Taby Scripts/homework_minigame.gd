@@ -20,10 +20,6 @@ func _ready():
 	create_new_sequence(current_length)
 	update_sequence_label()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func create_new_sequence(length):
 	pressed = []
 	sequence = []
@@ -35,6 +31,7 @@ func update_sequence_label():
 	for letter in sequence:
 		label_text += letter + " → "
 	sequence_label.text = label_text.rstrip(" → ")
+	sequence_label.visible = true
 
 func check_fail():
 	for i in range(len(pressed)):
@@ -43,10 +40,10 @@ func check_fail():
 	return false
 
 func next_level():
+	print("yippee")
 	current_length += 1
 	create_new_sequence(current_length)
 	update_sequence_label()
-	sequence_label.visible = true
 
 func game_over():
 	print("dead")
@@ -58,7 +55,6 @@ func sequence_input(l):
 	sequence_label.visible = false
 	pressed.append(l)
 	if sequence == pressed:
-		print("yippee")
 		next_level()
 	elif check_fail():
 		game_over()
@@ -76,4 +72,4 @@ func _on_button_d_pressed():
 	sequence_input("D")
 
 func _on_exit_button_pressed():
-	pass # Replace with function body.
+	pass # Replace with link to next scene
