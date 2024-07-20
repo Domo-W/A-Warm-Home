@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8n88mrtxh88a"]
+
+[ext_resource type="Script" path="res://Scripts/GeoffScripts/AtticGame/HanoiManager.gd" id="1_3l0oj"]
+[ext_resource type="PackedScene" uid="uid://bj2j6wfjipc1m" path="res://Scripts/GeoffScripts/AtticGame/Boxes/box_slot.tscn" id="2_bk6h7"]
+[ext_resource type="PackedScene" uid="uid://dcoj3pru8hmay" path="res://Scripts/GeoffScripts/AtticGame/Boxes/box_5.tscn" id="3_dioeb"]
+
+[node name="AtticCleaningMinigame" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="HanoiManager" type="Node" parent="."]
+script = ExtResource("1_3l0oj")
+
+[node name="Slots" type="Node" parent="HanoiManager"]
+
+[node name="ASlot" parent="HanoiManager/Slots" instance=ExtResource("2_bk6h7")]
+position = Vector2(-464, 245)
+
+[node name="BSlot" parent="HanoiManager/Slots" instance=ExtResource("2_bk6h7")]
+
+[node name="CSlot" parent="HanoiManager/Slots" instance=ExtResource("2_bk6h7")]
+
+[node name="Boxes" type="Node" parent="HanoiManager"]
+
+[node name="Box5V" parent="HanoiManager/Boxes" instance=ExtResource("3_dioeb")]
