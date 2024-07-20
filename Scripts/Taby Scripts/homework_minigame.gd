@@ -50,6 +50,7 @@ func game_over():
 	sequence_label.text = "You failed.\nFinal Grade: F"
 	sequence_label.visible = true
 	exit_button.visible = true
+	Global.has_done_task = true
 
 func sequence_input(l):
 	sequence_label.visible = false
