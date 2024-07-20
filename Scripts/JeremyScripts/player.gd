@@ -37,6 +37,5 @@ func _physics_process(delta):
 		else:
 			visible = false
 			is_hidden = true
-	print(visible)
 
 	move_and_slide()

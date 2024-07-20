@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b88hj3jx7jg33"]
+
+[ext_resource type="Script" path="res://Scripts/JeremyScripts/objects_for_hiding.gd" id="1_bsmt2"]
+[ext_resource type="Texture2D" uid="uid://bdhrfskm2irck" path="res://icon.svg" id="1_c85av"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7u3h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_geiwc"]
+
+[node name="ObjectForHiding" type="StaticBody2D"]
+script = ExtResource("1_bsmt2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_c85av")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_c7u3h")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_geiwc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

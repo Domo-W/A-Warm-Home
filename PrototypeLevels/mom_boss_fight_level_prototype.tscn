@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c06ltddb6oafb"]
+[gd_scene load_steps=6 format=3 uid="uid://c06ltddb6oafb"]
 
-[ext_resource type="PackedScene" uid="uid://c08h2lhpkvxht" path="res://Scripts/JeremyScripts/player.tscn" id="1_w1xc5"]
+[ext_resource type="PackedScene" uid="uid://c08h2lhpkvxht" path="res://Assets/JeremyAssets/player.tscn" id="1_w1xc5"]
 [ext_resource type="PackedScene" uid="uid://b88hj3jx7jg33" path="res://Assets/JeremyAssets/objects_for_hiding.tscn" id="2_bg7kl"]
+[ext_resource type="PackedScene" uid="uid://duiq0ihwaivdj" path="res://Assets/JeremyAssets/mom_boss_char.tscn" id="3_oek4w"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_kd05s"]
 
@@ -21,7 +22,7 @@ modulate = Color(0.324417, 0.0979215, 0.0551417, 1)
 offset_left = -5.0
 offset_top = 516.0
 offset_right = 1152.0
-offset_bottom = 655.0
+offset_bottom = 835.0
 texture = SubResource("CanvasTexture_t7y1q")
 
 [node name="Closet" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_bg7kl")]
@@ -36,3 +37,6 @@ player = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("1_w1xc5")]
 position = Vector2(431, 540)
+
+[node name="MomBossChar" parent="." instance=ExtResource("3_oek4w")]
+position = Vector2(94, 673)

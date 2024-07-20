@@ -18,3 +18,14 @@ shape = SubResource("RectangleShape2D_240x3")
 position = Vector2(0.400002, 0)
 scale = Vector2(3.7, 3.7)
 texture = ExtResource("2_bvc5k")
+
+[node name="InteractLabel" type="Label" parent="."]
+visible = false
+offset_left = -92.0
+offset_top = 74.0
+offset_right = 92.0
+offset_bottom = 97.0
+text = "WORDS WORDS WORDS"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
