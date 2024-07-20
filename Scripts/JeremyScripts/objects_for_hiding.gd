@@ -5,7 +5,6 @@ extends StaticBody2D
 func _on_area_2d_body_entered(body):
 	if body == player:
 		player.can_hide = true
-		player.visible = true
 
 
 func _on_area_2d_body_exited(body):
