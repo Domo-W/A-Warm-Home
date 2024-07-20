@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="A Warm Home"
-run/main_scene="res://PrototypeLevels/attic_redo.tscn"
+run/main_scene="res://PrototypeLevels/bedroom.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://Scripts/global.gd"
+
+[display]
+
+window/size/resizable=false
 
 [input]
 

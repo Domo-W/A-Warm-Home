@@ -7,6 +7,7 @@ extends Node2D
 var exitable = false
 
 func _ready():
+	player.position.y = 114
 	if not Global.fresh_start:
 		player.position.x = -180
 	Global.fresh_start = false
