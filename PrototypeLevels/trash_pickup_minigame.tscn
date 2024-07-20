@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://crmfsin4hce3g"]
+
+[ext_resource type="Script" path="res://Scripts/GeoffScripts/trash_pickup_manager.gd" id="1_5uwl1"]
+[ext_resource type="PackedScene" uid="uid://c5wly7ft6wgh5" path="res://Scripts/GeoffScripts/droppable_area.tscn" id="2_thcmf"]
+
+[node name="TrashPickupMinigame" type="Node2D"]
+
+[node name="TrashManager" type="Node" parent="."]
+script = ExtResource("1_5uwl1")
+
+[node name="DroppableArea" parent="." instance=ExtResource("2_thcmf")]

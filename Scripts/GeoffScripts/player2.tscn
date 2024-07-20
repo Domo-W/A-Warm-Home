@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhn5gfeu5ted3"]
+[gd_scene load_steps=4 format=3 uid="uid://d2jhblpqn0v53"]
 
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/LawnMover.gd" id="1_m0d5j"]
 [ext_resource type="Texture2D" uid="uid://dtgr1xbaf7c0k" path="res://Assets/GeoffAssets/mowing_man.png" id="2_tfee6"]

@@ -2,7 +2,8 @@ extends Node
 var grass_scene = preload("res://Scripts/GeoffScripts/mowing_grass.tscn")
 var score = 0
 @onready var label = $Label
-@onready var cpu_particles_2d = $"../Player/CPUParticles2D"
+@onready var cpu_particles_2d = $"../LawnPlayer/CPUParticles2D"
+
 
 
 func add_point():
