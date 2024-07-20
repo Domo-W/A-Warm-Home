@@ -15,6 +15,8 @@ func _ready():
 		player.position.x = -180
 	else:
 		Global.has_done_task = false
+		if Global.day != 1:
+			controls_hint.text = "A new day!"
 		controls_hint.visible = true
 	Global.fresh_start = false
 
