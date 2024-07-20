@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://diqhnjnlpsobr"]
+
+[ext_resource type="Texture2D" uid="uid://coxoia6hhhgv5" path="res://Assets/GeoffAssets/grass_particle.png" id="1_0qum6"]
+
+[sub_resource type="Curve" id="Curve_m2sew"]
+_data = [Vector2(0, 1), 0.0, -1.8069, 0, 1, Vector2(0.553435, 0), -1.8069, 0.0, 1, 0]
+point_count = 2
+
+[node name="GrassCutParticle" type="Node2D"]
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="."]
+explosiveness = 0.73
+texture = ExtResource("1_0qum6")
+direction = Vector2(0, -1)
+spread = 90.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 50.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_m2sew")

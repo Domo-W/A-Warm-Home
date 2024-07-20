@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://c08h2lhpkvxht"]
+
+[ext_resource type="Script" path="res://Scripts/JeremyScripts/player.gd" id="1_xp44h"]
+[ext_resource type="Texture2D" uid="uid://dtgr1xbaf7c0k" path="res://Assets/GeoffAssets/mowing_man.png" id="2_bvc5k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_240x3"]
+size = Vector2(54, 40)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 3
+script = ExtResource("1_xp44h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 40)
+shape = SubResource("RectangleShape2D_240x3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.400002, 0)
+scale = Vector2(3.7, 3.7)
+texture = ExtResource("2_bvc5k")
+
+[node name="InteractLabel" type="Label" parent="."]
+visible = false
+offset_left = -92.0
+offset_top = 74.0
+offset_right = 92.0
+offset_bottom = 97.0
+text = "WORDS WORDS WORDS"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
