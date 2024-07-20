@@ -77,7 +77,7 @@ position = Vector2(-3, 12)
 zoom = Vector2(6, 6)
 limit_left = -290
 limit_right = 72
-limit_bottom = 64
+limit_bottom = 40
 
 [node name="LivingRoomDoor" type="Area2D" parent="."]
 z_index = 1
@@ -154,7 +154,7 @@ texture = ExtResource("10_giotm")
 z_index = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Ground"]
-position = Vector2(-2, 63)
+position = Vector2(0, 40)
 shape = SubResource("WorldBoundaryShape2D_hkqds")
 
 [node name="TopGround" type="StaticBody2D" parent="Walls"]

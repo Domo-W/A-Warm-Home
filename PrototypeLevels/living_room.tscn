@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dxbvsk80vjupt"]
+[gd_scene load_steps=21 format=3 uid="uid://dxbvsk80vjupt"]
 
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/living_room.gd" id="1_0hlaw"]
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_gib24"]
@@ -69,15 +69,18 @@ normal = Vector2(1, 0)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_248oo"]
 normal = Vector2(-1, 0)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8das"]
+size = Vector2(98, 31)
+
 [node name="LivingRoom" type="Node2D"]
 script = ExtResource("1_0hlaw")
 
 [node name="stickplayer" parent="." instance=ExtResource("1_gib24")]
-position = Vector2(18, -16)
+position = Vector2(18, 10)
 
 [node name="Camera2D" type="Camera2D" parent="stickplayer"]
 z_index = 1
-zoom = Vector2(4, 4)
+zoom = Vector2(6, 6)
 limit_left = -162
 limit_right = 211
 limit_bottom = 143
@@ -95,14 +98,15 @@ position = Vector2(1, 0.75)
 shape = SubResource("RectangleShape2D_qp1a4")
 
 [node name="StairsLabel" type="Label" parent="Stairs"]
-offset_left = 5.0
-offset_top = -36.0
-offset_right = 101.0
-offset_bottom = -13.0
+offset_left = 7.0
+offset_top = -23.0
+offset_right = 103.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_pe3g1")
 theme_override_font_sizes/font_size = 8
-text = "Go upstairs?"
+text = "Go up-
+stairs?"
+horizontal_alignment = 1
 
 [node name="KitchenDoor" type="Area2D" parent="."]
 z_index = 1
@@ -118,9 +122,9 @@ shape = SubResource("RectangleShape2D_v4l52")
 
 [node name="KitchenLabel" type="Label" parent="KitchenDoor"]
 offset_left = -41.0
-offset_top = -34.0
+offset_top = -31.0
 offset_right = 15.0
-offset_bottom = -11.0
+offset_bottom = -8.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_pe3g1")
 theme_override_font_sizes/font_size = 8
@@ -141,9 +145,9 @@ shape = SubResource("RectangleShape2D_rv7v0")
 
 [node name="OutsideLabel" type="Label" parent="Outside"]
 offset_left = -31.0
-offset_top = -28.0
+offset_top = -22.0
 offset_right = 57.0
-offset_bottom = -5.0
+offset_bottom = 1.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_pe3g1")
 theme_override_font_sizes/font_size = 8
@@ -187,6 +191,14 @@ position = Vector2(2, 105)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall"]
 position = Vector2(209, -66)
 shape = SubResource("WorldBoundaryShape2D_248oo")
+
+[node name="CouchCollider" type="StaticBody2D" parent="Walls"]
+z_index = 1
+position = Vector2(-1, 66)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/CouchCollider"]
+position = Vector2(-3, -0.5)
+shape = SubResource("RectangleShape2D_b8das")
 
 [node name="Decor" type="Node" parent="."]
 

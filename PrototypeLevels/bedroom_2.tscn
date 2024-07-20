@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://72ydq62211xt"]
+[gd_scene load_steps=20 format=3 uid="uid://72ydq62211xt"]
 
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_lgsly"]
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/bedroom_2.gd" id="1_vcnu2"]
@@ -40,6 +40,9 @@ normal = Vector2(1, 0)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bw72o"]
 normal = Vector2(-1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1x6yg"]
+size = Vector2(20, 4)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v3q3j"]
 texture = ExtResource("5_lc8pd")
@@ -152,8 +155,15 @@ shape = SubResource("WorldBoundaryShape2D_tksie")
 position = Vector2(473, 7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall"]
-position = Vector2(-5, -27)
+position = Vector2(-32, -27)
 shape = SubResource("WorldBoundaryShape2D_bw72o")
+
+[node name="Bedframe" type="StaticBody2D" parent="Walls"]
+position = Vector2(435, 30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Bedframe"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_1x6yg")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_w167j")

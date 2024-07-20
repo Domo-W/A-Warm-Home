@@ -138,23 +138,21 @@ animations = [{
 }],
 "loop": true,
 "name": &"side_walk",
-"speed": 10.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ow216"]
-size = Vector2(11, 5)
+size = Vector2(11, 10)
 
 [node name="stickplayer" type="CharacterBody2D"]
 script = ExtResource("1_q5wbk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 3
-position = Vector2(9.53674e-07, -7)
-scale = Vector2(0.7, 0.7)
+position = Vector2(6, -35)
 sprite_frames = SubResource("SpriteFrames_8jd1c")
-animation = &"front"
-autoplay = "front"
+animation = &"back_walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 12.5)
+position = Vector2(6, -9)
 shape = SubResource("RectangleShape2D_ow216")
