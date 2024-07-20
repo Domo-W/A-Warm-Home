@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bi1oqyhj6cn0x"]
+[gd_scene load_steps=23 format=3 uid="uid://bi1oqyhj6cn0x"]
 
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/bedroom.gd" id="1_uv7jl"]
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_wcn88"]
@@ -29,6 +29,9 @@ func _process(delta):
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lq1t"]
 size = Vector2(82, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mv6mx"]
+size = Vector2(22, 39)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hem0p"]
 texture = ExtResource("7_5hj0y")
@@ -133,6 +136,24 @@ z_index = 1
 position = Vector2(36, 116)
 texture = ExtResource("5_0fvuw")
 
+[node name="SleepCheck" type="Area2D" parent="Decor/BedBottom"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decor/BedBottom/SleepCheck"]
+position = Vector2(1, -1.5)
+shape = SubResource("RectangleShape2D_mv6mx")
+
+[node name="BedLabel" type="Label" parent="Decor/BedBottom/SleepCheck"]
+visible = false
+offset_left = -126.0
+offset_top = -9.0
+offset_right = -14.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_1mrvb")
+theme_override_font_sizes/font_size = 8
+text = "\"I'm not ready
+to sleep yet\""
+
 [node name="BedTop" type="Sprite2D" parent="Decor"]
 z_index = 5
 position = Vector2(36, 116)
@@ -160,13 +181,16 @@ position = Vector2(-69, 78)
 texture = ExtResource("10_1wnig")
 
 [node name="ControlsHint" type="Label" parent="."]
-offset_left = -60.0
-offset_top = 42.0
-offset_right = 129.0
-offset_bottom = 63.0
+visible = false
+z_index = 1
+offset_left = -131.0
+offset_top = 107.0
+offset_right = 58.0
+offset_bottom = 128.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_1mrvb")
 theme_override_font_sizes/font_size = 8
-text = "WASD/Arrow Keys to Move
+text = "WASD to Move
 E to Interact"
 horizontal_alignment = 1
 
@@ -219,3 +243,5 @@ shape = SubResource("RectangleShape2D_t70ew")
 
 [connection signal="body_entered" from="HallwayDoor" to="." method="_on_hallway_door_body_entered"]
 [connection signal="body_exited" from="HallwayDoor" to="." method="_on_hallway_door_body_exited"]
+[connection signal="body_entered" from="Decor/BedBottom/SleepCheck" to="." method="_on_sleep_check_body_entered"]
+[connection signal="body_exited" from="Decor/BedBottom/SleepCheck" to="." method="_on_sleep_check_body_exited"]

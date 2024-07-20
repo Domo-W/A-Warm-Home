@@ -103,7 +103,7 @@ position = Vector2(18, 10)
 
 [node name="Camera2D" type="Camera2D" parent="stickplayer"]
 z_index = 1
-zoom = Vector2(6, 6)
+zoom = Vector2(5, 5)
 limit_left = -162
 limit_right = 211
 limit_bottom = 143
@@ -167,14 +167,17 @@ position = Vector2(12.5, -1)
 shape = SubResource("RectangleShape2D_rv7v0")
 
 [node name="OutsideLabel" type="Label" parent="Outside"]
-offset_left = -31.0
-offset_top = -22.0
-offset_right = 57.0
-offset_bottom = 1.0
+offset_left = -37.0
+offset_top = -37.0
+offset_right = 67.0
+offset_bottom = -14.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_pe3g1")
 theme_override_font_sizes/font_size = 8
-text = "Go outside?"
+text = "Mow the 
+lawn?"
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_8aalc")

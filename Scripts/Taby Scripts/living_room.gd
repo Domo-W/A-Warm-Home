@@ -18,6 +18,8 @@ func _ready():
 	stairs_label.visible = stairs_interact
 	kitchen_label.visible = kitchen_interact
 	outside_label.visible = outside_interact
+	if Global.day == 2 and Global.has_done_task:
+		outside_label.text = "Good work!"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -31,7 +33,10 @@ func _process(_delta):
 	if Input.is_action_just_pressed("interact") and outside_interact:
 		Global.prev_room_x = 150
 		print("touching grass")
-		get_tree().change_scene_to_file("res://PrototypeLevels/lawn_mowing_minigame.tscn")
+		if Global.day != 2:
+			outside_label.text = "I don't feel\nlike it..."
+		else:
+			get_tree().change_scene_to_file("res://PrototypeLevels/lawn_mowing_minigame.tscn")
 	if Input.is_action_just_pressed("interact") and dad_interact:
 		dad_speech.text = "\"Not now,\nI'm busy.\""
 
