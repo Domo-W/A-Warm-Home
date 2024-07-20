@@ -1,10 +1,13 @@
 extends StaticBody2D
 
+@export var player: CharacterBody2D
 
 
 func _on_area_2d_body_entered(body):
-	pass # Replace with function body.
+	if body == player:
+		player.can_hide = true
 
 
 func _on_area_2d_body_exited(body):
-	pass # Replace with function body.
+	if body == player:
+		player.can_hide = false

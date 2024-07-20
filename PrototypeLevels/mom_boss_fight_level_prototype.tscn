@@ -24,13 +24,15 @@ offset_right = 1152.0
 offset_bottom = 655.0
 texture = SubResource("CanvasTexture_t7y1q")
 
-[node name="Closet" parent="." instance=ExtResource("2_bg7kl")]
+[node name="Closet" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_bg7kl")]
 position = Vector2(1102, 505)
 scale = Vector2(0.75, 1.5)
+player = NodePath("../Player")
 
-[node name="Dresser" parent="." instance=ExtResource("2_bg7kl")]
+[node name="Dresser" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_bg7kl")]
 position = Vector2(718, 501)
 scale = Vector2(2, 0.75)
+player = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("1_w1xc5")]
 position = Vector2(431, 540)
