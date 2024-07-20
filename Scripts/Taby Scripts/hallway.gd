@@ -28,7 +28,11 @@ func _process(delta):
 	if Input.is_action_just_pressed("interact") and attic_interact:
 		Global.prev_room_x = -250
 		print("dusty")
-		#get_tree().change_scene_to_file("res://PrototypeLevels/attic.tscn")
+		if Global.day != 3:
+			attic_label.text = "I don't think\n I need to do \nthat today..."
+		else:
+			#get_tree().change_scene_to_file("res://PrototypeLevels/attic.tscn")
+			pass
 	if Input.is_action_just_pressed("interact") and stairs_interact:
 		Global.prev_room_x = 0
 		print("fell off")
