@@ -17,6 +17,7 @@ unique_name_in_owner = true
 script = ExtResource("1_t6kvw")
 
 [node name="LawnPlayer" parent="." instance=ExtResource("1_j8jey")]
+z_index = 10
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="LawnPlayer"]
 position = Vector2(-12, 15)

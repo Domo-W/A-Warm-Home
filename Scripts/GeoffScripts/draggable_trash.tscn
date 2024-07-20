@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3ab03uirfoop"]
+
+[ext_resource type="Script" path="res://Scripts/GeoffScripts/draggable_trash.gd" id="1_p53op"]
+[ext_resource type="Texture2D" uid="uid://ruqa7p0ia8le" path="res://Assets/GeoffAssets/big_trash.png" id="2_0oi8x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ln2gn"]
+radius = 29.0689
+
+[node name="DraggableTrash" type="Node2D"]
+script = ExtResource("1_p53op")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_0oi8x")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ln2gn")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

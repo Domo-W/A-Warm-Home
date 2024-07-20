@@ -1,5 +1,6 @@
 extends CharacterBody2D
-@onready var sprite_2d = $Sprite2D
+@onready var sprite = $Sprite2D
+@onready var interact_label = $InteractLabel
 
 const VSPEED = 200.0
 const HSPEED = 200.0
@@ -12,9 +13,9 @@ func _physics_process(delta):
 	var direction = Input.get_axis("move_left", "move_right")
 	
 	if direction > 0:
-		sprite_2d.flip_h = true
+		sprite.flip_h = true
 	elif direction < 0:
-		sprite_2d.flip_h = false
+		sprite.flip_h = false
 	
 	if direction and not is_hidden:
 		velocity.x = direction * HSPEED
@@ -30,12 +31,22 @@ func _physics_process(delta):
 	if global_position.y <= 457:
 		global_position.y = 457.9
 	
-	if can_hide and Input.is_action_just_pressed("interact"):
-		if is_hidden:
-			visible = true
-			is_hidden = false
+	if can_hide:
+		interact_label.visible = true
+		if not is_hidden:
+			interact_label.text = "Press E to Hide"
 		else:
-			visible = false
-			is_hidden = true
-
+			interact_label.text = "Press E to Leave"
+		
+		if Input.is_action_just_pressed("interact"):
+			if is_hidden:
+				sprite.self_modulate.a = 1
+				is_hidden = false
+			else:
+				sprite.self_modulate.a = 0
+				is_hidden = true
+	else:
+		interact_label.visible = false
+	
+	
 	move_and_slide()

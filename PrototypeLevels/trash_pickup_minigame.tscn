@@ -1,11 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://crmfsin4hce3g"]
+[gd_scene load_steps=5 format=3 uid="uid://crmfsin4hce3g"]
 
-[ext_resource type="Script" path="res://Scripts/GeoffScripts/trash_pickup_manager.gd" id="1_5uwl1"]
+[ext_resource type="Script" path="res://Scripts/GeoffScripts/TrashManager.gd" id="1_30auw"]
 [ext_resource type="PackedScene" uid="uid://c5wly7ft6wgh5" path="res://Scripts/GeoffScripts/droppable_area.tscn" id="2_thcmf"]
+[ext_resource type="Texture2D" uid="uid://cdrm3ks1f10hq" path="res://Assets/GeoffAssets/bin.png" id="5_g3gku"]
+[ext_resource type="Texture2D" uid="uid://bak46m7w8x40b" path="res://Assets/GeoffAssets/recycle_bin.png" id="6_vnfxk"]
 
 [node name="TrashPickupMinigame" type="Node2D"]
 
-[node name="TrashManager" type="Node" parent="."]
-script = ExtResource("1_5uwl1")
+[node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="DroppableArea" parent="." instance=ExtResource("2_thcmf")]
+[node name="TrashManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_30auw")
+
+[node name="TrashSprite" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-337, 64)
+scale = Vector2(2, 2)
+texture = ExtResource("5_g3gku")
+
+[node name="Trash" parent="." instance=ExtResource("2_thcmf")]
+z_index = 1
+position = Vector2(-335, -18)
+
+[node name="RecSprite" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(306, 81)
+scale = Vector2(2, 2)
+texture = ExtResource("6_vnfxk")
+
+[node name="Recycling" parent="." instance=ExtResource("2_thcmf")]
+z_index = 1
+position = Vector2(308, -1)

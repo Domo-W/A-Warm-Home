@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cksjgadof1e1o"]
+
+[ext_resource type="Script" path="res://Scripts/GeoffScripts/draggable_recycling.gd" id="1_qa81s"]
+[ext_resource type="Texture2D" uid="uid://dp5yufprvq3af" path="res://Assets/GeoffAssets/big_bottle.png" id="2_ofxk5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nj7st"]
+radius = 32.0156
+
+[node name="DraggableRecycling" type="Node2D"]
+script = ExtResource("1_qa81s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_ofxk5")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_nj7st")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
