@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c5rhaa4de4ebp"]
+[gd_scene load_steps=20 format=3 uid="uid://c5rhaa4de4ebp"]
 
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_8a4ks"]
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/kitchen.gd" id="1_vr8le"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://bkmravxd0qjg6" path="res://Assets/Decorations/kitchen_furniture/knife_holder.png" id="8_n2tci"]
 [ext_resource type="Texture2D" uid="uid://dtil4kqo7meag" path="res://Assets/Decorations/kitchen_furniture/sink_counter.png" id="9_pdtne"]
 [ext_resource type="Texture2D" uid="uid://5ed6nt2lvcbf" path="res://Assets/Decorations/kitchen_furniture/clock.png" id="10_giotm"]
-[ext_resource type="Texture2D" uid="uid://da8ibdgnpbvgg" path="res://Assets/Decorations/CharacterSpriteSheets/mom-Sheet.png" id="11_dio0j"]
 [ext_resource type="Texture2D" uid="uid://xrm114p3ix85" path="res://Assets/Decorations/kitchen_furniture/stove.png" id="11_nyqio"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejkyi"]
@@ -56,21 +55,6 @@ texture = ExtResource("6_khv4v")
 
 [sub_resource type="TileSet" id="TileSet_1d6ge"]
 sources/0 = SubResource("TileSetAtlasSource_04kkk")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_85la2"]
-atlas = ExtResource("11_dio0j")
-region = Rect2(0, 0, 32, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_a560w"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_85la2")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hkqds"]
 
@@ -137,8 +121,8 @@ offset_right = 70.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_m14ld")
 theme_override_font_sizes/font_size = 8
-text = "\"Ready to do 
-homework?\""
+text = "Ready to do 
+homework?"
 horizontal_alignment = 1
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -163,12 +147,6 @@ texture = ExtResource("9_pdtne")
 [node name="Clock" type="Sprite2D" parent="Decor"]
 position = Vector2(-122, -6)
 texture = ExtResource("10_giotm")
-
-[node name="Mom" type="AnimatedSprite2D" parent="Decor"]
-visible = false
-position = Vector2(-269, -5)
-scale = Vector2(0.8, 0.8)
-sprite_frames = SubResource("SpriteFrames_a560w")
 
 [node name="Walls" type="Node" parent="."]
 
