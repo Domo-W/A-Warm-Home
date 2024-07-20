@@ -1,11 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://duiq0ihwaivdj"]
+[gd_scene load_steps=4 format=3 uid="uid://duiq0ihwaivdj"]
 
 [ext_resource type="Script" path="res://Scripts/JeremyScripts/mom_boss_script.gd" id="1_ti50d"]
 [ext_resource type="Texture2D" uid="uid://bdhrfskm2irck" path="res://icon.svg" id="2_ufuae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4tuqa"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_4lcsm"]
 
 [node name="MomBossChar" type="CharacterBody2D"]
 script = ExtResource("1_ti50d")
@@ -20,10 +18,8 @@ shape = SubResource("RectangleShape2D_4tuqa")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
-[node name="DetectionArea" type="Area2D" parent="."]
+[node name="LeaveRoomTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
-scale = Vector2(20, 20)
-shape = SubResource("CircleShape2D_4lcsm")
-
-[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="timeout" from="LeaveRoomTimer" to="." method="_on_timer_timeout"]
