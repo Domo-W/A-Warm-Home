@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b07nts8x802h7"]
+[gd_scene load_steps=5 format=3 uid="uid://beu3omu223flp"]
 
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/homework_minigame.gd" id="1_7v38n"]
 [ext_resource type="Texture2D" uid="uid://r3fona4dtfik" path="res://Assets/Taby Assets/whiteboard.jpg" id="1_obk0u"]
+[ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="3_6nk3e"]
 [ext_resource type="FontFile" uid="uid://didr0ixt7d7pg" path="res://Assets/Taby Assets/PixelifySans-VariableFont_wght.ttf" id="3_lxwis"]
 
 [node name="Homework" type="Control"]
@@ -35,7 +36,7 @@ offset_top = -54.72
 offset_right = 994.512
 offset_bottom = 14.28
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_lxwis")
+theme_override_fonts/font = ExtResource("3_6nk3e")
 theme_override_font_sizes/font_size = 50
 text = "Homework"
 horizontal_alignment = 1
@@ -78,25 +79,25 @@ theme_override_constants/separation = 30
 
 [node name="ButtonA" type="Button" parent="ButtonContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_lxwis")
+theme_override_fonts/font = ExtResource("3_6nk3e")
 theme_override_font_sizes/font_size = 50
 text = "A"
 
 [node name="ButtonB" type="Button" parent="ButtonContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_lxwis")
+theme_override_fonts/font = ExtResource("3_6nk3e")
 theme_override_font_sizes/font_size = 50
 text = "B"
 
 [node name="ButtonC" type="Button" parent="ButtonContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_lxwis")
+theme_override_fonts/font = ExtResource("3_6nk3e")
 theme_override_font_sizes/font_size = 50
 text = "C"
 
 [node name="ButtonD" type="Button" parent="ButtonContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_lxwis")
+theme_override_fonts/font = ExtResource("3_6nk3e")
 theme_override_font_sizes/font_size = 50
 text = "D"
 
@@ -107,10 +108,10 @@ offset_top = 170.0
 offset_right = 984.0
 offset_bottom = 557.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_lxwis")
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("3_6nk3e")
+theme_override_font_sizes/font_size = 30
 text = "You failed.
-Final Grade: F"
+Final grade: F"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
@@ -118,13 +119,13 @@ autowrap_mode = 1
 [node name="ExitButton" type="Button" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 547.0
-offset_top = 460.0
-offset_right = 902.0
-offset_bottom = 537.0
+offset_left = 534.0
+offset_top = 438.0
+offset_right = 932.0
+offset_bottom = 515.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_lxwis")
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("3_6nk3e")
+theme_override_font_sizes/font_size = 30
 text = "Exit in shame"
 
 [connection signal="pressed" from="ButtonContainer/ButtonA" to="." method="_on_button_a_pressed"]
