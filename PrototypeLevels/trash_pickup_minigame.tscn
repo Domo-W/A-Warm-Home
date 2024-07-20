@@ -1,11 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://crmfsin4hce3g"]
+[gd_scene load_steps=4 format=3 uid="uid://crmfsin4hce3g"]
 
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/trash_pickup_manager.gd" id="1_5uwl1"]
+[ext_resource type="PackedScene" uid="uid://d3ab03uirfoop" path="res://Scripts/GeoffScripts/draggable_trash.tscn" id="2_eu4uh"]
 [ext_resource type="PackedScene" uid="uid://c5wly7ft6wgh5" path="res://Scripts/GeoffScripts/droppable_area.tscn" id="2_thcmf"]
 
 [node name="TrashPickupMinigame" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [node name="TrashManager" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("1_5uwl1")
 
+[node name="DraggableTrash" parent="TrashManager" instance=ExtResource("2_eu4uh")]
+
 [node name="DroppableArea" parent="." instance=ExtResource("2_thcmf")]
+position = Vector2(-335, -18)
+
+[node name="DroppableArea2" parent="." instance=ExtResource("2_thcmf")]
+position = Vector2(308, -1)
