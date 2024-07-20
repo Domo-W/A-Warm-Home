@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cw58w2k2i75i3"]
 
-[ext_resource type="PackedScene" uid="uid://c08h2lhpkvxht" path="res://Scripts/JeremyScripts/player.tscn" id="1_j8jey"]
+[ext_resource type="PackedScene" uid="uid://c08h2lhpkvxht" path="res://Assets/JeremyAssets/player.tscn" id="1_j8jey"]
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/lawn_game_manager.gd" id="1_t6kvw"]
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/GrassSpawner.gd" id="4_uvx30"]
 [ext_resource type="PackedScene" uid="uid://b2f5ynnfdrbe3" path="res://Scripts/GeoffScripts/mowing_grass.tscn" id="5_v4il5"]
