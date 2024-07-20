@@ -29,7 +29,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("interact") and outside_interact:
 		Global.prev_room_x = 150
 		print("touching grass")
-		#get_tree().change_scene_to_file("res://PrototypeLevels/hallway.tscn")
+		get_tree().change_scene_to_file("res://PrototypeLevels/lawn_mowing_minigame.tscn")
 
 func _on_stairs_body_entered(body):
 	if body == player:
