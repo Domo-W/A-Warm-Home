@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6prcsqhdar25"]
+
+[ext_resource type="Texture2D" uid="uid://chkvv4pcjbste" path="res://Assets/Taby Assets/door.png" id="1_vxdig"]
+[ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="2_p75ds"]
+
+[sub_resource type="GDScript" id="GDScript_qtutp"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lq1t"]
+size = Vector2(159, 65)
+
+[node name="HallwayDoor" type="Area2D"]
+position = Vector2(-181, 30)
+script = SubResource("GDScript_qtutp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vxdig")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, 27.5)
+shape = SubResource("RectangleShape2D_5lq1t")
+
+[node name="InteractHintLabel" type="Label" parent="."]
+visible = false
+offset_left = -80.0
+offset_top = 15.0
+offset_right = 88.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource("2_p75ds")
+theme_override_font_sizes/font_size = 8
+text = "Hallway"
+horizontal_alignment = 1

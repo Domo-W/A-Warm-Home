@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5rhaa4de4ebp"]
+
+[ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_8a4ks"]
+[ext_resource type="Script" path="res://Scripts/Taby Scripts/kitchen.gd" id="1_vr8le"]
+[ext_resource type="Texture2D" uid="uid://c2jt4pqenae4c" path="res://Assets/Taby Assets/sidedoor.png" id="2_bo2jo"]
+[ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="3_m14ld"]
+[ext_resource type="Texture2D" uid="uid://cbpaakn38axbn" path="res://Assets/Taby Assets/study.png" id="5_hqki2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejkyi"]
+size = Vector2(81, 66)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hkqds"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtjag"]
+size = Vector2(104, 65)
+
+[node name="Kitchen" type="Node2D"]
+script = ExtResource("1_vr8le")
+
+[node name="stickplayer" parent="." instance=ExtResource("1_8a4ks")]
+position = Vector2(-3, 1)
+
+[node name="Camera2D" type="Camera2D" parent="stickplayer"]
+zoom = Vector2(4, 4)
+
+[node name="LivingRoomDoor" type="Area2D" parent="."]
+position = Vector2(10, -10)
+
+[node name="Sprite2D" type="Sprite2D" parent="LivingRoomDoor"]
+texture = ExtResource("2_bo2jo")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LivingRoomDoor"]
+position = Vector2(7.5, -1)
+shape = SubResource("RectangleShape2D_ejkyi")
+
+[node name="LivingRoomLabel" type="Label" parent="LivingRoomDoor"]
+offset_left = -19.0
+offset_top = -31.0
+offset_right = 69.0
+offset_bottom = -8.0
+theme_override_fonts/font = ExtResource("3_m14ld")
+theme_override_font_sizes/font_size = 8
+text = "Living Room"
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(-2, 27)
+shape = SubResource("WorldBoundaryShape2D_hkqds")
+
+[node name="Homework" type="Area2D" parent="."]
+position = Vector2(-114, -12)
+
+[node name="Sprite2D" type="Sprite2D" parent="Homework"]
+position = Vector2(-23, -11)
+texture = ExtResource("5_hqki2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Homework"]
+position = Vector2(-27, 3.5)
+shape = SubResource("RectangleShape2D_wtjag")
+
+[node name="HomeworkLabel" type="Label" parent="Homework"]
+offset_left = -98.0
+offset_top = -23.0
+offset_right = 70.0
+theme_override_fonts/font = ExtResource("3_m14ld")
+theme_override_font_sizes/font_size = 8
+text = "Ready to do homework?"
+
+[connection signal="body_entered" from="LivingRoomDoor" to="." method="_on_living_room_door_body_entered"]
+[connection signal="body_exited" from="LivingRoomDoor" to="." method="_on_living_room_door_body_exited"]
+[connection signal="body_entered" from="Homework" to="." method="_on_homework_body_entered"]
+[connection signal="body_exited" from="Homework" to="." method="_on_homework_body_exited"]

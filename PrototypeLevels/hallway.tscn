@@ -1,18 +1,25 @@
-[gd_scene load_steps=9 format=3 uid="uid://dw7isrcpo28gr"]
+[gd_scene load_steps=12 format=3 uid="uid://dw7isrcpo28gr"]
 
-[ext_resource type="Script" path="res://PrototypeLevels/hallway.gd" id="1_e8e6x"]
+[ext_resource type="Script" path="res://Scripts/Taby Scripts/hallway.gd" id="1_e8e6x"]
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="2_4qndj"]
-[ext_resource type="Texture2D" uid="uid://cbpaakn38axbn" path="res://Assets/Taby Assets/study.png" id="2_b2ouj"]
 [ext_resource type="Texture2D" uid="uid://chkvv4pcjbste" path="res://Assets/Taby Assets/door.png" id="3_abag3"]
 [ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="4_egvlc"]
+[ext_resource type="Texture2D" uid="uid://bgudec1affrgo" path="res://Assets/Taby Assets/atticent.png" id="6_r7bcc"]
+[ext_resource type="Texture2D" uid="uid://dvfx2alqwexc2" path="res://Assets/Taby Assets/stairs.png" id="7_fs7ls"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vwjh5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ncs0"]
-size = Vector2(99, 41)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u7565"]
 size = Vector2(53, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mtf74"]
+size = Vector2(53.5, 51.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xlabb"]
+size = Vector2(99, 67)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eojqk"]
+size = Vector2(77, 59)
 
 [node name="Hallway" type="Node2D"]
 script = ExtResource("1_e8e6x")
@@ -22,35 +29,14 @@ z_index = 3
 position = Vector2(86, -30)
 
 [node name="Camera2D" type="Camera2D" parent="stickplayer"]
-position = Vector2(-9, 34)
-zoom = Vector2(2, 2)
+position = Vector2(-9, -9)
+zoom = Vector2(4, 4)
 
 [node name="Ground" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 position = Vector2(36, 37)
 shape = SubResource("WorldBoundaryShape2D_vwjh5")
-
-[node name="HomeworkBox" type="Area2D" parent="."]
-position = Vector2(-81, 7)
-
-[node name="Sprite2D" type="Sprite2D" parent="HomeworkBox"]
-position = Vector2(-21, -16)
-texture = ExtResource("2_b2ouj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HomeworkBox"]
-position = Vector2(-27.5, 3.5)
-shape = SubResource("RectangleShape2D_3ncs0")
-
-[node name="HomeworkHintLabel" type="Label" parent="."]
-visible = false
-offset_left = -186.0
-offset_top = -12.0
-offset_right = -18.0
-offset_bottom = 11.0
-theme_override_fonts/font = ExtResource("4_egvlc")
-theme_override_font_sizes/font_size = 8
-text = "Ready to do homework?"
 
 [node name="BedroomDoor" type="Area2D" parent="."]
 position = Vector2(86, -30)
@@ -73,7 +59,74 @@ theme_override_font_sizes/font_size = 8
 text = "Bedroom"
 horizontal_alignment = 1
 
-[connection signal="body_entered" from="HomeworkBox" to="." method="_on_homework_box_body_entered"]
-[connection signal="body_exited" from="HomeworkBox" to="." method="_on_homework_box_body_exited"]
+[node name="Bedroom2Door" type="Area2D" parent="."]
+position = Vector2(-63, -25)
+
+[node name="Sprite2D" type="Sprite2D" parent="Bedroom2Door"]
+texture = ExtResource("3_abag3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bedroom2Door"]
+position = Vector2(-4.25, 32.25)
+shape = SubResource("RectangleShape2D_mtf74")
+
+[node name="Bedroom2Label" type="Label" parent="Bedroom2Door"]
+visible = false
+offset_left = -52.0
+offset_top = 13.0
+offset_right = 52.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("4_egvlc")
+theme_override_font_sizes/font_size = 8
+text = "Mom's Bedroom"
+
+[node name="AtticEntrance" type="Area2D" parent="."]
+position = Vector2(-253, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="AtticEntrance"]
+texture = ExtResource("6_r7bcc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AtticEntrance"]
+position = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_xlabb")
+
+[node name="AtticLabel" type="Label" parent="AtticEntrance"]
+visible = false
+offset_left = 13.0
+offset_top = -9.0
+offset_right = 53.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("4_egvlc")
+theme_override_font_sizes/font_size = 8
+text = "Attic"
+
+[node name="Stairs" type="Area2D" parent="."]
+position = Vector2(-402, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Stairs"]
+position = Vector2(0, 27)
+texture = ExtResource("7_fs7ls")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs"]
+position = Vector2(6.5, 0.5)
+shape = SubResource("RectangleShape2D_eojqk")
+
+[node name="StairsLabel" type="Label" parent="Stairs"]
+visible = false
+offset_left = -51.0
+offset_top = -26.0
+offset_right = 61.0
+offset_bottom = -3.0
+theme_override_fonts/font = ExtResource("4_egvlc")
+theme_override_font_sizes/font_size = 8
+text = "Go downstairs?"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [connection signal="body_entered" from="BedroomDoor" to="." method="_on_bedroom_door_body_entered"]
 [connection signal="body_exited" from="BedroomDoor" to="." method="_on_bedroom_door_body_exited"]
+[connection signal="body_entered" from="Bedroom2Door" to="." method="_on_bedroom_2_door_body_entered"]
+[connection signal="body_exited" from="Bedroom2Door" to="." method="_on_bedroom_2_door_body_exited"]
+[connection signal="body_entered" from="AtticEntrance" to="." method="_on_attic_entrance_body_entered"]
+[connection signal="body_exited" from="AtticEntrance" to="." method="_on_attic_entrance_body_exited"]
+[connection signal="body_entered" from="Stairs" to="." method="_on_stairs_body_entered"]
+[connection signal="body_exited" from="Stairs" to="." method="_on_stairs_body_exited"]
