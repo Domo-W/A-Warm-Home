@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://72ydq62211xt"]
+
+[ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_lgsly"]
+[ext_resource type="Script" path="res://Scripts/Taby Scripts/bedroom_2.gd" id="1_vcnu2"]
+[ext_resource type="Texture2D" uid="uid://chkvv4pcjbste" path="res://Assets/Taby Assets/door.png" id="3_m3npe"]
+[ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="4_vw0ov"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gf5dq"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lxb5g"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="GDScript" id="GDScript_qtutp"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lq1t"]
+size = Vector2(159, 65)
+
+[node name="Bedroom2" type="Node2D"]
+script = ExtResource("1_vcnu2")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(323, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("WorldBoundaryShape2D_gf5dq")
+
+[node name="stickplayer" parent="." instance=ExtResource("1_lgsly")]
+position = Vector2(318, -61)
+
+[node name="Camera2D" type="Camera2D" parent="stickplayer"]
+zoom = Vector2(4, 4)
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(608, -94)
+shape = SubResource("WorldBoundaryShape2D_lxb5g")
+
+[node name="HallwayDoor" type="Area2D" parent="."]
+position = Vector2(313, -65)
+script = SubResource("GDScript_qtutp")
+
+[node name="Sprite2D" type="Sprite2D" parent="HallwayDoor"]
+position = Vector2(0, 5)
+texture = ExtResource("3_m3npe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HallwayDoor"]
+position = Vector2(-2.5, 27.5)
+shape = SubResource("RectangleShape2D_5lq1t")
+
+[node name="InteractHintLabel" type="Label" parent="HallwayDoor"]
+visible = false
+offset_left = -80.0
+offset_top = 15.0
+offset_right = 88.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource("4_vw0ov")
+theme_override_font_sizes/font_size = 8
+text = "Hallway"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="HallwayDoor" to="." method="_on_hallway_door_body_entered"]
+[connection signal="body_exited" from="HallwayDoor" to="." method="_on_hallway_door_body_exited"]

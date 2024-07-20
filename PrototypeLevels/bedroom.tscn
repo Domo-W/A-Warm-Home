@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bi1oqyhj6cn0x"]
+[gd_scene load_steps=10 format=3 uid="uid://bi1oqyhj6cn0x"]
 
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/bedroom.gd" id="1_uv7jl"]
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_wcn88"]
 [ext_resource type="Texture2D" uid="uid://chkvv4pcjbste" path="res://Assets/Taby Assets/door.png" id="2_fs664"]
 [ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="3_1mrvb"]
+[ext_resource type="Texture2D" uid="uid://b50ef10v7hbay" path="res://Assets/Taby Assets/bed.png" id="5_eyexk"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r5ko4"]
 
@@ -24,6 +25,9 @@ func _process(delta):
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lq1t"]
 size = Vector2(159, 65)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_b1amx"]
+normal = Vector2(-0.99973, -0.0232495)
+
 [node name="Bedroom" type="Node2D"]
 script = ExtResource("1_uv7jl")
 
@@ -31,8 +35,8 @@ script = ExtResource("1_uv7jl")
 position = Vector2(41, 15)
 
 [node name="Camera2D" type="Camera2D" parent="stickplayer"]
-position = Vector2(-3, 0)
-zoom = Vector2(2, 2)
+position = Vector2(-5, -3)
+zoom = Vector2(4, 4)
 
 [node name="Ground" type="StaticBody2D" parent="."]
 
@@ -40,27 +44,49 @@ zoom = Vector2(2, 2)
 position = Vector2(1, 95)
 shape = SubResource("WorldBoundaryShape2D_r5ko4")
 
-[node name="Door" type="Area2D" parent="."]
+[node name="HallwayDoor" type="Area2D" parent="."]
 position = Vector2(-181, 30)
 script = SubResource("GDScript_qtutp")
 
-[node name="Sprite2D" type="Sprite2D" parent="Door"]
+[node name="Sprite2D" type="Sprite2D" parent="HallwayDoor"]
 texture = ExtResource("2_fs664")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HallwayDoor"]
 position = Vector2(-2.5, 27.5)
 shape = SubResource("RectangleShape2D_5lq1t")
 
-[node name="InteractHintLabel" type="Label" parent="."]
+[node name="InteractHintLabel" type="Label" parent="HallwayDoor"]
 visible = false
-offset_left = -261.0
-offset_top = 45.0
-offset_right = -93.0
-offset_bottom = 58.0
+offset_left = -80.0
+offset_top = 15.0
+offset_right = 88.0
+offset_bottom = 28.0
 theme_override_fonts/font = ExtResource("3_1mrvb")
 theme_override_font_sizes/font_size = 8
-text = "Press E to Interact"
+text = "Hallway"
 horizontal_alignment = 1
 
-[connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]
-[connection signal="body_exited" from="Door" to="." method="_on_door_body_exited"]
+[node name="Bed" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(37, 80)
+texture = ExtResource("5_eyexk")
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(56, 69)
+shape = SubResource("WorldBoundaryShape2D_b1amx")
+
+[node name="ControlsHint" type="Label" parent="."]
+offset_left = -60.0
+offset_top = 42.0
+offset_right = 129.0
+offset_bottom = 63.0
+theme_override_fonts/font = ExtResource("3_1mrvb")
+theme_override_font_sizes/font_size = 8
+text = "WASD/Arrow Keys to Move
+E to Interact"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="HallwayDoor" to="." method="_on_hallway_door_body_entered"]
+[connection signal="body_exited" from="HallwayDoor" to="." method="_on_hallway_door_body_exited"]

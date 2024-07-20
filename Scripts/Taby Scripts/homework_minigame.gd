@@ -72,4 +72,4 @@ func _on_button_d_pressed():
 	sequence_input("D")
 
 func _on_exit_button_pressed():
-	get_tree().change_scene_to_file("res://PrototypeLevels/hallway.tscn")
+	get_tree().change_scene_to_file("res://PrototypeLevels/kitchen.tscn")
