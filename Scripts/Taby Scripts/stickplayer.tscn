@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkoaycpofp2y0"]
+
+[ext_resource type="Script" path="res://Scripts/Taby Scripts/stickplayer.gd" id="1_q5wbk"]
+[ext_resource type="Texture2D" uid="uid://biadgtlblyjhb" path="res://Assets/Taby Assets/stickman.png" id="2_3bfc3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8jd1c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3bfc3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ow216"]
+size = Vector2(11, 20)
+
+[node name="stickplayer" type="CharacterBody2D"]
+script = ExtResource("1_q5wbk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8jd1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 37)
+shape = SubResource("RectangleShape2D_ow216")
