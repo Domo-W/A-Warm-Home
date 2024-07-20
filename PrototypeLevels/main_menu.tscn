@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://chks8b2pnxohn"]
+[gd_scene load_steps=6 format=3 uid="uid://chks8b2pnxohn"]
 
 [ext_resource type="Texture2D" uid="uid://cdrm3ks1f10hq" path="res://Assets/GeoffAssets/bin.png" id="1_52y7p"]
 [ext_resource type="Texture2D" uid="uid://bak46m7w8x40b" path="res://Assets/GeoffAssets/recycle_bin.png" id="1_dxq4w"]
+[ext_resource type="Script" path="res://Scripts/GeoffScripts/MainMenu/main_menu.gd" id="1_io3fj"]
 [ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="2_5unqs"]
 [ext_resource type="FontFile" uid="uid://didr0ixt7d7pg" path="res://Assets/Taby Assets/PixelifySans-VariableFont_wght.ttf" id="3_2g1o1"]
 
@@ -15,6 +16,7 @@ theme_override_constants/margin_left = 120
 theme_override_constants/margin_top = 80
 theme_override_constants/margin_right = 120
 theme_override_constants/margin_bottom = 80
+script = ExtResource("1_io3fj")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -65,3 +67,7 @@ size_flags_horizontal = 3
 [node name="Logo" type="TextureRect" parent="HBoxContainer/CenterContainer"]
 layout_mode = 2
 texture = ExtResource("1_52y7p")
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/New" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/DayPick" to="." method="_on_day_pick_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]

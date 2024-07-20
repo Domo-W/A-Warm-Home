@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://gy5pengrs7re"]
+
+[ext_resource type="Script" path="res://Scripts/GeoffScripts/MainMenu/day_select_menu.gd" id="1_gcc78"]
+[ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="1_w6iao"]
+
+[node name="DaySelectMenu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+script = ExtResource("1_gcc78")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_w6iao")
+theme_override_font_sizes/font_size = 64
+text = "Select A Day"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Day_1" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_w6iao")
+theme_override_font_sizes/font_size = 40
+text = "Day 1
+"
+
+[node name="Day_2" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_w6iao")
+theme_override_font_sizes/font_size = 40
+text = "Day 2"
+
+[node name="Day_3" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_w6iao")
+theme_override_font_sizes/font_size = 40
+text = "Day 3"
+
+[node name="Day_4" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_w6iao")
+theme_override_font_sizes/font_size = 40
+text = "Day 4"
+
+[node name="Day_5" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_w6iao")
+theme_override_font_sizes/font_size = 40
+text = "Day 5"
+
+[node name="Return" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_w6iao")
+theme_override_font_sizes/font_size = 40
+text = "Return To Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Day_1" to="." method="_on_day_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Day_2" to="." method="_on_day_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Day_3" to="." method="_on_day_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Day_4" to="." method="_on_day_4_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Day_5" to="." method="_on_day_5_pressed"]
+[connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_return_pressed"]
