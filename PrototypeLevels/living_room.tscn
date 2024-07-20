@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dxbvsk80vjupt"]
+[gd_scene load_steps=10 format=3 uid="uid://dxbvsk80vjupt"]
 
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/living_room.gd" id="1_0hlaw"]
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_gib24"]
@@ -13,6 +13,9 @@ size = Vector2(78, 68.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4l52"]
 size = Vector2(87, 98)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rv7v0"]
+size = Vector2(63, 82)
 
 [node name="LivingRoom" type="Node2D"]
 script = ExtResource("1_0hlaw")
@@ -69,7 +72,29 @@ theme_override_fonts/font = ExtResource("3_pe3g1")
 theme_override_font_sizes/font_size = 8
 text = "Kitchen"
 
+[node name="Outside" type="Area2D" parent="."]
+position = Vector2(151, -17)
+
+[node name="Sprite2D" type="Sprite2D" parent="Outside"]
+texture = ExtResource("5_fkvoe")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Outside"]
+position = Vector2(12.5, -1)
+shape = SubResource("RectangleShape2D_rv7v0")
+
+[node name="OutsideLabel" type="Label" parent="Outside"]
+offset_left = -31.0
+offset_top = -33.0
+offset_right = 57.0
+offset_bottom = -10.0
+theme_override_fonts/font = ExtResource("3_pe3g1")
+theme_override_font_sizes/font_size = 8
+text = "Go outside?"
+
 [connection signal="body_entered" from="Stairs" to="." method="_on_stairs_body_entered"]
 [connection signal="body_exited" from="Stairs" to="." method="_on_stairs_body_exited"]
 [connection signal="body_entered" from="KitchenDoor" to="." method="_on_kitchen_door_body_entered"]
 [connection signal="body_exited" from="KitchenDoor" to="." method="_on_kitchen_door_body_exited"]
+[connection signal="body_entered" from="Outside" to="." method="_on_outside_body_entered"]
+[connection signal="body_exited" from="Outside" to="." method="_on_outside_body_exited"]

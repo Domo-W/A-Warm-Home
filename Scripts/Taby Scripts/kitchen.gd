@@ -15,7 +15,7 @@ func _ready():
 	homework_label.visible = homework_interact
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("interact") and living_interact:
 		Global.prev_room_x = -130
 		get_tree().change_scene_to_file("res://PrototypeLevels/living_room.tscn")

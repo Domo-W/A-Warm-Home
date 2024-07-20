@@ -5,7 +5,7 @@ extends CharacterBody2D
 const VSPEED = 100.0
 const HSPEED = 150.0
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var updown = Input.get_axis("move_up", "move_down")
 	var direction = Input.get_axis("move_left", "move_right")
 	

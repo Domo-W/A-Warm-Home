@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://beu3omu223flp"]
+[gd_scene load_steps=6 format=3 uid="uid://beu3omu223flp"]
 
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/homework_minigame.gd" id="1_7v38n"]
 [ext_resource type="Texture2D" uid="uid://r3fona4dtfik" path="res://Assets/Taby Assets/whiteboard.jpg" id="1_obk0u"]
 [ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="3_6nk3e"]
 [ext_resource type="FontFile" uid="uid://didr0ixt7d7pg" path="res://Assets/Taby Assets/PixelifySans-VariableFont_wght.ttf" id="3_lxwis"]
+[ext_resource type="AudioStream" path="res://Assets/Sound Assets/Kiwi Jam Task Music Normal.mp3" id="5_7a1k8"]
 
 [node name="Homework" type="Control"]
 layout_mode = 3
@@ -127,6 +128,10 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_6nk3e")
 theme_override_font_sizes/font_size = 30
 text = "Exit in shame"
+
+[node name="TaskMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_7a1k8")
+autoplay = true
 
 [connection signal="pressed" from="ButtonContainer/ButtonA" to="." method="_on_button_a_pressed"]
 [connection signal="pressed" from="ButtonContainer/ButtonB" to="." method="_on_button_b_pressed"]
