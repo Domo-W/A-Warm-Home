@@ -41,6 +41,16 @@ func move_disk(from_tower, to_tower):
 		var disk = towers[from_tower].pop_back()
 		towers[to_tower].append(disk)
 		move_count += 1
+		if disk == 1:
+			box_1.position = Vector2(x_coords[to_tower], y_coords[len(towers[to_tower])-1])
+		elif disk == 2:
+			box_2.position = Vector2(x_coords[to_tower], y_coords[len(towers[to_tower])-1])
+		elif disk == 3:
+			box_3.position = Vector2(x_coords[to_tower], y_coords[len(towers[to_tower])-1])
+		elif disk == 4:
+			box_4.position = Vector2(x_coords[to_tower], y_coords[len(towers[to_tower])-1])
+		else:
+			box_4.position = Vector2(x_coords[to_tower], y_coords[len(towers[to_tower])-1])
 
 
 func _on_button_1_pressed():
