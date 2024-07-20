@@ -1,19 +1,103 @@
-[gd_scene load_steps=4 format=3 uid="uid://c08h2lhpkvxht"]
+[gd_scene load_steps=13 format=3 uid="uid://c08h2lhpkvxht"]
 
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/LawnMover.gd" id="1_xornc"]
-[ext_resource type="Texture2D" uid="uid://dtgr1xbaf7c0k" path="res://Assets/GeoffAssets/mowing_man.png" id="2_bvc5k"]
+[ext_resource type="Texture2D" uid="uid://cm6l6gny30r82" path="res://Assets/GeoffAssets/playerLawnMow-Sheet.png" id="2_0hmer"]
+[ext_resource type="Texture2D" uid="uid://coxoia6hhhgv5" path="res://Assets/GeoffAssets/grass_particle.png" id="3_07oy3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfdmd"]
+atlas = ExtResource("2_0hmer")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl71h"]
+atlas = ExtResource("2_0hmer")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dt3wt"]
+atlas = ExtResource("2_0hmer")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52kd2"]
+atlas = ExtResource("2_0hmer")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2m2d"]
+atlas = ExtResource("2_0hmer")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34lpy"]
+atlas = ExtResource("2_0hmer")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mma1e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfdmd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl71h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dt3wt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52kd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2m2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34lpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52kd2")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_240x3"]
-size = Vector2(15, 9)
+size = Vector2(29.5, 15.5)
+
+[sub_resource type="Curve" id="Curve_u2y2u"]
+_data = [Vector2(0, 1), 0.0, -1.8069, 0, 1, Vector2(0.553435, 0), -1.8069, 0.0, 1, 0]
+point_count = 2
 
 [node name="LawnPlayer" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_xornc")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mma1e")
+animation = &"walk"
+autoplay = "idle"
+frame_progress = 0.958964
+offset = Vector2(-12, -25)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-8.5, 11.5)
+position = Vector2(-0.25, -1.25)
 shape = SubResource("RectangleShape2D_240x3")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.400002, 0)
-texture = ExtResource("2_bvc5k")
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, 5)
+scale = Vector2(2, 2)
+emitting = false
+amount = 20
+lifetime = 0.3
+one_shot = true
+texture = ExtResource("3_07oy3")
+emission_shape = 3
+emission_rect_extents = Vector2(8, 1)
+direction = Vector2(0, -1)
+spread = 90.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 50.0
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_u2y2u")

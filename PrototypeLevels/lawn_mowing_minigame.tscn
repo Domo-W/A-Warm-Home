@@ -1,13 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cw58w2k2i75i3"]
+[gd_scene load_steps=7 format=3 uid="uid://cw58w2k2i75i3"]
 
 [ext_resource type="PackedScene" uid="uid://c08h2lhpkvxht" path="res://Scripts/GeoffScripts/lawn_player.tscn" id="1_j8jey"]
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/lawn_game_manager.gd" id="1_t6kvw"]
-[ext_resource type="Texture2D" uid="uid://coxoia6hhhgv5" path="res://Assets/GeoffAssets/grass_particle.png" id="3_gyos6"]
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/GrassSpawner.gd" id="4_uvx30"]
-
-[sub_resource type="Curve" id="Curve_yeyo4"]
-_data = [Vector2(0, 1), 0.0, -1.8069, 0, 1, Vector2(0.553435, 0), -1.8069, 0.0, 1, 0]
-point_count = 2
+[ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="5_tcdom"]
+[ext_resource type="Script" path="res://Scripts/GeoffScripts/CountdownTimer.gd" id="6_sc2lr"]
+[ext_resource type="Script" path="res://Scripts/GeoffScripts/LawnEnd.gd" id="7_rcidv"]
 
 [node name="LawnMowingMinigame" type="Node2D"]
 script = ExtResource("1_t6kvw")
@@ -17,35 +15,91 @@ unique_name_in_owner = true
 script = ExtResource("1_t6kvw")
 
 [node name="LawnPlayer" parent="." instance=ExtResource("1_j8jey")]
+unique_name_in_owner = true
 z_index = 10
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="LawnPlayer"]
-position = Vector2(-12, 15)
-emitting = false
-lifetime = 0.3
-one_shot = true
-texture = ExtResource("3_gyos6")
-direction = Vector2(0, -1)
-spread = 90.0
-gravity = Vector2(0, 0)
-initial_velocity_max = 50.0
-scale_amount_min = 0.5
-scale_amount_curve = SubResource("Curve_yeyo4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
 [node name="GrassSpawner" type="Timer" parent="."]
+unique_name_in_owner = true
 wait_time = 0.2
 autostart = true
 script = ExtResource("4_uvx30")
 
 [node name="Label" type="Label" parent="GrassSpawner"]
-offset_left = -61.0
-offset_top = -70.0
-offset_right = 62.0
-offset_bottom = -47.0
-text = "0"
+offset_left = 47.0
+offset_top = -78.0
+offset_right = 170.0
+offset_bottom = -46.0
+theme_override_colors/font_color = Color(0.113725, 0.572549, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_tcdom")
+theme_override_font_sizes/font_size = 32
+text = "000"
+
+[node name="CountdownTimer" type="Node2D" parent="."]
+position = Vector2(-1, -8)
+script = ExtResource("6_sc2lr")
+
+[node name="CountDownLabel" type="Label" parent="CountdownTimer"]
+offset_left = -137.0
+offset_top = -69.0
+offset_right = 151.0
+offset_bottom = -37.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_tcdom")
+theme_override_font_sizes/font_size = 16
+text = "TIME:60"
+
+[node name="Timer" type="Timer" parent="CountdownTimer"]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="EndScreen" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="EndScreen"]
+z_index = 20
+offset_left = -198.0
+offset_top = -110.0
+offset_right = 225.0
+offset_bottom = 127.0
+color = Color(0.207675, 0.587276, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="EndScreen"]
+z_index = 21
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+script = ExtResource("7_rcidv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EndScreen/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="EndLabel" type="Label" parent="EndScreen/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_tcdom")
+text = "You Cut XXX
+Blades of Grass"
 horizontal_alignment = 1
 
+[node name="Button" type="Button" parent="EndScreen/MarginContainer/VBoxContainer"]
+z_index = 25
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_tcdom")
+text = "Go Back Inside"
+
 [connection signal="timeout" from="GrassSpawner" to="GrassSpawner" method="_on_timeout"]
+[connection signal="timeout" from="CountdownTimer/Timer" to="CountdownTimer" method="_on_timer_timeout"]
+[connection signal="pressed" from="EndScreen/MarginContainer/VBoxContainer/Button" to="EndScreen/MarginContainer" method="_on_button_pressed"]
