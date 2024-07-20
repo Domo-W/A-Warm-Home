@@ -1,0 +1,134 @@
+[gd_scene load_steps=4 format=3 uid="uid://b07nts8x802h7"]
+
+[ext_resource type="Script" path="res://Scripts/Taby Scripts/homework_minigame.gd" id="1_7v38n"]
+[ext_resource type="Texture2D" uid="uid://r3fona4dtfik" path="res://Assets/Taby Assets/whiteboard.jpg" id="1_obk0u"]
+[ext_resource type="FontFile" uid="uid://didr0ixt7d7pg" path="res://Assets/Taby Assets/PixelifySans-VariableFont_wght.ttf" id="3_lxwis"]
+
+[node name="Homework" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7v38n")
+
+[node name="WhiteboardBackground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_obk0u")
+expand_mode = 1
+
+[node name="HomeworkLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.069
+anchor_top = 0.14
+anchor_right = 0.069
+anchor_bottom = 0.14
+offset_left = 0.511993
+offset_top = -54.72
+offset_right = 994.512
+offset_bottom = 14.28
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lxwis")
+theme_override_font_sizes/font_size = 50
+text = "Homework"
+horizontal_alignment = 1
+vertical_alignment = 3
+autowrap_mode = 1
+
+[node name="HintLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.069
+anchor_top = 0.14
+anchor_right = 0.069
+anchor_bottom = 0.14
+offset_left = -4.48801
+offset_top = 2.28
+offset_right = 989.512
+offset_bottom = 71.28
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lxwis")
+theme_override_font_sizes/font_size = 35
+text = "(Press the buttons in the correct sequence)"
+horizontal_alignment = 1
+vertical_alignment = 3
+autowrap_mode = 1
+
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.128
+anchor_top = 0.276
+anchor_right = 0.128
+anchor_bottom = 0.276
+offset_left = 0.543991
+offset_top = 0.151978
+offset_right = 200.544
+offset_bottom = 458.152
+pivot_offset = Vector2(-760, -500)
+theme_override_constants/separation = 30
+
+[node name="ButtonA" type="Button" parent="ButtonContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lxwis")
+theme_override_font_sizes/font_size = 50
+text = "A"
+
+[node name="ButtonB" type="Button" parent="ButtonContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lxwis")
+theme_override_font_sizes/font_size = 50
+text = "B"
+
+[node name="ButtonC" type="Button" parent="ButtonContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lxwis")
+theme_override_font_sizes/font_size = 50
+text = "C"
+
+[node name="ButtonD" type="Button" parent="ButtonContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lxwis")
+theme_override_font_sizes/font_size = 50
+text = "D"
+
+[node name="SequenceLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 170.0
+offset_right = 984.0
+offset_bottom = 557.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lxwis")
+theme_override_font_sizes/font_size = 50
+text = "You failed.
+Final Grade: F"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="ExitButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 547.0
+offset_top = 460.0
+offset_right = 902.0
+offset_bottom = 537.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lxwis")
+theme_override_font_sizes/font_size = 50
+text = "Exit in shame"
+
+[connection signal="pressed" from="ButtonContainer/ButtonA" to="." method="_on_button_a_pressed"]
+[connection signal="pressed" from="ButtonContainer/ButtonB" to="." method="_on_button_b_pressed"]
+[connection signal="pressed" from="ButtonContainer/ButtonC" to="." method="_on_button_c_pressed"]
+[connection signal="pressed" from="ButtonContainer/ButtonD" to="." method="_on_button_d_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

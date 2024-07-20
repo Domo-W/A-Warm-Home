@@ -1,0 +1,79 @@
+extends Control
+
+var letters = ['A', 'B', 'C', 'D']
+var sequence = []
+var pressed = []
+var rng = RandomNumberGenerator.new()
+var current_length = 1
+var started = false
+
+@onready var sequence_label = $SequenceLabel
+@onready var button_a = $ButtonContainer/ButtonA
+@onready var button_b = $ButtonContainer/ButtonB
+@onready var button_c = $ButtonContainer/ButtonC
+@onready var button_d = $ButtonContainer/ButtonD
+@onready var exit_button = $ExitButton
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	exit_button.visible = false
+	create_new_sequence(current_length)
+	update_sequence_label()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func create_new_sequence(length):
+	pressed = []
+	sequence = []
+	for i in range(length):
+		sequence.append(letters[rng.randi_range(0, 3)])
+
+func update_sequence_label():
+	var label_text = ""
+	for letter in sequence:
+		label_text += letter + " → "
+	sequence_label.text = label_text.rstrip(" → ")
+
+func check_fail():
+	for i in range(len(pressed)):
+		if pressed[i] != sequence[i]:
+			return true
+	return false
+
+func next_level():
+	current_length += 1
+	create_new_sequence(current_length)
+	update_sequence_label()
+	sequence_label.visible = true
+
+func game_over():
+	print("dead")
+	sequence_label.text = "You failed.\nFinal Grade: F"
+	sequence_label.visible = true
+	exit_button.visible = true
+
+func sequence_input(l):
+	sequence_label.visible = false
+	pressed.append(l)
+	if sequence == pressed:
+		print("yippee")
+		next_level()
+	elif check_fail():
+		game_over()
+
+func _on_button_a_pressed():
+	sequence_input("A")
+
+func _on_button_b_pressed():
+	sequence_input("B")
+
+func _on_button_c_pressed():
+	sequence_input("C")
+
+func _on_button_d_pressed():
+	sequence_input("D")
+
+func _on_exit_button_pressed():
+	pass # Replace with function body.
