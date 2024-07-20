@@ -4,16 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://dtgr1xbaf7c0k" path="res://Assets/GeoffAssets/mowing_man.png" id="2_bvc5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_240x3"]
-size = Vector2(120, 120)
+size = Vector2(15, 9)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="LawnPlayer" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_xornc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8.5, 11.5)
 shape = SubResource("RectangleShape2D_240x3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.400002, 0)
-scale = Vector2(3.7, 3.7)
 texture = ExtResource("2_bvc5k")
