@@ -3,16 +3,17 @@
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/droppable_area.gd" id="1_4aqm0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ab0ay"]
-size = Vector2(126, 127)
+size = Vector2(208, 150)
 
 [node name="DroppableArea" type="StaticBody2D" groups=["droppable"]]
 script = ExtResource("1_4aqm0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -43)
 shape = SubResource("RectangleShape2D_ab0ay")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -64.0
-offset_top = -64.0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_left = -91.0
+offset_top = -27.0
+offset_right = 97.0
+offset_bottom = 28.0

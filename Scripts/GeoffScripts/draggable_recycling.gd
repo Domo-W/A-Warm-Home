@@ -16,11 +16,11 @@ func _process(delta):
 		elif Input.is_action_just_released("click"):
 			Global.is_dragging_trash=false
 			var tween = get_tree().create_tween()
-			if is_in_bin and str(bin_ref)[0] == "T":
+			if is_in_bin and str(bin_ref)[0] == "R":
 				tween.tween_property(self, "position", bin_ref.position, 0.2).set_ease(Tween.EASE_OUT)
 				trash_manager.throw_trash()
 				queue_free()
-			elif is_in_bin and str(bin_ref)[0] != "T":
+			elif is_in_bin and str(bin_ref)[0] != "R":
 				tween.tween_property(self, "global_position", Vector2(randi_range(-150,150),randi_range(-150,150)),0.2).set_ease(Tween.EASE_OUT)
 
 func _on_area_2d_mouse_entered():
