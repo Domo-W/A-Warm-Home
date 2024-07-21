@@ -9,6 +9,7 @@ var hallway_interact = true
 var trash = false
 
 func _ready():
+	DoorClick.play()
 	if Global.trash_collected[3]:
 		trash_can.empty()
 

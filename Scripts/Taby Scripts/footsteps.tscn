@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://c88vpd5p4h3q7"]
+
+[node name="Footsteps" type="AudioStreamPlayer2D"]
+volume_db = 24.0

@@ -16,6 +16,11 @@ var trash1 = false
 var trash2 = false
 
 func _ready():
+	DoorClick.play()
+	if (Global.day < 3 or (Global.day == 3 and not Global.has_done_task)) and not HappyEnvironment.playing:
+		HappyEnvironment.playing = true
+	elif Global.day >= 3 and not ActualCreepy.playing:
+		ActualCreepy.playing = true
 	player.position.x = Global.prev_room_x
 	bedroom_label.visible = bedroom_interact
 	bedroom2_label.visible = bedroom2_interact

@@ -12,10 +12,16 @@ var sleepable = true
 var trashable = false
 
 func _ready():
+	MenuMusic.playing = false
+	if (Global.day < 3 or (Global.day == 3 and not Global.has_done_task)) and not HappyEnvironment.playing:
+		HappyEnvironment.playing = true
+	elif Global.day >= 3 and not ActualCreepy.playing:
+		ActualCreepy.playing = true
 	player.position.y = 114
 	if Global.trash_collected[0]:
 		trash_can.empty()
 	if not Global.fresh_start:
+		DoorClick.play()
 		player.position.x = -180
 	else:
 		Global.has_done_task = false

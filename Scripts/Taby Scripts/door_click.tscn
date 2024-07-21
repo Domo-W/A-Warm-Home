@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvv7k1as65kmg"]
+
+[ext_resource type="AudioStream" uid="uid://cinegykehq652" path="res://Assets/SoundAssets/Sound Effects/DoorClick.mp3" id="1_g8reh"]
+
+[node name="DoorClick" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_g8reh")
