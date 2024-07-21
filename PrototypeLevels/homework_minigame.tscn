@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://beu3omu223flp"]
+[gd_scene load_steps=8 format=3 uid="uid://beu3omu223flp"]
 
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/homework_minigame.gd" id="1_7v38n"]
 [ext_resource type="Texture2D" uid="uid://c1rnrdl3m4f4l" path="res://Assets/Taby Assets/whiteboard.png" id="2_xhjp6"]
 [ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="3_6nk3e"]
 [ext_resource type="FontFile" uid="uid://didr0ixt7d7pg" path="res://Assets/Taby Assets/PixelifySans-VariableFont_wght.ttf" id="3_lxwis"]
 [ext_resource type="AudioStream" uid="uid://cq38b34ohmup6" path="res://Assets/SoundAssets/KiwiJamTaskMusicNormal.mp3" id="5_172li"]
+[ext_resource type="AudioStream" uid="uid://d1yt0jngah4ob" path="res://Assets/SoundAssets/Sound Effects/SuccessSound.mp3" id="6_yvm3y"]
+[ext_resource type="AudioStream" uid="uid://dbrjbksequdh3" path="res://Assets/SoundAssets/Sound Effects/FailSound.mp3" id="7_nu7qg"]
 
 [node name="Homework" type="Control"]
 layout_mode = 3
@@ -135,7 +137,12 @@ text = "Exit in shame"
 
 [node name="TaskMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_172li")
-autoplay = true
+
+[node name="Correct" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_yvm3y")
+
+[node name="Incorrect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_nu7qg")
 
 [connection signal="pressed" from="ButtonContainer/ButtonA" to="." method="_on_button_a_pressed"]
 [connection signal="pressed" from="ButtonContainer/ButtonB" to="." method="_on_button_b_pressed"]

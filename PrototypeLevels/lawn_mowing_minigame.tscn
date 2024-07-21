@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cw58w2k2i75i3"]
+[gd_scene load_steps=31 format=3 uid="uid://cw58w2k2i75i3"]
 
 [ext_resource type="PackedScene" uid="uid://c08h2lhpkvxht" path="res://Scripts/GeoffScripts/lawn_player.tscn" id="1_j8jey"]
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/lawn_game_manager.gd" id="1_t6kvw"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dywfphj7i6b5h" path="res://Assets/Decorations/CharacterSpriteSheets/lady-Sheet.png" id="9_cgu3s"]
 [ext_resource type="Texture2D" uid="uid://c7wxsovuv81m4" path="res://Assets/GeoffAssets/heart.png" id="10_djx3m"]
 [ext_resource type="AudioStream" uid="uid://cq38b34ohmup6" path="res://Assets/SoundAssets/KiwiJamTaskMusicNormal.mp3" id="11_sofr3"]
+[ext_resource type="AudioStream" uid="uid://d02cqu4r1rigr" path="res://Assets/SoundAssets/Sound Effects/LawnMower.mp3" id="12_osmfy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iog14"]
 texture = ExtResource("7_nufc6")
@@ -427,6 +428,10 @@ scale_amount_curve = SubResource("Curve_n5pmb")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_sofr3")
+autoplay = true
+
+[node name="mower" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_osmfy")
 autoplay = true
 
 [connection signal="timeout" from="GrassSpawner" to="GrassSpawner" method="_on_timeout"]

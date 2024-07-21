@@ -1,10 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://crmfsin4hce3g"]
+[gd_scene load_steps=14 format=3 uid="uid://crmfsin4hce3g"]
 
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/TrashManager.gd" id="1_30auw"]
 [ext_resource type="Texture2D" uid="uid://dnxuytr08pr54" path="res://Assets/GeoffAssets/binsMinigame-Sheet.png" id="2_3hjg4"]
 [ext_resource type="PackedScene" uid="uid://c5wly7ft6wgh5" path="res://Scripts/GeoffScripts/droppable_area.tscn" id="2_thcmf"]
 [ext_resource type="Texture2D" uid="uid://2d13hlpg3uqc" path="res://Assets/Decorations/Assets_1/frontlawn/front_lawn.png" id="4_gh54c"]
 [ext_resource type="AudioStream" uid="uid://cq38b34ohmup6" path="res://Assets/SoundAssets/KiwiJamTaskMusicNormal.mp3" id="5_7sq85"]
+[ext_resource type="AudioStream" uid="uid://d1yt0jngah4ob" path="res://Assets/SoundAssets/Sound Effects/SuccessSound.mp3" id="6_svt03"]
+[ext_resource type="AudioStream" uid="uid://dbrjbksequdh3" path="res://Assets/SoundAssets/Sound Effects/FailSound.mp3" id="7_afp06"]
+[ext_resource type="AudioStream" uid="uid://da71rt8pt184s" path="res://Assets/SoundAssets/Sound Effects/GlassPickUp.mp3" id="8_rwbp1"]
+[ext_resource type="AudioStream" uid="uid://d5whb7lnyr3y" path="res://Assets/SoundAssets/Sound Effects/PaperPickUp.mp3" id="9_2evp8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f34xd"]
 atlas = ExtResource("2_3hjg4")
@@ -77,6 +81,20 @@ position = Vector2(8, 595)
 scale = Vector2(18.7539, 18.7539)
 texture = ExtResource("4_gh54c")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_7sq85")
 autoplay = true
+
+[node name="TCorrect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_svt03")
+
+[node name="GP" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_rwbp1")
+volume_db = 5.0
+
+[node name="PP" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_2evp8")
+volume_db = 5.0
+
+[node name="TIncorrect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_afp06")

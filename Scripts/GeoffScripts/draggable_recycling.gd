@@ -5,6 +5,11 @@ var bin_ref
 var offset: Vector2
 var initialPos: Vector2
 @onready var trash_manager = $".."
+@onready var t_correct = $"../../TCorrect"
+@onready var t_incorrect = $"../../TIncorrect"
+@onready var gp = $"../../GP"
+
+
 
 func _ready():
 	rotation_degrees = randi_range(0,360)
@@ -12,6 +17,7 @@ func _ready():
 func _process(delta):
 	if draggable:
 		if Input.is_action_just_pressed("click"):
+			gp.play()
 			offset = get_global_mouse_position() - global_position
 			Global.is_dragging_trash=true
 		if Input.is_action_pressed("click"):
@@ -21,10 +27,12 @@ func _process(delta):
 			var tween = get_tree().create_tween()
 			if is_in_bin and str(bin_ref)[0] == "R":
 				tween.tween_property(self, "position", bin_ref.position, 0.2).set_ease(Tween.EASE_OUT)
+				t_correct.play()
 				trash_manager.throw_trash()
 				queue_free()
 			elif is_in_bin and str(bin_ref)[0] != "R":
 				tween.tween_property(self, "global_position", Vector2(randi_range(-150,150),randi_range(0,280)),0.2).set_ease(Tween.EASE_OUT)
+				t_incorrect.play()
 
 func _on_area_2d_mouse_entered():
 	if not Global.is_dragging_trash:
