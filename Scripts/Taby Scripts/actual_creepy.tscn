@@ -5,3 +5,4 @@
 [node name="ActualCreepy" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_4l0ik")
 volume_db = -5.0
+bus = &"Music"

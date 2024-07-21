@@ -2,3 +2,4 @@
 
 [node name="Footsteps" type="AudioStreamPlayer2D"]
 volume_db = 24.0
+bus = &"SFX"

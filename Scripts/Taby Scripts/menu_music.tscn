@@ -4,3 +4,4 @@
 
 [node name="MenuMusic" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_yinhk")
+bus = &"Music"
