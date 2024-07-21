@@ -1,6 +1,7 @@
 extends CharacterBody2D
 @onready var sprite_2d = $AnimatedSprite2D
 
+
 const VSPEED = 100.0
 const HSPEED = 150.0
 

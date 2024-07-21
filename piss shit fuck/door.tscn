@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://cr0q83uowpg6m"]
-
-[node name="Door" type="Area2D" groups=["Doors"]]
-
-[node name="Marker2D" type="Marker2D" parent="."]

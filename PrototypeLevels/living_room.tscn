@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dxbvsk80vjupt"]
+[gd_scene load_steps=32 format=3 uid="uid://dxbvsk80vjupt"]
 
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/living_room.gd" id="1_0hlaw"]
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_gib24"]
@@ -16,10 +16,10 @@
 [ext_resource type="PackedScene" path="res://Scripts/Taby Scripts/trash_can.tscn" id="14_i0yby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qp1a4"]
-size = Vector2(102, 82.5)
+size = Vector2(85, 82.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4l52"]
-size = Vector2(87, 98)
+size = Vector2(82, 98)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rv7v0"]
 size = Vector2(63, 82)
@@ -76,15 +76,15 @@ normal = Vector2(-1, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8das"]
 size = Vector2(98, 31)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yahqm"]
-atlas = ExtResource("11_dicnm")
-region = Rect2(0, 0, 32, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_utnam"]
+atlas = ExtResource("11_fiw6m")
+region = Rect2(0, 0, 25, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gqrtq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yahqm")
+"texture": SubResource("AtlasTexture_utnam")
 }],
 "loop": true,
 "name": &"default",
@@ -92,16 +92,34 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fc6t"]
-size = Vector2(21.25, 61.25)
+size = Vector2(21.25, 47.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2fndl"]
 size = Vector2(118.75, 78.4375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tnp2"]
+atlas = ExtResource("12_tg0y4")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2o8xu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tnp2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmvbi"]
+size = Vector2(58, 74)
 
 [node name="LivingRoom" type="Node2D"]
 script = ExtResource("1_0hlaw")
 
 [node name="stickplayer" parent="." instance=ExtResource("1_gib24")]
-z_index = 3
+z_index = 7
 position = Vector2(18, 10)
 
 [node name="Camera2D" type="Camera2D" parent="stickplayer"]
@@ -120,7 +138,7 @@ position = Vector2(6, -21)
 texture = ExtResource("3_xogwo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs"]
-position = Vector2(1, 0.75)
+position = Vector2(9.5, 0.75)
 shape = SubResource("RectangleShape2D_qp1a4")
 
 [node name="StairsLabel" type="Label" parent="Stairs"]
@@ -133,7 +151,6 @@ theme_override_font_sizes/font_size = 8
 text = "Go up-
 stairs?"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="KitchenDoor" type="Area2D" parent="."]
 z_index = 1
@@ -144,7 +161,7 @@ position = Vector2(-12, 27)
 texture = ExtResource("5_x3cqw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenDoor"]
-position = Vector2(-20.5, -14)
+position = Vector2(-23, -14)
 shape = SubResource("RectangleShape2D_v4l52")
 
 [node name="KitchenLabel" type="Label" parent="KitchenDoor"]
@@ -156,7 +173,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_pe3g1")
 theme_override_font_sizes/font_size = 8
 text = "Kitchen"
-metadata/_edit_use_anchors_ = true
 
 [node name="Outside" type="Area2D" parent="."]
 z_index = 1
@@ -183,7 +199,6 @@ text = "Mow the
 lawn?"
 horizontal_alignment = 1
 vertical_alignment = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_8aalc")
@@ -251,19 +266,20 @@ position = Vector2(104, -8)
 texture = ExtResource("9_6sat7")
 
 [node name="FramedPhotos" type="Sprite2D" parent="Decor"]
-position = Vector2(-84, -1)
+position = Vector2(-84, -11)
 texture = ExtResource("10_ltdel")
 
 [node name="Dad" type="AnimatedSprite2D" parent="Decor"]
-z_index = 4
-position = Vector2(22, 68)
+z_index = 10
+position = Vector2(22, 65)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_gqrtq")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Decor/Dad"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decor/Dad/StaticBody2D"]
-position = Vector2(1.875, 11.875)
+position = Vector2(1.875, 5)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_5fc6t")
 
 [node name="DadSense" type="Area2D" parent="Decor/Dad"]
@@ -275,6 +291,8 @@ shape = SubResource("RectangleShape2D_2fndl")
 
 [node name="DadSpeech" type="Label" parent="Decor/Dad/DadSense"]
 visible = false
+z_index = 1
+z_as_relative = false
 offset_left = 33.75
 offset_top = -18.75
 offset_right = 129.75
@@ -301,6 +319,8 @@ position = Vector2(-73, 13)
 position = Vector2(1, 9)
 shape = SubResource("RectangleShape2D_gmvbi")
 
+[node name="Hitboxes" type="Node" parent="."]
+
 [connection signal="body_entered" from="Stairs" to="." method="_on_stairs_body_entered"]
 [connection signal="body_exited" from="Stairs" to="." method="_on_stairs_body_exited"]
 [connection signal="body_entered" from="KitchenDoor" to="." method="_on_kitchen_door_body_entered"]
@@ -309,3 +329,5 @@ shape = SubResource("RectangleShape2D_gmvbi")
 [connection signal="body_exited" from="Outside" to="." method="_on_outside_body_exited"]
 [connection signal="body_entered" from="Decor/Dad/DadSense" to="." method="_on_dad_sense_body_entered"]
 [connection signal="body_exited" from="Decor/Dad/DadSense" to="." method="_on_dad_sense_body_exited"]
+[connection signal="body_entered" from="TrashCan/TrashArea" to="." method="_on_trash_area_body_entered"]
+[connection signal="body_exited" from="TrashCan/TrashArea" to="." method="_on_trash_area_body_exited"]

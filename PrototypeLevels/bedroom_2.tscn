@@ -98,7 +98,6 @@ z_index = 1
 position = Vector2(362, -16)
 zoom = Vector2(5, 5)
 limit_bottom = 48
-editor_draw_limits = true
 
 [node name="stickplayer" parent="." instance=ExtResource("1_lgsly")]
 position = Vector2(315, -6)

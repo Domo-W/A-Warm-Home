@@ -101,12 +101,10 @@ script = ExtResource("1_vr8le")
 position = Vector2(-3, 12)
 
 [node name="Camera2D" type="Camera2D" parent="stickplayer"]
-position = Vector2(8, 28)
 zoom = Vector2(6, 6)
 limit_left = -290
 limit_right = 72
 limit_bottom = 40
-editor_draw_limits = true
 
 [node name="LivingRoomDoor" type="Area2D" parent="."]
 z_index = 1
@@ -130,7 +128,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_m14ld")
 theme_override_font_sizes/font_size = 8
 text = "Living Room"
-metadata/_edit_use_anchors_ = true
 
 [node name="Homework" type="Area2D" parent="."]
 z_index = 1
@@ -150,7 +147,6 @@ theme_override_font_sizes/font_size = 8
 text = "\"Ready to do 
 homework?\""
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Table" type="Sprite2D" parent="Homework"]
 position = Vector2(-10, 30)

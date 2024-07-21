@@ -1,7 +1,5 @@
 extends MarginContainer
 
-func _ready():
-	ClickSound.play()
 
 func _on_day_1_pressed():
 	Global.day = 1
@@ -24,9 +22,7 @@ func _on_day_4_pressed():
 
 
 func _on_day_5_pressed():
-	Global.day = 4
-	Global.has_done_task = false
-	get_tree().change_scene_to_file("res://piss shit fuck/mom_boss_fight_day_5.tscn")
+	pass # Replace with function body.
 
 
 func _on_return_pressed():

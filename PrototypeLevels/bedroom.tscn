@@ -110,7 +110,6 @@ limit_left = -225
 limit_top = 29
 limit_right = 65
 limit_bottom = 137
-editor_draw_limits = true
 
 [node name="HallwayDoor" type="Area2D" parent="."]
 z_index = 1
