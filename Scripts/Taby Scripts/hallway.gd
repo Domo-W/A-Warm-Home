@@ -25,6 +25,8 @@ func _ready():
 		trash_can.empty()
 	if Global.trash_collected[2]:
 		trash_can_2.empty()
+	if Global.day == 4 and Global.has_done_task:
+		attic_label.text = "Good work!"
 
 func _process(delta):
 	if Input.is_action_just_pressed("interact") and bedroom_interact:
