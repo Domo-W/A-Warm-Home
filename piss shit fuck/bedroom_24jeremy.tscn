@@ -1,19 +1,17 @@
-[gd_scene load_steps=26 format=3 uid="uid://72ydq62211xt"]
+[gd_scene load_steps=23 format=3 uid="uid://d0dyar6ggppeb"]
 
-[ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_lgsly"]
-[ext_resource type="Script" path="res://Scripts/Taby Scripts/bedroom_2.gd" id="1_vcnu2"]
-[ext_resource type="Texture2D" uid="uid://bgyab0qqneo3s" path="res://Assets/Decorations/livingroom_attic_door/Door.png" id="3_t0nvn"]
-[ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="4_vw0ov"]
-[ext_resource type="Texture2D" uid="uid://div2u7lqiorlc" path="res://Assets/Decorations/Assets_1/wallpaper&flooring.png" id="5_lc8pd"]
-[ext_resource type="Texture2D" uid="uid://5ed6nt2lvcbf" path="res://Assets/Decorations/kitchen_furniture/clock.png" id="6_57xt8"]
-[ext_resource type="Texture2D" uid="uid://bq8egwy6jkxde" path="res://Assets/Decorations/Assets_1/bedbottom.png" id="6_i50yr"]
-[ext_resource type="Texture2D" uid="uid://2b1pwpwk8wwv" path="res://Assets/Decorations/Assets_1/bedtop.png" id="7_w473q"]
-[ext_resource type="Texture2D" uid="uid://d3a1k1gg7sofk" path="res://Assets/Decorations/Assets_1/bedside_table.png" id="8_plfoc"]
-[ext_resource type="Texture2D" uid="uid://bpty26etbullq" path="res://Assets/Decorations/livingroom_attic_door/framed_photos.png" id="9_nui6l"]
-[ext_resource type="Texture2D" uid="uid://bqo5j5cppejcy" path="res://Assets/Decorations/livingroom_attic_door/rug.png" id="10_r8eyy"]
-[ext_resource type="Texture2D" uid="uid://duqr08xhecs5t" path="res://Assets/Decorations/Assets_1/window.png" id="12_hd4xw"]
-[ext_resource type="PackedScene" uid="uid://d26dwpph6etgm" path="res://Scripts/Taby Scripts/day_counter.tscn" id="13_i0txh"]
-[ext_resource type="PackedScene" path="res://Scripts/Taby Scripts/trash_can.tscn" id="14_2w857"]
+[ext_resource type="Script" path="res://Scripts/Taby Scripts/bedroom_2.gd" id="1_r2qfj"]
+[ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="2_1l8th"]
+[ext_resource type="Texture2D" uid="uid://bgyab0qqneo3s" path="res://Assets/Decorations/livingroom_attic_door/Door.png" id="3_x1xqu"]
+[ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="4_28oe0"]
+[ext_resource type="Texture2D" uid="uid://div2u7lqiorlc" path="res://Assets/Decorations/Assets_1/wallpaper&flooring.png" id="5_hjv27"]
+[ext_resource type="Texture2D" uid="uid://5ed6nt2lvcbf" path="res://Assets/Decorations/kitchen_furniture/clock.png" id="6_gupwr"]
+[ext_resource type="Texture2D" uid="uid://bq8egwy6jkxde" path="res://Assets/Decorations/Assets_1/bedbottom.png" id="7_l2or7"]
+[ext_resource type="Texture2D" uid="uid://2b1pwpwk8wwv" path="res://Assets/Decorations/Assets_1/bedtop.png" id="8_emcd0"]
+[ext_resource type="Texture2D" uid="uid://d3a1k1gg7sofk" path="res://Assets/Decorations/Assets_1/bedside_table.png" id="9_d1qxw"]
+[ext_resource type="Texture2D" uid="uid://bqo5j5cppejcy" path="res://Assets/Decorations/livingroom_attic_door/rug.png" id="10_mce6m"]
+[ext_resource type="Texture2D" uid="uid://bpty26etbullq" path="res://Assets/Decorations/livingroom_attic_door/framed_photos.png" id="11_ormiq"]
+[ext_resource type="Texture2D" uid="uid://duqr08xhecs5t" path="res://Assets/Decorations/Assets_1/window.png" id="12_gm0l8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lxb5g"]
 normal = Vector2(-1, 0)
@@ -33,7 +31,7 @@ func _process(delta):
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lq1t"]
-size = Vector2(75, 55)
+size = Vector2(98, 55)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gf5dq"]
 
@@ -50,7 +48,7 @@ normal = Vector2(-1, 0)
 size = Vector2(20, 4)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v3q3j"]
-texture = ExtResource("5_lc8pd")
+texture = ExtResource("5_hjv27")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -87,20 +85,16 @@ texture = ExtResource("5_lc8pd")
 [sub_resource type="TileSet" id="TileSet_w167j"]
 sources/0 = SubResource("TileSetAtlasSource_v3q3j")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mg1cl"]
-size = Vector2(40, 62)
-
 [node name="Bedroom2" type="Node2D"]
-script = ExtResource("1_vcnu2")
+script = ExtResource("1_r2qfj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 1
 position = Vector2(362, -16)
 zoom = Vector2(5, 5)
 limit_bottom = 48
-editor_draw_limits = true
 
-[node name="stickplayer" parent="." instance=ExtResource("1_lgsly")]
+[node name="stickplayer" parent="." instance=ExtResource("2_1l8th")]
 position = Vector2(315, -6)
 
 [node name="Wall" type="StaticBody2D" parent="."]
@@ -116,10 +110,10 @@ script = SubResource("GDScript_qtutp")
 
 [node name="Sprite2D" type="Sprite2D" parent="HallwayDoor"]
 position = Vector2(0, 68)
-texture = ExtResource("3_t0nvn")
+texture = ExtResource("3_x1xqu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HallwayDoor"]
-position = Vector2(-17.5, 46.5)
+position = Vector2(-6, 46.5)
 shape = SubResource("RectangleShape2D_5lq1t")
 
 [node name="InteractHintLabel" type="Label" parent="HallwayDoor"]
@@ -129,7 +123,7 @@ offset_top = 10.0
 offset_right = 82.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_vw0ov")
+theme_override_fonts/font = ExtResource("4_28oe0")
 theme_override_font_sizes/font_size = 8
 text = "Hallway"
 horizontal_alignment = 1
@@ -187,59 +181,46 @@ layer_0/tile_data = PackedInt32Array(10, 0, 5, 65546, 0, 6, 131082, 0, 7, 11, 0,
 
 [node name="Clock" type="Sprite2D" parent="Decor"]
 position = Vector2(349, -2)
-texture = ExtResource("6_57xt8")
+texture = ExtResource("6_gupwr")
 
 [node name="BedBottom" type="Sprite2D" parent="Decor"]
 z_index = 1
 position = Vector2(435, 25)
-texture = ExtResource("6_i50yr")
+texture = ExtResource("7_l2or7")
 
 [node name="BedTop" type="Sprite2D" parent="Decor/BedBottom"]
 z_index = 5
-texture = ExtResource("7_w473q")
+texture = ExtResource("8_emcd0")
 
 [node name="BedsideTable" type="Sprite2D" parent="Decor"]
 position = Vector2(466, 17)
-texture = ExtResource("8_plfoc")
+texture = ExtResource("9_d1qxw")
 
 [node name="BedBottom2" type="Sprite2D" parent="Decor"]
 z_index = 1
 position = Vector2(283, 25)
-texture = ExtResource("6_i50yr")
+texture = ExtResource("7_l2or7")
 
 [node name="BedTop" type="Sprite2D" parent="Decor/BedBottom2"]
 z_index = 5
-texture = ExtResource("7_w473q")
+texture = ExtResource("8_emcd0")
 
 [node name="BedsideTable2" type="Sprite2D" parent="Decor"]
 position = Vector2(272, 17)
-texture = ExtResource("8_plfoc")
+texture = ExtResource("9_d1qxw")
 
 [node name="Rug" type="Sprite2D" parent="Decor"]
 position = Vector2(365, 31)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("10_r8eyy")
+texture = ExtResource("10_mce6m")
 
 [node name="FramedPhotos" type="Sprite2D" parent="Decor"]
 position = Vector2(388, -18)
-texture = ExtResource("9_nui6l")
+texture = ExtResource("11_ormiq")
 
 [node name="Window" type="Sprite2D" parent="Decor"]
 position = Vector2(283, -19)
-texture = ExtResource("12_hd4xw")
-
-[node name="DayCounter" parent="." instance=ExtResource("13_i0txh")]
-
-[node name="TrashCan" parent="." instance=ExtResource("14_2w857")]
-position = Vector2(350, -6)
-
-[node name="TrashArea" type="Area2D" parent="TrashCan"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashCan/TrashArea"]
-position = Vector2(0, 5)
-shape = SubResource("RectangleShape2D_mg1cl")
+texture = ExtResource("12_gm0l8")
 
 [connection signal="body_entered" from="HallwayDoor" to="." method="_on_hallway_door_body_entered"]
 [connection signal="body_exited" from="HallwayDoor" to="." method="_on_hallway_door_body_exited"]
-[connection signal="body_entered" from="TrashCan/TrashArea" to="." method="_on_trash_area_body_entered"]
-[connection signal="body_exited" from="TrashCan/TrashArea" to="." method="_on_trash_area_body_exited"]

@@ -1,46 +1,25 @@
-[gd_scene load_steps=28 format=3 uid="uid://bi1oqyhj6cn0x"]
+[gd_scene load_steps=21 format=3 uid="uid://bvob5sv0ao22m"]
 
-[ext_resource type="Script" path="res://Scripts/Taby Scripts/bedroom.gd" id="1_uv7jl"]
-[ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_wcn88"]
-[ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="3_1mrvb"]
-[ext_resource type="Texture2D" uid="uid://bgyab0qqneo3s" path="res://Assets/Decorations/livingroom_attic_door/Door.png" id="3_wmlin"]
-[ext_resource type="Texture2D" uid="uid://bq8egwy6jkxde" path="res://Assets/Decorations/Assets_1/bedbottom.png" id="5_0fvuw"]
-[ext_resource type="Texture2D" uid="uid://2b1pwpwk8wwv" path="res://Assets/Decorations/Assets_1/bedtop.png" id="6_5o5me"]
-[ext_resource type="Texture2D" uid="uid://div2u7lqiorlc" path="res://Assets/Decorations/Assets_1/wallpaper&flooring.png" id="7_5hj0y"]
-[ext_resource type="Texture2D" uid="uid://d3a1k1gg7sofk" path="res://Assets/Decorations/Assets_1/bedside_table.png" id="7_b735n"]
-[ext_resource type="Texture2D" uid="uid://c67075wfrtmlv" path="res://Assets/Decorations/Assets_1/bookshelf_against_wall.png" id="8_8hjb7"]
-[ext_resource type="Texture2D" uid="uid://cvacvgcl1au6v" path="res://Assets/Decorations/Assets_1/posters_boys_room.png" id="9_yrcl4"]
-[ext_resource type="Texture2D" uid="uid://fv01pymh0sh3" path="res://Assets/Decorations/Assets_1/window_w__curtain.png" id="10_1wnig"]
-[ext_resource type="PackedScene" uid="uid://d26dwpph6etgm" path="res://Scripts/Taby Scripts/day_counter.tscn" id="12_866lb"]
-[ext_resource type="Texture2D" uid="uid://dvdspn071mmo1" path="res://Assets/Decorations/Assets_1/football.png" id="12_aevv8"]
-[ext_resource type="PackedScene" path="res://Scripts/Taby Scripts/trash_can.tscn" id="14_p6qo7"]
-[ext_resource type="Texture2D" uid="uid://03vacajjurw7" path="res://Assets/Decorations/Deco/blue_rug.png" id="15_nsqbr"]
-
-[sub_resource type="GDScript" id="GDScript_qtutp"]
-script/source = "extends Area2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
+[ext_resource type="Script" path="res://piss shit fuck/bedroom_4_jeremy.gd" id="1_too5c"]
+[ext_resource type="Texture2D" uid="uid://bgyab0qqneo3s" path="res://Assets/Decorations/livingroom_attic_door/Door.png" id="3_h4nag"]
+[ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="4_2k5or"]
+[ext_resource type="Texture2D" uid="uid://bq8egwy6jkxde" path="res://Assets/Decorations/Assets_1/bedbottom.png" id="5_75vgq"]
+[ext_resource type="Texture2D" uid="uid://2b1pwpwk8wwv" path="res://Assets/Decorations/Assets_1/bedtop.png" id="6_yr38u"]
+[ext_resource type="Texture2D" uid="uid://d3a1k1gg7sofk" path="res://Assets/Decorations/Assets_1/bedside_table.png" id="7_hhru7"]
+[ext_resource type="Texture2D" uid="uid://c67075wfrtmlv" path="res://Assets/Decorations/Assets_1/bookshelf_against_wall.png" id="8_g8icf"]
+[ext_resource type="Texture2D" uid="uid://cvacvgcl1au6v" path="res://Assets/Decorations/Assets_1/posters_boys_room.png" id="9_lm0wr"]
+[ext_resource type="Texture2D" uid="uid://fv01pymh0sh3" path="res://Assets/Decorations/Assets_1/window_w__curtain.png" id="10_o7qqm"]
+[ext_resource type="Texture2D" uid="uid://div2u7lqiorlc" path="res://Assets/Decorations/Assets_1/wallpaper&flooring.png" id="11_7xn4k"]
+[ext_resource type="Texture2D" uid="uid://dvdspn071mmo1" path="res://Assets/Decorations/Assets_1/football.png" id="12_upogg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lq1t"]
-size = Vector2(55, 59)
+size = Vector2(82, 59)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mv6mx"]
 size = Vector2(22, 39)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1des"]
-size = Vector2(73, 20)
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hem0p"]
-texture = ExtResource("7_5hj0y")
+texture = ExtResource("11_7xn4k")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -92,38 +71,20 @@ normal = Vector2(-1, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t70ew"]
 size = Vector2(20, 2)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qj161"]
-size = Vector2(44, 66)
-
 [node name="Bedroom" type="Node2D"]
-script = ExtResource("1_uv7jl")
-
-[node name="stickplayer" parent="." instance=ExtResource("1_wcn88")]
-position = Vector2(37, 112)
-
-[node name="Camera2D" type="Camera2D" parent="stickplayer"]
-z_index = 1
-position = Vector2(5, -24)
-offset = Vector2(5, 0)
-zoom = Vector2(6, 6)
-limit_left = -225
-limit_top = 29
-limit_right = 65
-limit_bottom = 137
-editor_draw_limits = true
+script = ExtResource("1_too5c")
 
 [node name="HallwayDoor" type="Area2D" parent="."]
 z_index = 1
 position = Vector2(-181, 30)
-script = SubResource("GDScript_qtutp")
 
 [node name="Sprite2D" type="Sprite2D" parent="HallwayDoor"]
 z_index = 1
 position = Vector2(0, 62)
-texture = ExtResource("3_wmlin")
+texture = ExtResource("3_h4nag")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HallwayDoor"]
-position = Vector2(-11.5, 46.5)
+position = Vector2(2, 46.5)
 shape = SubResource("RectangleShape2D_5lq1t")
 
 [node name="InteractHintLabel" type="Label" parent="HallwayDoor"]
@@ -134,17 +95,19 @@ offset_top = 3.0
 offset_right = 82.0
 offset_bottom = 16.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_1mrvb")
+theme_override_fonts/font = ExtResource("4_2k5or")
 theme_override_font_sizes/font_size = 8
 text = "Hallway"
 horizontal_alignment = 1
+
+[node name="Marker2D" type="Marker2D" parent="HallwayDoor"]
 
 [node name="Decor" type="Node" parent="."]
 
 [node name="BedBottom" type="Sprite2D" parent="Decor"]
 z_index = 1
 position = Vector2(36, 116)
-texture = ExtResource("5_0fvuw")
+texture = ExtResource("5_75vgq")
 
 [node name="SleepCheck" type="Area2D" parent="Decor/BedBottom"]
 
@@ -159,7 +122,7 @@ offset_top = -9.0
 offset_right = -14.0
 offset_bottom = 14.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_1mrvb")
+theme_override_fonts/font = ExtResource("4_2k5or")
 theme_override_font_sizes/font_size = 8
 text = "\"I'm not ready
 to sleep yet\""
@@ -167,38 +130,28 @@ to sleep yet\""
 [node name="BedTop" type="Sprite2D" parent="Decor"]
 z_index = 5
 position = Vector2(36, 116)
-texture = ExtResource("6_5o5me")
+texture = ExtResource("6_yr38u")
 
 [node name="BedsideTable" type="Sprite2D" parent="Decor"]
 z_index = 1
 position = Vector2(66, 109)
-texture = ExtResource("7_b735n")
+texture = ExtResource("7_hhru7")
 
 [node name="Bookshelf" type="Sprite2D" parent="Decor"]
 position = Vector2(-2, 98)
-texture = ExtResource("8_8hjb7")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Decor/Bookshelf"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Decor/Bookshelf/StaticBody2D"]
-position = Vector2(-17.5, -10)
-shape = SubResource("RectangleShape2D_k1des")
+texture = ExtResource("8_g8icf")
 
 [node name="Posters" type="Sprite2D" parent="Decor"]
 position = Vector2(-23, 72)
-texture = ExtResource("9_yrcl4")
+texture = ExtResource("9_lm0wr")
 
 [node name="Window" type="Sprite2D" parent="Decor"]
 position = Vector2(-112, 78)
-texture = ExtResource("10_1wnig")
+texture = ExtResource("10_o7qqm")
 
 [node name="Window2" type="Sprite2D" parent="Decor"]
 position = Vector2(-69, 78)
-texture = ExtResource("10_1wnig")
-
-[node name="Football" type="Sprite2D" parent="Decor"]
-position = Vector2(-35, 98)
-texture = ExtResource("12_aevv8")
+texture = ExtResource("10_o7qqm")
 
 [node name="ControlsHint" type="Label" parent="."]
 visible = false
@@ -208,7 +161,7 @@ offset_top = 107.0
 offset_right = 58.0
 offset_bottom = 128.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_1mrvb")
+theme_override_fonts/font = ExtResource("4_2k5or")
 theme_override_font_sizes/font_size = 8
 text = "WASD to Move
 E to Interact"
@@ -219,6 +172,10 @@ position = Vector2(52, -39)
 tile_set = SubResource("TileSet_alql7")
 format = 2
 layer_0/tile_data = PackedInt32Array(589822, 0, 5, 655358, 0, 6, 720894, 0, 7, 589823, 0, 5, 655359, 0, 6, 720895, 0, 7, 589821, 0, 5, 655357, 0, 6, 720893, 0, 7, 589820, 0, 5, 655356, 0, 6, 720892, 0, 7, 589819, 0, 5, 655355, 0, 6, 720891, 0, 7, 589818, 0, 5, 655354, 0, 6, 720890, 0, 7, 589817, 0, 5, 655353, 0, 6, 720889, 0, 7, 589816, 0, 5, 655352, 0, 6, 720888, 0, 7, 589815, 0, 5, 655351, 0, 6, 720887, 0, 7, 589814, 0, 5, 655350, 0, 6, 720886, 0, 7, 589813, 0, 5, 655349, 0, 6, 720885, 0, 7, 589812, 0, 5, 655348, 0, 6, 720884, 0, 7, 589811, 0, 5, 655347, 0, 6, 720883, 0, 7, 589810, 0, 5, 655346, 0, 6, 720882, 0, 7, 589809, 0, 5, 655345, 0, 6, 720881, 0, 7, 589808, 0, 5, 655344, 0, 6, 720880, 0, 7, 589807, 0, 5, 655343, 0, 6, 720879, 0, 7, 589805, 0, 5, 655341, 0, 6, 720877, 0, 7, 589806, 0, 5, 655342, 0, 6, 720878, 0, 7, 524288, 0, 5, 589824, 0, 6, 655360, 0, 7, 524289, 0, 5, 589825, 0, 6, 655361, 0, 7, 524290, 0, 5, 589826, 0, 6, 655362, 0, 7, 524291, 0, 5, 589827, 0, 6, 655363, 0, 7, 589796, 0, 5, 655332, 0, 6, 720868, 0, 7, 589797, 0, 5, 655333, 0, 6, 720869, 0, 7, 589798, 0, 5, 655334, 0, 6, 720870, 0, 7, 589799, 0, 5, 655335, 0, 6, 720871, 0, 7, 589800, 0, 5, 655336, 0, 6, 720872, 0, 7, 589801, 0, 5, 655337, 0, 6, 720873, 0, 7, 589802, 0, 5, 655338, 0, 6, 720874, 0, 7, 589803, 0, 5, 655339, 0, 6, 720875, 0, 7, 589804, 0, 5, 655340, 0, 6, 720876, 0, 7, -589852, 0, 3, -524316, 0, 3, -458780, 0, 3, -393244, 0, 3, -327708, 0, 3, -262172, 0, 3, -196636, 0, 3, -131100, 0, 3, -65564, 0, 3, -28, 0, 3, 65508, 0, 3, 131044, 0, 3, 196580, 0, 3, 262116, 0, 3, 327652, 0, 3, 393188, 0, 3, 458724, 0, 3, 524260, 0, 3, -589851, 0, 3, -524315, 0, 3, -458779, 0, 3, -393243, 0, 3, -327707, 0, 3, -262171, 0, 3, -196635, 0, 3, -131099, 0, 3, -65563, 0, 3, -27, 0, 3, 65509, 0, 3, 131045, 0, 3, 196581, 0, 3, 262117, 0, 3, 327653, 0, 3, 393189, 0, 3, 458725, 0, 3, 524261, 0, 3, -589850, 0, 3, -524314, 0, 3, -458778, 0, 3, -393242, 0, 3, -327706, 0, 3, -262170, 0, 3, -196634, 0, 3, -131098, 0, 3, -65562, 0, 3, -26, 0, 3, 65510, 0, 3, 131046, 0, 3, 196582, 0, 3, 262118, 0, 3, 327654, 0, 3, 393190, 0, 3, 458726, 0, 3, 524262, 0, 3, -589849, 0, 3, -524313, 0, 3, -458777, 0, 3, -393241, 0, 3, -327705, 0, 3, -262169, 0, 3, -196633, 0, 3, -131097, 0, 3, -65561, 0, 3, -25, 0, 3, 65511, 0, 3, 131047, 0, 3, 196583, 0, 3, 262119, 0, 3, 327655, 0, 3, 393191, 0, 3, 458727, 0, 3, 524263, 0, 3, -589848, 0, 3, -524312, 0, 3, -458776, 0, 3, -393240, 0, 3, -327704, 0, 3, -262168, 0, 3, -196632, 0, 3, -131096, 0, 3, -65560, 0, 3, -24, 0, 3, 65512, 0, 3, 131048, 0, 3, 196584, 0, 3, 262120, 0, 3, 327656, 0, 3, 393192, 0, 3, 458728, 0, 3, 524264, 0, 3, -589847, 0, 3, -524311, 0, 3, -458775, 0, 3, -393239, 0, 3, -327703, 0, 3, -262167, 0, 3, -196631, 0, 3, -131095, 0, 3, -65559, 0, 3, -23, 0, 3, 65513, 0, 3, 131049, 0, 3, 196585, 0, 3, 262121, 0, 3, 327657, 0, 3, 393193, 0, 3, 458729, 0, 3, 524265, 0, 3, -589846, 0, 3, -524310, 0, 3, -458774, 0, 3, -393238, 0, 3, -327702, 0, 3, -262166, 0, 3, -196630, 0, 3, -131094, 0, 3, -65558, 0, 3, -22, 0, 3, 65514, 0, 3, 131050, 0, 3, 196586, 0, 3, 262122, 0, 3, 327658, 0, 3, 393194, 0, 3, 458730, 0, 3, 524266, 0, 3, -589845, 0, 3, -524309, 0, 3, -458773, 0, 3, -393237, 0, 3, -327701, 0, 3, -262165, 0, 3, -196629, 0, 3, -131093, 0, 3, -65557, 0, 3, -21, 0, 3, 65515, 0, 3, 131051, 0, 3, 196587, 0, 3, 262123, 0, 3, 327659, 0, 3, 393195, 0, 3, 458731, 0, 3, 524267, 0, 3, -589844, 0, 3, -524308, 0, 3, -458772, 0, 3, -393236, 0, 3, -327700, 0, 3, -262164, 0, 3, -196628, 0, 3, -131092, 0, 3, -65556, 0, 3, -20, 0, 3, 65516, 0, 3, 131052, 0, 3, 196588, 0, 3, 262124, 0, 3, 327660, 0, 3, 393196, 0, 3, 458732, 0, 3, 524268, 0, 3, -589843, 0, 3, -524307, 0, 3, -458771, 0, 3, -393235, 0, 3, -327699, 0, 3, -262163, 0, 3, -196627, 0, 3, -131091, 0, 3, -65555, 0, 3, -19, 0, 3, 65517, 0, 3, 131053, 0, 3, 196589, 0, 3, 262125, 0, 3, 327661, 0, 3, 393197, 0, 3, 458733, 0, 3, 524269, 0, 3, -589842, 0, 3, -524306, 0, 3, -458770, 0, 3, -393234, 0, 3, -327698, 0, 3, -262162, 0, 3, -196626, 0, 3, -131090, 0, 3, -65554, 0, 3, -18, 0, 3, 65518, 0, 3, 131054, 0, 3, 196590, 0, 3, 262126, 0, 3, 327662, 0, 3, 393198, 0, 3, 458734, 0, 3, 524270, 0, 3, -589841, 0, 3, -524305, 0, 3, -458769, 0, 3, -393233, 0, 3, -327697, 0, 3, -262161, 0, 3, -196625, 0, 3, -131089, 0, 3, -65553, 0, 3, -17, 0, 3, 65519, 0, 3, 131055, 0, 3, 196591, 0, 3, 262127, 0, 3, 327663, 0, 3, 393199, 0, 3, 458735, 0, 3, 524271, 0, 3, -589840, 0, 3, -524304, 0, 3, -458768, 0, 3, -393232, 0, 3, -327696, 0, 3, -262160, 0, 3, -196624, 0, 3, -131088, 0, 3, -65552, 0, 3, -16, 0, 3, 65520, 0, 3, 131056, 0, 3, 196592, 0, 3, 262128, 0, 3, 327664, 0, 3, 393200, 0, 3, 458736, 0, 3, 524272, 0, 3, -589839, 0, 3, -524303, 0, 3, -458767, 0, 3, -393231, 0, 3, -327695, 0, 3, -262159, 0, 3, -196623, 0, 3, -131087, 0, 3, -65551, 0, 3, -15, 0, 3, 65521, 0, 3, 131057, 0, 3, 196593, 0, 3, 262129, 0, 3, 327665, 0, 3, 393201, 0, 3, 458737, 0, 3, 524273, 0, 3, -589838, 0, 3, -524302, 0, 3, -458766, 0, 3, -393230, 0, 3, -327694, 0, 3, -262158, 0, 3, -196622, 0, 3, -131086, 0, 3, -65550, 0, 3, -14, 0, 3, 65522, 0, 3, 131058, 0, 3, 196594, 0, 3, 262130, 0, 3, 327666, 0, 3, 393202, 0, 3, 458738, 0, 3, 524274, 0, 3, -589837, 0, 3, -524301, 0, 3, -458765, 0, 3, -393229, 0, 3, -327693, 0, 3, -262157, 0, 3, -196621, 0, 3, -131085, 0, 3, -65549, 0, 3, -13, 0, 3, 65523, 0, 3, 131059, 0, 3, 196595, 0, 3, 262131, 0, 3, 327667, 0, 3, 393203, 0, 3, 458739, 0, 3, 524275, 0, 3, -589836, 0, 3, -524300, 0, 3, -458764, 0, 3, -393228, 0, 3, -327692, 0, 3, -262156, 0, 3, -196620, 0, 3, -131084, 0, 3, -65548, 0, 3, -12, 0, 3, 65524, 0, 3, 131060, 0, 3, 196596, 0, 3, 262132, 0, 3, 327668, 0, 3, 393204, 0, 3, 458740, 0, 3, 524276, 0, 3, -589835, 0, 3, -524299, 0, 3, -458763, 0, 3, -393227, 0, 3, -327691, 0, 3, -262155, 0, 3, -196619, 0, 3, -131083, 0, 3, -65547, 0, 3, -11, 0, 3, 65525, 0, 3, 131061, 0, 3, 196597, 0, 3, 262133, 0, 3, 327669, 0, 3, 393205, 0, 3, 458741, 0, 3, 524277, 0, 3, -589834, 0, 3, -524298, 0, 3, -458762, 0, 3, -393226, 0, 3, -327690, 0, 3, -262154, 0, 3, -196618, 0, 3, -131082, 0, 3, -65546, 0, 3, -10, 0, 3, 65526, 0, 3, 131062, 0, 3, 196598, 0, 3, 262134, 0, 3, 327670, 0, 3, 393206, 0, 3, 458742, 0, 3, 524278, 0, 3, -589833, 0, 3, -524297, 0, 3, -458761, 0, 3, -393225, 0, 3, -327689, 0, 3, -262153, 0, 3, -196617, 0, 3, -131081, 0, 3, -65545, 0, 3, -9, 0, 3, 65527, 0, 3, 131063, 0, 3, 196599, 0, 3, 262135, 0, 3, 327671, 0, 3, 393207, 0, 3, 458743, 0, 3, 524279, 0, 3, -589832, 0, 3, -524296, 0, 3, -458760, 0, 3, -393224, 0, 3, -327688, 0, 3, -262152, 0, 3, -196616, 0, 3, -131080, 0, 3, -65544, 0, 3, -8, 0, 3, 65528, 0, 3, 131064, 0, 3, 196600, 0, 3, 262136, 0, 3, 327672, 0, 3, 393208, 0, 3, 458744, 0, 3, 524280, 0, 3, -589831, 0, 3, -524295, 0, 3, -458759, 0, 3, -393223, 0, 3, -327687, 0, 3, -262151, 0, 3, -196615, 0, 3, -131079, 0, 3, -65543, 0, 3, -7, 0, 3, 65529, 0, 3, 131065, 0, 3, 196601, 0, 3, 262137, 0, 3, 327673, 0, 3, 393209, 0, 3, 458745, 0, 3, 524281, 0, 3, -589830, 0, 3, -524294, 0, 3, -458758, 0, 3, -393222, 0, 3, -327686, 0, 3, -262150, 0, 3, -196614, 0, 3, -131078, 0, 3, -65542, 0, 3, -6, 0, 3, 65530, 0, 3, 131066, 0, 3, 196602, 0, 3, 262138, 0, 3, 327674, 0, 3, 393210, 0, 3, 458746, 0, 3, 524282, 0, 3, -589829, 0, 3, -524293, 0, 3, -458757, 0, 3, -393221, 0, 3, -327685, 0, 3, -262149, 0, 3, -196613, 0, 3, -131077, 0, 3, -65541, 0, 3, -5, 0, 3, 65531, 0, 3, 131067, 0, 3, 196603, 0, 3, 262139, 0, 3, 327675, 0, 3, 393211, 0, 3, 458747, 0, 3, 524283, 0, 3, -589828, 0, 3, -524292, 0, 3, -458756, 0, 3, -393220, 0, 3, -327684, 0, 3, -262148, 0, 3, -196612, 0, 3, -131076, 0, 3, -65540, 0, 3, -4, 0, 3, 65532, 0, 3, 131068, 0, 3, 196604, 0, 3, 262140, 0, 3, 327676, 0, 3, 393212, 0, 3, 458748, 0, 3, 524284, 0, 3, -589827, 0, 3, -524291, 0, 3, -458755, 0, 3, -393219, 0, 3, -327683, 0, 3, -262147, 0, 3, -196611, 0, 3, -131075, 0, 3, -65539, 0, 3, -3, 0, 3, 65533, 0, 3, 131069, 0, 3, 196605, 0, 3, 262141, 0, 3, 327677, 0, 3, 393213, 0, 3, 458749, 0, 3, 524285, 0, 3, -589826, 0, 3, -524290, 0, 3, -458754, 0, 3, -393218, 0, 3, -327682, 0, 3, -262146, 0, 3, -196610, 0, 3, -131074, 0, 3, -65538, 0, 3, -2, 0, 3, 65534, 0, 3, 131070, 0, 3, 196606, 0, 3, 262142, 0, 3, 327678, 0, 3, 393214, 0, 3, 458750, 0, 3, 524286, 0, 3, -589825, 0, 3, -524289, 0, 3, -458753, 0, 3, -393217, 0, 3, -327681, 0, 3, -262145, 0, 3, -196609, 0, 3, -131073, 0, 3, -65537, 0, 3, -1, 0, 3, 65535, 0, 3, 131071, 0, 3, 196607, 0, 3, 262143, 0, 3, 327679, 0, 3, 393215, 0, 3, 458751, 0, 3, 524287, 0, 3, -655360, 0, 3, -589824, 0, 3, -524288, 0, 3, -458752, 0, 3, -393216, 0, 3, -327680, 0, 3, -262144, 0, 3, -196608, 0, 3, -131072, 0, 3, -65536, 0, 3, 0, 0, 3, 65536, 0, 3, 131072, 0, 3, 196608, 0, 3, 262144, 0, 3, 327680, 0, 3, 393216, 0, 3, 458752, 0, 3, -655359, 0, 3, -589823, 0, 3, -524287, 0, 3, -458751, 0, 3, -393215, 0, 3, -327679, 0, 3, -262143, 0, 3, -196607, 0, 3, -131071, 0, 3, -65535, 0, 3, 1, 0, 3, 65537, 0, 3, 131073, 0, 3, 196609, 0, 3, 262145, 0, 3, 327681, 0, 3, 393217, 0, 3, 458753, 0, 3, -655358, 0, 3, -589822, 0, 3, -524286, 0, 3, -458750, 0, 3, -393214, 0, 3, -327678, 0, 3, -262142, 0, 3, -196606, 0, 3, -131070, 0, 3, -65534, 0, 3, 2, 0, 3, 65538, 0, 3, 131074, 0, 3, 196610, 0, 3, 262146, 0, 3, 327682, 0, 3, 393218, 0, 3, 458754, 0, 3, -655357, 0, 3, -589821, 0, 3, -524285, 0, 3, -458749, 0, 3, -393213, 0, 3, -327677, 0, 3, -262141, 0, 3, -196605, 0, 3, -131069, 0, 3, -65533, 0, 3, 3, 0, 3, 65539, 0, 3, 131075, 0, 3, 196611, 0, 3, 262147, 0, 3, 327683, 0, 3, 393219, 0, 3, 458755, 0, 3, 524292, 0, 5, 589828, 0, 6, 655364, 0, 7, 524293, 0, 5, 589829, 0, 6, 655365, 0, 7, 524294, 0, 5, 589830, 0, 6, 655366, 0, 7, 524295, 0, 5, 589831, 0, 6, 655367, 0, 7, 524296, 0, 5, 589832, 0, 6, 655368, 0, 7, -131068, 65536, 3, -65532, 65536, 3, 4, 65536, 3, 65540, 65536, 3, 131076, 65536, 3, 196612, 65536, 3, 262148, 65536, 3, 327684, 65536, 3, 393220, 65536, 3, 458756, 65536, 3, -131067, 65536, 3, -65531, 65536, 3, 5, 65536, 3, 65541, 65536, 3, 131077, 65536, 3, 196613, 65536, 3, 262149, 65536, 3, 327685, 65536, 3, 393221, 65536, 3, 458757, 65536, 3, -131066, 65536, 3, -65530, 65536, 3, 6, 65536, 3, 65542, 65536, 3, 131078, 65536, 3, 196614, 65536, 3, 262150, 65536, 3, 327686, 65536, 3, 393222, 65536, 3, 458758, 65536, 3, -131065, 65536, 3, -65529, 65536, 3, 7, 65536, 3, 65543, 65536, 3, 131079, 65536, 3, 196615, 65536, 3, 262151, 65536, 3, 327687, 65536, 3, 393223, 65536, 3, 458759, 65536, 3, -131064, 65536, 3, -65528, 65536, 3, 8, 65536, 3, 65544, 65536, 3, 131080, 65536, 3, 196616, 65536, 3, 262152, 65536, 3, 327688, 65536, 3, 393224, 65536, 3, 458760, 65536, 3, -655356, 65536, 3, -589820, 65536, 3, -524284, 65536, 3, -458748, 65536, 3, -393212, 65536, 3, -327676, 65536, 3, -262140, 65536, 3, -196604, 65536, 3, -655355, 65536, 3, -589819, 65536, 3, -524283, 65536, 3, -458747, 65536, 3, -393211, 65536, 3, -327675, 65536, 3, -262139, 65536, 3, -196603, 65536, 3, -655354, 65536, 3, -589818, 65536, 3, -524282, 65536, 3, -458746, 65536, 3, -393210, 65536, 3, -327674, 65536, 3, -262138, 65536, 3, -196602, 65536, 3, -655353, 65536, 3, -589817, 65536, 3, -524281, 65536, 3, -458745, 65536, 3, -393209, 65536, 3, -327673, 65536, 3, -262137, 65536, 3, -196601, 65536, 3, -655352, 65536, 3, -589816, 65536, 3, -524280, 65536, 3, -458744, 65536, 3, -393208, 65536, 3, -327672, 65536, 3, -262136, 65536, 3, -196600, 65536, 3)
+
+[node name="Football" type="Sprite2D" parent="."]
+position = Vector2(-35, 98)
+texture = ExtResource("12_upogg")
 
 [node name="Walls" type="Node" parent="."]
 
@@ -257,25 +214,7 @@ position = Vector2(37, 122)
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_t70ew")
 
-[node name="DayCounter" parent="." instance=ExtResource("12_866lb")]
-
-[node name="TrashCan" parent="." instance=ExtResource("14_p6qo7")]
-position = Vector2(-147, 84)
-
-[node name="TrashArea" type="Area2D" parent="TrashCan"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashCan/TrashArea"]
-position = Vector2(0, 7)
-shape = SubResource("RectangleShape2D_qj161")
-
-[node name="BlueRug" type="Sprite2D" parent="."]
-position = Vector2(-94, 119)
-scale = Vector2(0.78125, 0.78125)
-texture = ExtResource("15_nsqbr")
-
 [connection signal="body_entered" from="HallwayDoor" to="." method="_on_hallway_door_body_entered"]
 [connection signal="body_exited" from="HallwayDoor" to="." method="_on_hallway_door_body_exited"]
 [connection signal="body_entered" from="Decor/BedBottom/SleepCheck" to="." method="_on_sleep_check_body_entered"]
 [connection signal="body_exited" from="Decor/BedBottom/SleepCheck" to="." method="_on_sleep_check_body_exited"]
-[connection signal="body_entered" from="TrashCan/TrashArea" to="." method="_on_trash_area_body_entered"]
-[connection signal="body_exited" from="TrashCan/TrashArea" to="." method="_on_trash_area_body_exited"]
