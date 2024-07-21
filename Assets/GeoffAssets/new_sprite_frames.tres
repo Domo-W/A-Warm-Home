@@ -1,0 +1,66 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://dywy3ec3xlj5h"]
+
+[ext_resource type="Texture2D" uid="uid://dwk2u4hyx71kv" path="res://Assets/GeoffAssets/boxesSprites-Sheet.png" id="1_4oemy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjx1k"]
+atlas = ExtResource("1_4oemy")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lv1w"]
+atlas = ExtResource("1_4oemy")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_megq0"]
+atlas = ExtResource("1_4oemy")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkqgd"]
+atlas = ExtResource("1_4oemy")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kw4fw"]
+atlas = ExtResource("1_4oemy")
+region = Rect2(0, 0, 48, 48)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjx1k")
+}],
+"loop": true,
+"name": &"Box1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lv1w")
+}],
+"loop": true,
+"name": &"Box2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_megq0")
+}],
+"loop": true,
+"name": &"Box3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkqgd")
+}],
+"loop": true,
+"name": &"Box4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kw4fw")
+}],
+"loop": true,
+"name": &"Box5",
+"speed": 5.0
+}]

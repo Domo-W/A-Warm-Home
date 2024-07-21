@@ -1,39 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://beex0paj73cv5"]
+[gd_scene load_steps=6 format=3 uid="uid://beex0paj73cv5"]
 
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/AtticRedo/AtticManagerAgain.gd" id="1_woab1"]
 [ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="2_6jj5o"]
-[ext_resource type="Texture2D" uid="uid://bdhrfskm2irck" path="res://icon.svg" id="3_7y2mm"]
+[ext_resource type="SpriteFrames" uid="uid://dywy3ec3xlj5h" path="res://Assets/GeoffAssets/new_sprite_frames.tres" id="3_npis8"]
+[ext_resource type="Script" path="res://Scripts/GeoffScripts/AtticGame/AtticEnd.gd" id="4_j7j4g"]
+[ext_resource type="Texture2D" uid="uid://bn7mee37sw257" path="res://Assets/GeoffAssets/silly_wet.png" id="5_6pawc"]
 
 [node name="AtticRedo" type="Node2D"]
 
 [node name="AtticManager" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("1_woab1")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="AtticManager"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -517.0
-offset_top = 199.0
-offset_right = -542.0
-offset_bottom = -331.0
+offset_left = -562.0
+offset_top = 231.0
+offset_right = -587.0
+offset_bottom = -337.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 100
+alignment = 1
 
 [node name="Button" type="Button" parent="AtticManager/HBoxContainer"]
+z_index = 7
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_6jj5o")
 theme_override_font_sizes/font_size = 32
 text = "Pile One"
 
 [node name="Button2" type="Button" parent="AtticManager/HBoxContainer"]
+z_index = 7
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_6jj5o")
 theme_override_font_sizes/font_size = 32
 text = "Pile Two"
 
 [node name="Button3" type="Button" parent="AtticManager/HBoxContainer"]
+z_index = 7
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_6jj5o")
 theme_override_font_sizes/font_size = 32
@@ -44,37 +51,104 @@ offset_left = 238.0
 offset_top = -306.0
 offset_right = 558.0
 offset_bottom = -274.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_6jj5o")
 theme_override_font_sizes/font_size = 32
 text = "Moves: XXX"
 
-[node name="Box_1" type="Sprite2D" parent="AtticManager"]
+[node name="Box_1" type="AnimatedSprite2D" parent="AtticManager"]
+z_index = 5
 position = Vector2(-385, -261)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("3_7y2mm")
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("3_npis8")
+animation = &"Box1"
+offset = Vector2(0, 10)
 
-[node name="Box_2" type="Sprite2D" parent="AtticManager"]
+[node name="Box_2" type="AnimatedSprite2D" parent="AtticManager"]
+z_index = 4
 position = Vector2(-385, -160)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("3_7y2mm")
+scale = Vector2(3, 3)
+sprite_frames = ExtResource("3_npis8")
+animation = &"Box2"
 
-[node name="Box_3" type="Sprite2D" parent="AtticManager"]
+[node name="Box_3" type="AnimatedSprite2D" parent="AtticManager"]
+z_index = 3
 position = Vector2(-391, -60)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("3_7y2mm")
+scale = Vector2(3, 3)
+sprite_frames = ExtResource("3_npis8")
+animation = &"Box3"
 
-[node name="Box_4" type="Sprite2D" parent="AtticManager"]
+[node name="Box_4" type="AnimatedSprite2D" parent="AtticManager"]
+z_index = 2
 position = Vector2(-391, 40)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("3_7y2mm")
+scale = Vector2(3, 3)
+sprite_frames = ExtResource("3_npis8")
+animation = &"Box4"
 
-[node name="Box_5" type="Sprite2D" parent="AtticManager"]
+[node name="Box_5" type="AnimatedSprite2D" parent="AtticManager"]
+z_index = 1
 position = Vector2(-390, 139)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("3_7y2mm")
+scale = Vector2(3, 3)
+sprite_frames = ExtResource("3_npis8")
+animation = &"Box5"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AtticEndScreen" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="AtticEndScreen"]
+z_index = 20
+offset_left = -702.0
+offset_top = -438.0
+offset_right = 716.0
+offset_bottom = 403.0
+color = Color(0.335232, 0.17686, 4.81308e-08, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="AtticEndScreen"]
+z_index = 21
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -577.0
+offset_top = -325.0
+offset_right = 580.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+script = ExtResource("4_j7j4g")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AtticEndScreen/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="EndLabel" type="Label" parent="AtticEndScreen/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6jj5o")
+theme_override_font_sizes/font_size = 32
+text = "Nice job!
+You finished cleaning
+in XXX moves"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="AtticEndScreen/MarginContainer/VBoxContainer"]
+z_index = 25
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6jj5o")
+theme_override_font_sizes/font_size = 32
+text = "Go Back Inside"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.533333)
+position = Vector2(369, 20)
+texture = ExtResource("5_6pawc")
 
 [connection signal="pressed" from="AtticManager/HBoxContainer/Button" to="AtticManager" method="_on_button_1_pressed"]
 [connection signal="pressed" from="AtticManager/HBoxContainer/Button2" to="AtticManager" method="_on_button_2_pressed"]
 [connection signal="pressed" from="AtticManager/HBoxContainer/Button3" to="AtticManager" method="_on_button_3_pressed"]
+[connection signal="pressed" from="AtticEndScreen/MarginContainer/VBoxContainer/Button" to="AtticEndScreen/MarginContainer" method="_on_button_pressed"]

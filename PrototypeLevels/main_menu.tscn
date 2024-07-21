@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://chks8b2pnxohn"]
+[gd_scene load_steps=5 format=3 uid="uid://chks8b2pnxohn"]
 
 [ext_resource type="Texture2D" uid="uid://cdrm3ks1f10hq" path="res://Assets/GeoffAssets/bin.png" id="1_52y7p"]
 [ext_resource type="Texture2D" uid="uid://bak46m7w8x40b" path="res://Assets/GeoffAssets/recycle_bin.png" id="1_dxq4w"]
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/MainMenu/main_menu.gd" id="1_io3fj"]
 [ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="2_5unqs"]
-[ext_resource type="FontFile" uid="uid://didr0ixt7d7pg" path="res://Assets/Taby Assets/PixelifySans-VariableFont_wght.ttf" id="3_2g1o1"]
 
 [node name="MainMenu" type="MarginContainer"]
 anchors_preset = 15
@@ -56,9 +55,10 @@ alignment = 2
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_2g1o1")
+theme_override_fonts/font = ExtResource("2_5unqs")
 theme_override_font_sizes/font_size = 16
-text = "Made for KiwiJam2024"
+text = "Developed by The MOM Ltd.
+Made for KiwiJam2024"
 
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
 layout_mode = 2

@@ -77,7 +77,7 @@ script = ExtResource("1_xornc")
 sprite_frames = SubResource("SpriteFrames_mma1e")
 animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.958964
+frame_progress = 0.435722
 offset = Vector2(-12, -25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
