@@ -242,7 +242,7 @@ position = Vector2(37, 122)
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_t70ew")
 
-[node name="Control" parent="." instance=ExtResource("12_866lb")]
+[node name="DayCounter" parent="." instance=ExtResource("12_866lb")]
 
 [connection signal="body_entered" from="HallwayDoor" to="." method="_on_hallway_door_body_entered"]
 [connection signal="body_exited" from="HallwayDoor" to="." method="_on_hallway_door_body_exited"]

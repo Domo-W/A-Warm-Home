@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c5rhaa4de4ebp"]
+[gd_scene load_steps=24 format=3 uid="uid://c5rhaa4de4ebp"]
 
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_8a4ks"]
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/kitchen.gd" id="1_vr8le"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://5ed6nt2lvcbf" path="res://Assets/Decorations/kitchen_furniture/clock.png" id="10_giotm"]
 [ext_resource type="Texture2D" uid="uid://da8ibdgnpbvgg" path="res://Assets/Decorations/CharacterSpriteSheets/mom-Sheet.png" id="11_dio0j"]
 [ext_resource type="Texture2D" uid="uid://xrm114p3ix85" path="res://Assets/Decorations/kitchen_furniture/stove.png" id="11_nyqio"]
+[ext_resource type="PackedScene" uid="uid://d26dwpph6etgm" path="res://Scripts/Taby Scripts/day_counter.tscn" id="13_fthc6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejkyi"]
 size = Vector2(81, 72)
@@ -200,6 +201,8 @@ shape = SubResource("WorldBoundaryShape2D_ro8pe")
 [node name="Stove" type="Sprite2D" parent="."]
 position = Vector2(-143, 2)
 texture = ExtResource("11_nyqio")
+
+[node name="DayCounter" parent="." instance=ExtResource("13_fthc6")]
 
 [connection signal="body_entered" from="LivingRoomDoor" to="." method="_on_living_room_door_body_entered"]
 [connection signal="body_exited" from="LivingRoomDoor" to="." method="_on_living_room_door_body_exited"]
