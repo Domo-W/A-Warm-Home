@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="3_m14ld"]
 [ext_resource type="Texture2D" uid="uid://d3a1k1gg7sofk" path="res://Assets/Decorations/Assets_1/bedside_table.png" id="5_gtsbw"]
 [ext_resource type="Texture2D" uid="uid://div2u7lqiorlc" path="res://Assets/Decorations/Assets_1/wallpaper&flooring.png" id="6_khv4v"]
-[ext_resource type="Texture2D" uid="uid://bbi4qoaa7njvj" path="res://Assets/Decorations/Assets_1/book.png" id="6_q1c2g"]
+[ext_resource type="Texture2D" uid="uid://cfwerihdc1r83" path="res://Assets/Decorations/Assets_1/book.png" id="6_q1c2g"]
 [ext_resource type="Texture2D" uid="uid://wustjokekyas" path="res://Assets/Decorations/kitchen_furniture/fridge.png" id="7_q1kbg"]
 [ext_resource type="Texture2D" uid="uid://bkmravxd0qjg6" path="res://Assets/Decorations/kitchen_furniture/knife_holder.png" id="8_n2tci"]
 [ext_resource type="Texture2D" uid="uid://dtil4kqo7meag" path="res://Assets/Decorations/kitchen_furniture/sink_counter.png" id="9_pdtne"]
@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://da8ibdgnpbvgg" path="res://Assets/Decorations/CharacterSpriteSheets/mom-Sheet.png" id="11_dio0j"]
 [ext_resource type="Texture2D" uid="uid://xrm114p3ix85" path="res://Assets/Decorations/kitchen_furniture/stove.png" id="11_nyqio"]
 [ext_resource type="PackedScene" uid="uid://d26dwpph6etgm" path="res://Scripts/Taby Scripts/day_counter.tscn" id="13_fthc6"]
-[ext_resource type="PackedScene" path="res://Scripts/Taby Scripts/trash_can.tscn" id="15_cehc8"]
+[ext_resource type="PackedScene" uid="uid://ildcguyssq7b" path="res://Scripts/Taby Scripts/trash_can.tscn" id="15_cehc8"]
 [ext_resource type="Texture2D" uid="uid://fv01pymh0sh3" path="res://Assets/Decorations/Assets_1/window_w__curtain.png" id="16_7bt4t"]
 [ext_resource type="Texture2D" uid="uid://biesgr8vg24m1" path="res://Assets/Decorations/Deco/ppeeasdasdasdee.png" id="17_mt4ub"]
 

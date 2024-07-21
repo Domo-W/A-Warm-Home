@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://div2u7lqiorlc" path="res://Assets/Decorations/Assets_1/wallpaper&flooring.png" id="7_3huq3"]
 [ext_resource type="Texture2D" uid="uid://dnrou4aurrouw" path="res://Assets/Decorations/livingroom_attic_door/ceiling_light.png" id="8_75juo"]
 [ext_resource type="PackedScene" uid="uid://d26dwpph6etgm" path="res://Scripts/Taby Scripts/day_counter.tscn" id="9_tyrqe"]
-[ext_resource type="PackedScene" path="res://Scripts/Taby Scripts/trash_can.tscn" id="10_vcg84"]
+[ext_resource type="PackedScene" uid="uid://ildcguyssq7b" path="res://Scripts/Taby Scripts/trash_can.tscn" id="10_vcg84"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u7565"]
 size = Vector2(53, 60.5)
