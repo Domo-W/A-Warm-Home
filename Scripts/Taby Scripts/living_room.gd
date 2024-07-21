@@ -35,7 +35,7 @@ func _process(_delta):
 		print("touching grass")
 		if Global.day != 2:
 			outside_label.text = "I don't feel\nlike it..."
-		else:
+		elif not Global.has_done_task:
 			get_tree().change_scene_to_file("res://PrototypeLevels/lawn_mowing_minigame.tscn")
 	if Input.is_action_just_pressed("interact") and dad_interact:
 		dad_speech.text = "\"Not now,\nI'm busy.\""
