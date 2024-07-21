@@ -1,9 +1,40 @@
-[gd_scene load_steps=5 format=3 uid="uid://crmfsin4hce3g"]
+[gd_scene load_steps=10 format=3 uid="uid://crmfsin4hce3g"]
 
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/TrashManager.gd" id="1_30auw"]
+[ext_resource type="Texture2D" uid="uid://dnxuytr08pr54" path="res://Assets/GeoffAssets/binsMinigame-Sheet.png" id="2_3hjg4"]
 [ext_resource type="PackedScene" uid="uid://c5wly7ft6wgh5" path="res://Scripts/GeoffScripts/droppable_area.tscn" id="2_thcmf"]
-[ext_resource type="Texture2D" uid="uid://cdrm3ks1f10hq" path="res://Assets/GeoffAssets/bin.png" id="5_g3gku"]
-[ext_resource type="Texture2D" uid="uid://bak46m7w8x40b" path="res://Assets/GeoffAssets/recycle_bin.png" id="6_vnfxk"]
+[ext_resource type="Texture2D" uid="uid://2d13hlpg3uqc" path="res://Assets/Decorations/Assets_1/frontlawn/front_lawn.png" id="4_gh54c"]
+[ext_resource type="AudioStream" uid="uid://cq38b34ohmup6" path="res://Assets/SoundAssets/KiwiJamTaskMusicNormal.mp3" id="5_7sq85"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f34xd"]
+atlas = ExtResource("2_3hjg4")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pwl1l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f34xd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2jbo"]
+atlas = ExtResource("2_3hjg4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xh6sr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2jbo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="TrashPickupMinigame" type="Node2D"]
 
@@ -13,22 +44,39 @@
 unique_name_in_owner = true
 script = ExtResource("1_30auw")
 
-[node name="TrashSprite" type="Sprite2D" parent="."]
+[node name="TrashSprite" type="AnimatedSprite2D" parent="."]
 z_index = -1
-position = Vector2(-337, 64)
-scale = Vector2(2, 2)
-texture = ExtResource("5_g3gku")
+position = Vector2(-360, 64)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_pwl1l")
+autoplay = "default"
 
 [node name="Trash" parent="." instance=ExtResource("2_thcmf")]
 z_index = 1
-position = Vector2(-335, -18)
+position = Vector2(-357, -67)
+scale = Vector2(1.1, 1.1)
 
-[node name="RecSprite" type="Sprite2D" parent="."]
+[node name="RecSprite" type="AnimatedSprite2D" parent="."]
 z_index = -1
-position = Vector2(306, 81)
-scale = Vector2(2, 2)
-texture = ExtResource("6_vnfxk")
+position = Vector2(360, 64)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_xh6sr")
+autoplay = "default"
 
 [node name="Recycling" parent="." instance=ExtResource("2_thcmf")]
 z_index = 1
-position = Vector2(308, -1)
+position = Vector2(363, -67)
+scale = Vector2(1.1, 1.1)
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="FrontLawn" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(8, 595)
+scale = Vector2(18.7539, 18.7539)
+texture = ExtResource("4_gh54c")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_7sq85")
+autoplay = true

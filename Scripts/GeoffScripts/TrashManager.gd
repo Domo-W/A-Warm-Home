@@ -12,12 +12,12 @@ func _ready():
 			trash = trash_scene.instantiate()
 		else:
 			trash = rec_scene.instantiate()
-		trash.position = Vector2(randi_range(-210, 210), randi_range(0, 120))
+		trash.position = Vector2(randi_range(-150,150),randi_range(0,280))
 		add_child(trash)
 
 func throw_trash():
 	remaining_trash -= 1
 	print(str(remaining_trash))
 	if remaining_trash <= 0:
-		#return to the moving around the yard scene
-		pass
+		Global.has_done_task = true
+		get_tree().change_scene_to_file("res://PrototypeLevels/living_room.tscn")

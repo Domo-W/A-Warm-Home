@@ -5,7 +5,7 @@ extends MarginContainer
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
-	end_label.text = "You Cut " + str(attic_manager.move_count) + "\nBlades of Grass"
+	end_label.text = "Nice job!\nYou finished cleaning\nin " + str(attic_manager.move_count) + " moves"
 
 
 func _on_button_pressed():

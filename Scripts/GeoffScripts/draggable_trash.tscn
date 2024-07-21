@@ -1,17 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3ab03uirfoop"]
+[gd_scene load_steps=6 format=3 uid="uid://d3ab03uirfoop"]
 
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/draggable_trash.gd" id="1_p53op"]
-[ext_resource type="Texture2D" uid="uid://ruqa7p0ia8le" path="res://Assets/GeoffAssets/big_trash.png" id="2_0oi8x"]
+[ext_resource type="Texture2D" uid="uid://ugr4gv12tg3f" path="res://Assets/GeoffAssets/stufftothrow-Sheet-Sheet.png" id="2_rrvsr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rbrk"]
+atlas = ExtResource("2_rrvsr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y13wn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rbrk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ln2gn"]
-radius = 29.0689
+radius = 54.037
 
 [node name="DraggableTrash" type="Node2D"]
 script = ExtResource("1_p53op")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_0oi8x")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5, -12)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_y13wn")
 
 [node name="Area2D" type="Area2D" parent="."]
 
