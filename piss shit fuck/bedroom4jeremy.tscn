@@ -1,31 +1,16 @@
-[gd_scene load_steps=23 format=3 uid="uid://bi1oqyhj6cn0x"]
+[gd_scene load_steps=21 format=3 uid="uid://bvob5sv0ao22m"]
 
-[ext_resource type="Script" path="res://Scripts/Taby Scripts/bedroom.gd" id="1_uv7jl"]
-[ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_wcn88"]
-[ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="3_1mrvb"]
-[ext_resource type="Texture2D" uid="uid://bgyab0qqneo3s" path="res://Assets/Decorations/livingroom_attic_door/Door.png" id="3_wmlin"]
-[ext_resource type="Texture2D" uid="uid://bq8egwy6jkxde" path="res://Assets/Decorations/Assets_1/bedbottom.png" id="5_0fvuw"]
-[ext_resource type="Texture2D" uid="uid://2b1pwpwk8wwv" path="res://Assets/Decorations/Assets_1/bedtop.png" id="6_5o5me"]
-[ext_resource type="Texture2D" uid="uid://div2u7lqiorlc" path="res://Assets/Decorations/Assets_1/wallpaper&flooring.png" id="7_5hj0y"]
-[ext_resource type="Texture2D" uid="uid://d3a1k1gg7sofk" path="res://Assets/Decorations/Assets_1/bedside_table.png" id="7_b735n"]
-[ext_resource type="Texture2D" uid="uid://c67075wfrtmlv" path="res://Assets/Decorations/Assets_1/bookshelf_against_wall.png" id="8_8hjb7"]
-[ext_resource type="Texture2D" uid="uid://cvacvgcl1au6v" path="res://Assets/Decorations/Assets_1/posters_boys_room.png" id="9_yrcl4"]
-[ext_resource type="Texture2D" uid="uid://fv01pymh0sh3" path="res://Assets/Decorations/Assets_1/window_w__curtain.png" id="10_1wnig"]
-[ext_resource type="Texture2D" uid="uid://dvdspn071mmo1" path="res://Assets/Decorations/Assets_1/football.png" id="12_aevv8"]
-
-[sub_resource type="GDScript" id="GDScript_qtutp"]
-script/source = "extends Area2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
+[ext_resource type="Script" path="res://piss shit fuck/bedroom_4_jeremy.gd" id="1_too5c"]
+[ext_resource type="Texture2D" uid="uid://bgyab0qqneo3s" path="res://Assets/Decorations/livingroom_attic_door/Door.png" id="3_h4nag"]
+[ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="4_2k5or"]
+[ext_resource type="Texture2D" uid="uid://bq8egwy6jkxde" path="res://Assets/Decorations/Assets_1/bedbottom.png" id="5_75vgq"]
+[ext_resource type="Texture2D" uid="uid://2b1pwpwk8wwv" path="res://Assets/Decorations/Assets_1/bedtop.png" id="6_yr38u"]
+[ext_resource type="Texture2D" uid="uid://d3a1k1gg7sofk" path="res://Assets/Decorations/Assets_1/bedside_table.png" id="7_hhru7"]
+[ext_resource type="Texture2D" uid="uid://c67075wfrtmlv" path="res://Assets/Decorations/Assets_1/bookshelf_against_wall.png" id="8_g8icf"]
+[ext_resource type="Texture2D" uid="uid://cvacvgcl1au6v" path="res://Assets/Decorations/Assets_1/posters_boys_room.png" id="9_lm0wr"]
+[ext_resource type="Texture2D" uid="uid://fv01pymh0sh3" path="res://Assets/Decorations/Assets_1/window_w__curtain.png" id="10_o7qqm"]
+[ext_resource type="Texture2D" uid="uid://div2u7lqiorlc" path="res://Assets/Decorations/Assets_1/wallpaper&flooring.png" id="11_7xn4k"]
+[ext_resource type="Texture2D" uid="uid://dvdspn071mmo1" path="res://Assets/Decorations/Assets_1/football.png" id="12_upogg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lq1t"]
 size = Vector2(82, 59)
@@ -34,7 +19,7 @@ size = Vector2(82, 59)
 size = Vector2(22, 39)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hem0p"]
-texture = ExtResource("7_5hj0y")
+texture = ExtResource("11_7xn4k")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -87,31 +72,16 @@ normal = Vector2(-1, 0)
 size = Vector2(20, 2)
 
 [node name="Bedroom" type="Node2D"]
-script = ExtResource("1_uv7jl")
-
-[node name="stickplayer" parent="." instance=ExtResource("1_wcn88")]
-position = Vector2(37, 112)
-
-[node name="Camera2D" type="Camera2D" parent="stickplayer"]
-z_index = 1
-position = Vector2(5, -24)
-offset = Vector2(5, 0)
-zoom = Vector2(6, 6)
-limit_left = -225
-limit_top = 29
-limit_right = 65
-limit_bottom = 137
-editor_draw_limits = true
+script = ExtResource("1_too5c")
 
 [node name="HallwayDoor" type="Area2D" parent="."]
 z_index = 1
 position = Vector2(-181, 30)
-script = SubResource("GDScript_qtutp")
 
 [node name="Sprite2D" type="Sprite2D" parent="HallwayDoor"]
 z_index = 1
 position = Vector2(0, 62)
-texture = ExtResource("3_wmlin")
+texture = ExtResource("3_h4nag")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HallwayDoor"]
 position = Vector2(2, 46.5)
@@ -125,17 +95,19 @@ offset_top = 3.0
 offset_right = 82.0
 offset_bottom = 16.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_1mrvb")
+theme_override_fonts/font = ExtResource("4_2k5or")
 theme_override_font_sizes/font_size = 8
 text = "Hallway"
 horizontal_alignment = 1
+
+[node name="Marker2D" type="Marker2D" parent="HallwayDoor"]
 
 [node name="Decor" type="Node" parent="."]
 
 [node name="BedBottom" type="Sprite2D" parent="Decor"]
 z_index = 1
 position = Vector2(36, 116)
-texture = ExtResource("5_0fvuw")
+texture = ExtResource("5_75vgq")
 
 [node name="SleepCheck" type="Area2D" parent="Decor/BedBottom"]
 
@@ -150,7 +122,7 @@ offset_top = -9.0
 offset_right = -14.0
 offset_bottom = 14.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_1mrvb")
+theme_override_fonts/font = ExtResource("4_2k5or")
 theme_override_font_sizes/font_size = 8
 text = "\"I'm not ready
 to sleep yet\""
@@ -158,28 +130,28 @@ to sleep yet\""
 [node name="BedTop" type="Sprite2D" parent="Decor"]
 z_index = 5
 position = Vector2(36, 116)
-texture = ExtResource("6_5o5me")
+texture = ExtResource("6_yr38u")
 
 [node name="BedsideTable" type="Sprite2D" parent="Decor"]
 z_index = 1
 position = Vector2(66, 109)
-texture = ExtResource("7_b735n")
+texture = ExtResource("7_hhru7")
 
 [node name="Bookshelf" type="Sprite2D" parent="Decor"]
 position = Vector2(-2, 98)
-texture = ExtResource("8_8hjb7")
+texture = ExtResource("8_g8icf")
 
 [node name="Posters" type="Sprite2D" parent="Decor"]
 position = Vector2(-23, 72)
-texture = ExtResource("9_yrcl4")
+texture = ExtResource("9_lm0wr")
 
 [node name="Window" type="Sprite2D" parent="Decor"]
 position = Vector2(-112, 78)
-texture = ExtResource("10_1wnig")
+texture = ExtResource("10_o7qqm")
 
 [node name="Window2" type="Sprite2D" parent="Decor"]
 position = Vector2(-69, 78)
-texture = ExtResource("10_1wnig")
+texture = ExtResource("10_o7qqm")
 
 [node name="ControlsHint" type="Label" parent="."]
 visible = false
@@ -189,7 +161,7 @@ offset_top = 107.0
 offset_right = 58.0
 offset_bottom = 128.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_1mrvb")
+theme_override_fonts/font = ExtResource("4_2k5or")
 theme_override_font_sizes/font_size = 8
 text = "WASD to Move
 E to Interact"
@@ -203,7 +175,7 @@ layer_0/tile_data = PackedInt32Array(589822, 0, 5, 655358, 0, 6, 720894, 0, 7, 5
 
 [node name="Football" type="Sprite2D" parent="."]
 position = Vector2(-35, 98)
-texture = ExtResource("12_aevv8")
+texture = ExtResource("12_upogg")
 
 [node name="Walls" type="Node" parent="."]
 

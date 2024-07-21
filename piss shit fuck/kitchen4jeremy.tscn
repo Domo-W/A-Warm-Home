@@ -1,17 +1,17 @@
-[gd_scene load_steps=23 format=3 uid="uid://c5rhaa4de4ebp"]
+[gd_scene load_steps=23 format=3 uid="uid://c7bjyqtponevf"]
 
-[ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_8a4ks"]
-[ext_resource type="Script" path="res://Scripts/Taby Scripts/kitchen.gd" id="1_vr8le"]
-[ext_resource type="Texture2D" uid="uid://bgyab0qqneo3s" path="res://Assets/Decorations/livingroom_attic_door/Door.png" id="3_73wfx"]
-[ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="3_m14ld"]
-[ext_resource type="Texture2D" uid="uid://cbpaakn38axbn" path="res://Assets/Taby Assets/study.png" id="5_hqki2"]
-[ext_resource type="Texture2D" uid="uid://div2u7lqiorlc" path="res://Assets/Decorations/Assets_1/wallpaper&flooring.png" id="6_khv4v"]
-[ext_resource type="Texture2D" uid="uid://wustjokekyas" path="res://Assets/Decorations/kitchen_furniture/fridge.png" id="7_q1kbg"]
-[ext_resource type="Texture2D" uid="uid://bkmravxd0qjg6" path="res://Assets/Decorations/kitchen_furniture/knife_holder.png" id="8_n2tci"]
-[ext_resource type="Texture2D" uid="uid://dtil4kqo7meag" path="res://Assets/Decorations/kitchen_furniture/sink_counter.png" id="9_pdtne"]
-[ext_resource type="Texture2D" uid="uid://5ed6nt2lvcbf" path="res://Assets/Decorations/kitchen_furniture/clock.png" id="10_giotm"]
-[ext_resource type="Texture2D" uid="uid://da8ibdgnpbvgg" path="res://Assets/Decorations/CharacterSpriteSheets/mom-Sheet.png" id="11_dio0j"]
-[ext_resource type="Texture2D" uid="uid://xrm114p3ix85" path="res://Assets/Decorations/kitchen_furniture/stove.png" id="11_nyqio"]
+[ext_resource type="Script" path="res://Scripts/Taby Scripts/kitchen.gd" id="1_5edm2"]
+[ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="2_ps6m5"]
+[ext_resource type="Texture2D" uid="uid://bgyab0qqneo3s" path="res://Assets/Decorations/livingroom_attic_door/Door.png" id="3_ki6fu"]
+[ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="4_70ymr"]
+[ext_resource type="Texture2D" uid="uid://cbpaakn38axbn" path="res://Assets/Taby Assets/study.png" id="5_8nicf"]
+[ext_resource type="Texture2D" uid="uid://div2u7lqiorlc" path="res://Assets/Decorations/Assets_1/wallpaper&flooring.png" id="6_65k4r"]
+[ext_resource type="Texture2D" uid="uid://wustjokekyas" path="res://Assets/Decorations/kitchen_furniture/fridge.png" id="7_ppj8j"]
+[ext_resource type="Texture2D" uid="uid://bkmravxd0qjg6" path="res://Assets/Decorations/kitchen_furniture/knife_holder.png" id="8_quqf1"]
+[ext_resource type="Texture2D" uid="uid://dtil4kqo7meag" path="res://Assets/Decorations/kitchen_furniture/sink_counter.png" id="9_xurbv"]
+[ext_resource type="Texture2D" uid="uid://5ed6nt2lvcbf" path="res://Assets/Decorations/kitchen_furniture/clock.png" id="10_0n0cx"]
+[ext_resource type="Texture2D" uid="uid://da8ibdgnpbvgg" path="res://Assets/Decorations/CharacterSpriteSheets/mom-Sheet.png" id="11_r5ws1"]
+[ext_resource type="Texture2D" uid="uid://xrm114p3ix85" path="res://Assets/Decorations/kitchen_furniture/stove.png" id="12_cqa7j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejkyi"]
 size = Vector2(81, 72)
@@ -20,7 +20,7 @@ size = Vector2(81, 72)
 size = Vector2(104, 66)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_04kkk"]
-texture = ExtResource("6_khv4v")
+texture = ExtResource("6_65k4r")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -58,7 +58,7 @@ texture = ExtResource("6_khv4v")
 sources/0 = SubResource("TileSetAtlasSource_04kkk")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_85la2"]
-atlas = ExtResource("11_dio0j")
+atlas = ExtResource("11_r5ws1")
 region = Rect2(0, 0, 32, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a560w"]
@@ -84,18 +84,16 @@ normal = Vector2(-1, 0)
 normal = Vector2(1, 0)
 
 [node name="Kitchen" type="Node2D"]
-script = ExtResource("1_vr8le")
+script = ExtResource("1_5edm2")
 
-[node name="stickplayer" parent="." instance=ExtResource("1_8a4ks")]
+[node name="stickplayer" parent="." instance=ExtResource("2_ps6m5")]
 position = Vector2(-3, 12)
 
 [node name="Camera2D" type="Camera2D" parent="stickplayer"]
-position = Vector2(8, 28)
 zoom = Vector2(6, 6)
 limit_left = -290
 limit_right = 72
 limit_bottom = 40
-editor_draw_limits = true
 
 [node name="LivingRoomDoor" type="Area2D" parent="."]
 z_index = 1
@@ -103,7 +101,7 @@ position = Vector2(10, -10)
 
 [node name="Sprite2D" type="Sprite2D" parent="LivingRoomDoor"]
 position = Vector2(0, 29)
-texture = ExtResource("3_73wfx")
+texture = ExtResource("3_ki6fu")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LivingRoomDoor"]
@@ -116,10 +114,9 @@ offset_top = -31.0
 offset_right = 58.0
 offset_bottom = -8.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_m14ld")
+theme_override_fonts/font = ExtResource("4_70ymr")
 theme_override_font_sizes/font_size = 8
 text = "Living Room"
-metadata/_edit_use_anchors_ = true
 
 [node name="Homework" type="Area2D" parent="."]
 z_index = 1
@@ -127,7 +124,7 @@ position = Vector2(-200, -12)
 
 [node name="Sprite2D" type="Sprite2D" parent="Homework"]
 position = Vector2(-23, -11)
-texture = ExtResource("5_hqki2")
+texture = ExtResource("5_8nicf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Homework"]
 position = Vector2(-27, 10)
@@ -138,12 +135,11 @@ offset_left = -98.0
 offset_top = -23.0
 offset_right = 70.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_m14ld")
+theme_override_fonts/font = ExtResource("4_70ymr")
 theme_override_font_sizes/font_size = 8
 text = "\"Ready to do 
 homework?\""
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_1d6ge")
@@ -154,19 +150,19 @@ layer_0/tile_data = PackedInt32Array(131059, 196608, 5, 131060, 0, 5, 131061, 65
 
 [node name="Fridge" type="Sprite2D" parent="Decor"]
 position = Vector2(-66, 8)
-texture = ExtResource("7_q1kbg")
+texture = ExtResource("7_ppj8j")
 
 [node name="KnifeHolder" type="Sprite2D" parent="Decor"]
 position = Vector2(-86, -3)
-texture = ExtResource("8_n2tci")
+texture = ExtResource("8_quqf1")
 
 [node name="SinkCounter" type="Sprite2D" parent="Decor"]
 position = Vector2(-115, -7)
-texture = ExtResource("9_pdtne")
+texture = ExtResource("9_xurbv")
 
 [node name="Clock" type="Sprite2D" parent="Decor"]
 position = Vector2(-122, -6)
-texture = ExtResource("10_giotm")
+texture = ExtResource("10_0n0cx")
 
 [node name="Mom" type="AnimatedSprite2D" parent="Decor"]
 visible = false
@@ -203,7 +199,7 @@ shape = SubResource("WorldBoundaryShape2D_ro8pe")
 
 [node name="Stove" type="Sprite2D" parent="."]
 position = Vector2(-143, 2)
-texture = ExtResource("11_nyqio")
+texture = ExtResource("12_cqa7j")
 
 [connection signal="body_entered" from="LivingRoomDoor" to="." method="_on_living_room_door_body_entered"]
 [connection signal="body_exited" from="LivingRoomDoor" to="." method="_on_living_room_door_body_exited"]

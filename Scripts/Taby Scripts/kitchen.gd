@@ -11,7 +11,7 @@ var homework_interact = (Global.prev_room_x == -120)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	player.position.x = Global.prev_room_x
+	#player.position.x = Global.prev_room_x
 	living_room_label.visible = living_interact
 	homework_label.visible = homework_interact
 	if Global.day == 1:

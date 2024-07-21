@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://begymf74ytw6g"]
+
+[ext_resource type="Texture2D" uid="uid://q7341bxck5k8" path="res://Assets/Decorations/CharacterSpriteSheets/momster-Sheet.png" id="1_bnlkg"]
+[ext_resource type="Script" path="res://piss shit fuck/momster.gd" id="1_qqpn6"]
+
+[sub_resource type="Animation" id="Animation_8df45"]
+resource_name = "momster"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 3, 5]
+}
+
+[sub_resource type="Animation" id="Animation_ixy6t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ndcti"]
+_data = {
+"RESET": SubResource("Animation_ixy6t"),
+"momster": SubResource("Animation_8df45")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uijya"]
+size = Vector2(44, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1dj3"]
+size = Vector2(63, 58)
+
+[node name="Momster" type="CharacterBody2D"]
+script = ExtResource("1_qqpn6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bnlkg")
+hframes = 7
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ndcti")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 21)
+shape = SubResource("RectangleShape2D_uijya")
+
+[node name="LeaveRoomTimer" type="Timer" parent="."]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_k1dj3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

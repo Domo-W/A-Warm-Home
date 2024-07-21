@@ -5,12 +5,12 @@ extends Node2D
 @onready var bed_label = $Decor/BedBottom/SleepCheck/BedLabel
 @onready var controls_hint = $ControlsHint
 @onready var player = %stickplayer
+@onready var marker_2d = $HallwayDoor/Marker2D
 
 var exitable = false
 var sleepable = true
 
 func _ready():
-	#player.position.y = 114
 	if not Global.fresh_start:
 		player.position.x = -180
 	else:
@@ -24,17 +24,8 @@ func _process(_delta):
 	if Input.is_action_just_pressed("interact") and exitable:
 		print("bye")
 		
-		#change this
-		get_tree().change_scene_to_file("res://PrototypeLevels/hallway.tscn")
-	if Input.is_action_just_pressed("interact") and sleepable:
-		if not Global.has_done_task:
-			bed_label.visible = true
-			controls_hint.visible = false
-		else:
-			print("good day")
-			Global.fresh_start = true
-			Global.day += 1
-			get_tree().change_scene_to_file("res://PrototypeLevels/bedroom.tscn")
+		player.position = marker_2d.global_position
+
 
 func _on_hallway_door_body_entered(body):
 	if body == player:

@@ -1,16 +1,16 @@
-[gd_scene load_steps=26 format=3 uid="uid://dxbvsk80vjupt"]
+[gd_scene load_steps=26 format=3 uid="uid://b8x3pueemyvyo"]
 
-[ext_resource type="Script" path="res://Scripts/Taby Scripts/living_room.gd" id="1_0hlaw"]
-[ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_gib24"]
-[ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="3_pe3g1"]
-[ext_resource type="Texture2D" uid="uid://bkal7lr7kyede" path="res://Assets/Decorations/Assets_1/stairs.png" id="3_xogwo"]
-[ext_resource type="Texture2D" uid="uid://bgyab0qqneo3s" path="res://Assets/Decorations/livingroom_attic_door/Door.png" id="5_x3cqw"]
-[ext_resource type="Texture2D" uid="uid://div2u7lqiorlc" path="res://Assets/Decorations/Assets_1/wallpaper&flooring.png" id="6_waljw"]
-[ext_resource type="Texture2D" uid="uid://c4xi83w7ir3i8" path="res://Assets/Decorations/livingroom_attic_door/Couch.png" id="7_6ojsh"]
-[ext_resource type="Texture2D" uid="uid://bqo5j5cppejcy" path="res://Assets/Decorations/livingroom_attic_door/rug.png" id="8_mbjh5"]
-[ext_resource type="Texture2D" uid="uid://duqr08xhecs5t" path="res://Assets/Decorations/Assets_1/window.png" id="9_6sat7"]
-[ext_resource type="Texture2D" uid="uid://bpty26etbullq" path="res://Assets/Decorations/livingroom_attic_door/framed_photos.png" id="10_ltdel"]
-[ext_resource type="Texture2D" uid="uid://bd3mw0muh6d64" path="res://Assets/Decorations/CharacterSpriteSheets/dad-Sheet.png" id="11_dicnm"]
+[ext_resource type="Script" path="res://Scripts/Taby Scripts/living_room.gd" id="1_qefgl"]
+[ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="2_urscb"]
+[ext_resource type="Texture2D" uid="uid://bkal7lr7kyede" path="res://Assets/Decorations/Assets_1/stairs.png" id="3_vkdef"]
+[ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="4_j53uk"]
+[ext_resource type="Texture2D" uid="uid://bgyab0qqneo3s" path="res://Assets/Decorations/livingroom_attic_door/Door.png" id="5_06881"]
+[ext_resource type="Texture2D" uid="uid://div2u7lqiorlc" path="res://Assets/Decorations/Assets_1/wallpaper&flooring.png" id="6_fsh6p"]
+[ext_resource type="Texture2D" uid="uid://c4xi83w7ir3i8" path="res://Assets/Decorations/livingroom_attic_door/Couch.png" id="7_o1b3g"]
+[ext_resource type="Texture2D" uid="uid://bqo5j5cppejcy" path="res://Assets/Decorations/livingroom_attic_door/rug.png" id="8_a7rpp"]
+[ext_resource type="Texture2D" uid="uid://duqr08xhecs5t" path="res://Assets/Decorations/Assets_1/window.png" id="9_hd8fo"]
+[ext_resource type="Texture2D" uid="uid://bpty26etbullq" path="res://Assets/Decorations/livingroom_attic_door/framed_photos.png" id="10_s0ja1"]
+[ext_resource type="Texture2D" uid="uid://bd3mw0muh6d64" path="res://Assets/Decorations/CharacterSpriteSheets/dad-Sheet.png" id="11_p7f5e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qp1a4"]
 size = Vector2(102, 82.5)
@@ -22,7 +22,7 @@ size = Vector2(87, 98)
 size = Vector2(63, 82)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1soc8"]
-texture = ExtResource("6_waljw")
+texture = ExtResource("6_fsh6p")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -74,7 +74,7 @@ normal = Vector2(-1, 0)
 size = Vector2(98, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yahqm"]
-atlas = ExtResource("11_dicnm")
+atlas = ExtResource("11_p7f5e")
 region = Rect2(0, 0, 32, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gqrtq"]
@@ -95,9 +95,9 @@ size = Vector2(17.5, 62.5)
 size = Vector2(118.75, 78.4375)
 
 [node name="LivingRoom" type="Node2D"]
-script = ExtResource("1_0hlaw")
+script = ExtResource("1_qefgl")
 
-[node name="stickplayer" parent="." instance=ExtResource("1_gib24")]
+[node name="stickplayer" parent="." instance=ExtResource("2_urscb")]
 z_index = 3
 position = Vector2(18, 10)
 
@@ -114,7 +114,7 @@ position = Vector2(0, -11)
 
 [node name="Sprite2D" type="Sprite2D" parent="Stairs"]
 position = Vector2(6, -21)
-texture = ExtResource("3_xogwo")
+texture = ExtResource("3_vkdef")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs"]
 position = Vector2(1, 0.75)
@@ -125,12 +125,11 @@ offset_left = 7.0
 offset_top = -23.0
 offset_right = 103.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_pe3g1")
+theme_override_fonts/font = ExtResource("4_j53uk")
 theme_override_font_sizes/font_size = 8
 text = "Go up-
 stairs?"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="KitchenDoor" type="Area2D" parent="."]
 z_index = 1
@@ -138,7 +137,7 @@ position = Vector2(-113, -8)
 
 [node name="Sprite2D" type="Sprite2D" parent="KitchenDoor"]
 position = Vector2(-12, 27)
-texture = ExtResource("5_x3cqw")
+texture = ExtResource("5_06881")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenDoor"]
 position = Vector2(-20.5, -14)
@@ -150,10 +149,9 @@ offset_top = -31.0
 offset_right = 15.0
 offset_bottom = -8.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_pe3g1")
+theme_override_fonts/font = ExtResource("4_j53uk")
 theme_override_font_sizes/font_size = 8
 text = "Kitchen"
-metadata/_edit_use_anchors_ = true
 
 [node name="Outside" type="Area2D" parent="."]
 z_index = 1
@@ -161,7 +159,7 @@ position = Vector2(151, -17)
 
 [node name="Sprite2D" type="Sprite2D" parent="Outside"]
 position = Vector2(7, 36)
-texture = ExtResource("5_x3cqw")
+texture = ExtResource("5_06881")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Outside"]
@@ -174,13 +172,12 @@ offset_top = -37.0
 offset_right = 67.0
 offset_bottom = -14.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_pe3g1")
+theme_override_fonts/font = ExtResource("4_j53uk")
 theme_override_font_sizes/font_size = 8
 text = "Mow the 
 lawn?"
 horizontal_alignment = 1
 vertical_alignment = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_8aalc")
@@ -233,23 +230,23 @@ shape = SubResource("RectangleShape2D_b8das")
 
 [node name="Couch" type="Sprite2D" parent="Decor"]
 position = Vector2(-31, 78)
-texture = ExtResource("7_6ojsh")
+texture = ExtResource("7_o1b3g")
 
 [node name="Couch2" type="Sprite2D" parent="Decor/Couch"]
 position = Vector2(53, 0)
-texture = ExtResource("7_6ojsh")
+texture = ExtResource("7_o1b3g")
 
 [node name="Rug" type="Sprite2D" parent="Decor"]
 position = Vector2(-2, 118)
-texture = ExtResource("8_mbjh5")
+texture = ExtResource("8_a7rpp")
 
 [node name="Window" type="Sprite2D" parent="Decor"]
 position = Vector2(104, -8)
-texture = ExtResource("9_6sat7")
+texture = ExtResource("9_hd8fo")
 
 [node name="FramedPhotos" type="Sprite2D" parent="Decor"]
 position = Vector2(-84, -1)
-texture = ExtResource("10_ltdel")
+texture = ExtResource("10_s0ja1")
 
 [node name="Dad" type="AnimatedSprite2D" parent="Decor"]
 z_index = 4
@@ -261,6 +258,7 @@ sprite_frames = SubResource("SpriteFrames_gqrtq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decor/Dad/StaticBody2D"]
 position = Vector2(5.72205e-06, 0)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_5fc6t")
 
 [node name="DadSense" type="Area2D" parent="Decor/Dad"]
@@ -277,7 +275,7 @@ offset_top = -18.75
 offset_right = 129.75
 offset_bottom = 4.25001
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_pe3g1")
+theme_override_fonts/font = ExtResource("4_j53uk")
 theme_override_font_sizes/font_size = 8
 text = "\"Hey 
 son...\""

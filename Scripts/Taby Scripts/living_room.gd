@@ -14,7 +14,7 @@ var dad_interact = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	player.position.x = Global.prev_room_x
+	#player.position.x = Global.prev_room_x
 	stairs_label.visible = stairs_interact
 	kitchen_label.visible = kitchen_interact
 	outside_label.visible = outside_interact
