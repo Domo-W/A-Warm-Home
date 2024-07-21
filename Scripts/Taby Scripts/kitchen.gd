@@ -13,9 +13,11 @@ var trash = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if not homework_interact:
+		DoorClick.play()
 	if (Global.day < 3 or (Global.day == 3 and not Global.has_done_task)) and not HappyEnvironment.playing:
 		HappyEnvironment.playing = true
-	elif not ActualCreepy.playing:
+	elif Global.day >= 3 and not ActualCreepy.playing:
 		ActualCreepy.playing = true
 	if Global.trash_collected[5]:
 		trash_can.empty()

@@ -16,9 +16,10 @@ var trash = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	DoorClick.play()
 	if (Global.day < 3 or (Global.day == 3 and not Global.has_done_task)) and not HappyEnvironment.playing:
 		HappyEnvironment.playing = true
-	elif not ActualCreepy.playing:
+	elif Global.day >= 3 and not ActualCreepy.playing:
 		ActualCreepy.playing = true
 	player.position.x = Global.prev_room_x
 	stairs_label.visible = stairs_interact
