@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c1rnrdl3m4f4l" path="res://Assets/Taby Assets/whiteboard.png" id="2_xhjp6"]
 [ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="3_6nk3e"]
 [ext_resource type="FontFile" uid="uid://didr0ixt7d7pg" path="res://Assets/Taby Assets/PixelifySans-VariableFont_wght.ttf" id="3_lxwis"]
-[ext_resource type="AudioStream" uid="uid://ce7twlrque3k4" path="res://Assets/Sound Assets/Kiwi Jam Task Music Normal.mp3" id="5_7a1k8"]
+[ext_resource type="AudioStream" uid="uid://cq38b34ohmup6" path="res://Assets/SoundAssets/KiwiJamTaskMusicNormal.mp3" id="5_172li"]
 
 [node name="Homework" type="Control"]
 layout_mode = 3
@@ -134,7 +134,7 @@ theme_override_font_sizes/font_size = 30
 text = "Exit in shame"
 
 [node name="TaskMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_7a1k8")
+stream = ExtResource("5_172li")
 autoplay = true
 
 [connection signal="pressed" from="ButtonContainer/ButtonA" to="." method="_on_button_a_pressed"]

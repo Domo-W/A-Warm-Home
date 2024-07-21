@@ -6,6 +6,9 @@ var offset: Vector2
 var initialPos: Vector2
 @onready var trash_manager = $".."
 
+func _ready():
+	rotation_degrees = randi_range(0,360)
+
 func _process(delta):
 	if draggable:
 		if Input.is_action_just_pressed("click"):
@@ -21,7 +24,7 @@ func _process(delta):
 				trash_manager.throw_trash()
 				queue_free()
 			elif is_in_bin and str(bin_ref)[0] != "R":
-				tween.tween_property(self, "global_position", Vector2(randi_range(-150,150),randi_range(-150,150)),0.2).set_ease(Tween.EASE_OUT)
+				tween.tween_property(self, "global_position", Vector2(randi_range(-150,150),randi_range(0,280)),0.2).set_ease(Tween.EASE_OUT)
 
 func _on_area_2d_mouse_entered():
 	if not Global.is_dragging_trash:
