@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://fv01pymh0sh3" path="res://Assets/Decorations/Assets_1/window_w__curtain.png" id="10_1wnig"]
 [ext_resource type="PackedScene" uid="uid://d26dwpph6etgm" path="res://Scripts/Taby Scripts/day_counter.tscn" id="12_866lb"]
 [ext_resource type="Texture2D" uid="uid://dvdspn071mmo1" path="res://Assets/Decorations/Assets_1/football.png" id="12_aevv8"]
-[ext_resource type="PackedScene" path="res://Scripts/Taby Scripts/trash_can.tscn" id="14_p6qo7"]
+[ext_resource type="PackedScene" uid="uid://ildcguyssq7b" path="res://Scripts/Taby Scripts/trash_can.tscn" id="14_p6qo7"]
 [ext_resource type="Texture2D" uid="uid://03vacajjurw7" path="res://Assets/Decorations/Deco/blue_rug.png" id="15_nsqbr"]
 
 [sub_resource type="GDScript" id="GDScript_qtutp"]
