@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cin1cv3hc0dab"
+path="res://.godot/imported/SuccessSound.mp3-10a6abf4ac1007a9629694105f2d6b6e.mp3str"
+
+[deps]
+
+source_file="res://Assets/SoundAssets/Sound Effects/SuccessSound.mp3"
+dest_files=["res://.godot/imported/SuccessSound.mp3-10a6abf4ac1007a9629694105f2d6b6e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
