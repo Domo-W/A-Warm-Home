@@ -42,7 +42,7 @@ func _process(_delta):
 			print("good day")
 			Global.fresh_start = true
 			Global.day += 1
-			get_tree().change_scene_to_file("res://PrototypeLevels/bedroom.tscn")
+			get_tree().change_scene_to_file("res://PrototypeLevels/day_switch.tscn")
 	if Input.is_action_just_pressed("interact") and trashable:
 		Global.trash_collected[0] = true
 		print(Global.trash_collected)

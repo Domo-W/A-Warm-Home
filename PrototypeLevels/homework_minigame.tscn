@@ -5,8 +5,8 @@
 [ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="3_6nk3e"]
 [ext_resource type="FontFile" uid="uid://didr0ixt7d7pg" path="res://Assets/Taby Assets/PixelifySans-VariableFont_wght.ttf" id="3_lxwis"]
 [ext_resource type="AudioStream" uid="uid://cq38b34ohmup6" path="res://Assets/SoundAssets/KiwiJamTaskMusicNormal.mp3" id="5_172li"]
-[ext_resource type="AudioStream" uid="uid://d1yt0jngah4ob" path="res://Assets/SoundAssets/Sound Effects/SuccessSound.mp3" id="6_yvm3y"]
-[ext_resource type="AudioStream" uid="uid://dbrjbksequdh3" path="res://Assets/SoundAssets/Sound Effects/FailSound.mp3" id="7_nu7qg"]
+[ext_resource type="AudioStream" uid="uid://cin1cv3hc0dab" path="res://Assets/SoundAssets/Sound Effects/SuccessSound.mp3" id="6_yvm3y"]
+[ext_resource type="AudioStream" uid="uid://dgvja8pdopobq" path="res://Assets/SoundAssets/Sound Effects/FailSound.mp3" id="7_nu7qg"]
 
 [node name="Homework" type="Control"]
 layout_mode = 3
