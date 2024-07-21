@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c4n4u02gdfr45"
+path="res://.godot/imported/DoorClick.mp3-f30b33b9196ac77c77b4e856ba13d2c9.mp3str"
+
+[deps]
+
+source_file="res://Assets/SoundAssets/Sound Effects/DoorClick.mp3"
+dest_files=["res://.godot/imported/DoorClick.mp3-f30b33b9196ac77c77b4e856ba13d2c9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

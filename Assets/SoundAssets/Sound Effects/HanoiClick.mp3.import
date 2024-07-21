@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://be0x1mf3drykw"
+path="res://.godot/imported/HanoiClick.mp3-39222b28eeffbaefebafabdca412d267.mp3str"
+
+[deps]
+
+source_file="res://Assets/SoundAssets/Sound Effects/HanoiClick.mp3"
+dest_files=["res://.godot/imported/HanoiClick.mp3-39222b28eeffbaefebafabdca412d267.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

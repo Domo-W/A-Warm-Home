@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://da71rt8pt184s"
+path="res://.godot/imported/GlassPickUp.mp3-203adcbc99c283a585fa55ab2189c2b6.mp3str"
+
+[deps]
+
+source_file="res://Assets/SoundAssets/Sound Effects/GlassPickUp.mp3"
+dest_files=["res://.godot/imported/GlassPickUp.mp3-203adcbc99c283a585fa55ab2189c2b6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
