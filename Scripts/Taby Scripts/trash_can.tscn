@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://ildcguyssq7b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5lh5m"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"full",
+"speed": 5.0
+}]
+
+[node name="TrashCan" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_5lh5m")
+animation = &"empty"
