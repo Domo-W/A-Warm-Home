@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var player = %stickplayer
+@onready var player = $stickplayer
 @onready var bedroom_label = $BedroomDoor/BedroomLabel
 @onready var bedroom2_label = $Bedroom2Door/Bedroom2Label
 @onready var attic_label = $AtticEntrance/AtticLabel

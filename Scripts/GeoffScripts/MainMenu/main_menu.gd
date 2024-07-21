@@ -1,6 +1,7 @@
 extends MarginContainer
 
 func _ready():
+	ClickSound.play()
 	if not MenuMusic.playing:
 		MenuMusic.playing = true
 
