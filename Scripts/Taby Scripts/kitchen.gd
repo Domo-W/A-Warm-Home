@@ -5,12 +5,16 @@ extends Node2D
 @onready var living_room_label = $LivingRoomDoor/LivingRoomLabel
 @onready var homework_label = $Homework/HomeworkLabel
 @onready var mom = $Decor/Mom
+@onready var trash_can = $TrashCan
 
 var living_interact = (Global.prev_room_x == -130)
 var homework_interact = (Global.prev_room_x == -120)
+var trash = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if Global.trash_collected[5]:
+		trash_can.empty()
 	player.position.x = Global.prev_room_x
 	living_room_label.visible = living_interact
 	homework_label.visible = homework_interact
@@ -31,8 +35,10 @@ func _process(_delta):
 			homework_label.text = "I'll do it\nanother day..."
 		else:
 			get_tree().change_scene_to_file("res://PrototypeLevels/homework_minigame.tscn")
-
-
+	if Input.is_action_just_pressed("interact") and trash:
+		Global.trash_collected[5] = true
+		print(Global.trash_collected)
+		trash_can.empty()
 
 func _on_homework_body_entered(body):
 	if body == player:
@@ -56,3 +62,9 @@ func _on_living_room_door_body_exited(body):
 	if body == player:
 		living_interact = false
 		living_room_label.visible = false
+
+func _on_trash_area_body_entered(body):
+	trash = true
+
+func _on_trash_area_body_exited(body):
+	trash = false

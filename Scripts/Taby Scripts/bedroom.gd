@@ -5,12 +5,16 @@ extends Node2D
 @onready var bed_label = $Decor/BedBottom/SleepCheck/BedLabel
 @onready var controls_hint = $ControlsHint
 @onready var player = $stickplayer
+@onready var trash_can = $TrashCan
 
 var exitable = false
 var sleepable = true
+var trashable = false
 
 func _ready():
 	player.position.y = 114
+	if Global.trash_collected[0]:
+		trash_can.empty()
 	if not Global.fresh_start:
 		player.position.x = -180
 	else:
@@ -33,6 +37,10 @@ func _process(_delta):
 			Global.fresh_start = true
 			Global.day += 1
 			get_tree().change_scene_to_file("res://PrototypeLevels/bedroom.tscn")
+	if Input.is_action_just_pressed("interact") and trashable:
+		Global.trash_collected[0] = true
+		print(Global.trash_collected)
+		trash_can.empty()
 
 func _on_hallway_door_body_entered(body):
 	if body == player:
@@ -52,3 +60,9 @@ func _on_sleep_check_body_exited(body):
 	if body == player:
 		sleepable = false
 		bed_label.visible = false
+
+func _on_trash_area_body_entered(body):
+	trashable = true
+
+func _on_trash_area_body_exited(body):
+	trashable = false

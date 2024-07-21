@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bi1oqyhj6cn0x"]
+[gd_scene load_steps=27 format=3 uid="uid://bi1oqyhj6cn0x"]
 
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/bedroom.gd" id="1_uv7jl"]
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_wcn88"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://fv01pymh0sh3" path="res://Assets/Decorations/Assets_1/window_w__curtain.png" id="10_1wnig"]
 [ext_resource type="PackedScene" uid="uid://d26dwpph6etgm" path="res://Scripts/Taby Scripts/day_counter.tscn" id="12_866lb"]
 [ext_resource type="Texture2D" uid="uid://dvdspn071mmo1" path="res://Assets/Decorations/Assets_1/football.png" id="12_aevv8"]
+[ext_resource type="PackedScene" uid="uid://ildcguyssq7b" path="res://Scripts/Taby Scripts/trash_can.tscn" id="14_p6qo7"]
 
 [sub_resource type="GDScript" id="GDScript_qtutp"]
 script/source = "extends Area2D
@@ -29,7 +30,7 @@ func _process(delta):
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lq1t"]
-size = Vector2(82, 59)
+size = Vector2(55, 59)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mv6mx"]
 size = Vector2(22, 39)
@@ -90,6 +91,9 @@ normal = Vector2(-1, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t70ew"]
 size = Vector2(20, 2)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qj161"]
+size = Vector2(44, 66)
+
 [node name="Bedroom" type="Node2D"]
 script = ExtResource("1_uv7jl")
 
@@ -117,7 +121,7 @@ position = Vector2(0, 62)
 texture = ExtResource("3_wmlin")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HallwayDoor"]
-position = Vector2(2, 46.5)
+position = Vector2(-11.5, 46.5)
 shape = SubResource("RectangleShape2D_5lq1t")
 
 [node name="InteractHintLabel" type="Label" parent="HallwayDoor"]
@@ -253,7 +257,18 @@ shape = SubResource("RectangleShape2D_t70ew")
 
 [node name="DayCounter" parent="." instance=ExtResource("12_866lb")]
 
+[node name="TrashCan" parent="." instance=ExtResource("14_p6qo7")]
+position = Vector2(-147, 84)
+
+[node name="TrashArea" type="Area2D" parent="TrashCan"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashCan/TrashArea"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_qj161")
+
 [connection signal="body_entered" from="HallwayDoor" to="." method="_on_hallway_door_body_entered"]
 [connection signal="body_exited" from="HallwayDoor" to="." method="_on_hallway_door_body_exited"]
 [connection signal="body_entered" from="Decor/BedBottom/SleepCheck" to="." method="_on_sleep_check_body_entered"]
 [connection signal="body_exited" from="Decor/BedBottom/SleepCheck" to="." method="_on_sleep_check_body_exited"]
+[connection signal="body_entered" from="TrashCan/TrashArea" to="." method="_on_trash_area_body_entered"]
+[connection signal="body_exited" from="TrashCan/TrashArea" to="." method="_on_trash_area_body_exited"]
