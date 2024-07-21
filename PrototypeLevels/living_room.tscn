@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dxbvsk80vjupt"]
+[gd_scene load_steps=27 format=3 uid="uid://dxbvsk80vjupt"]
 
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/living_room.gd" id="1_0hlaw"]
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_gib24"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://duqr08xhecs5t" path="res://Assets/Decorations/Assets_1/window.png" id="9_6sat7"]
 [ext_resource type="Texture2D" uid="uid://bpty26etbullq" path="res://Assets/Decorations/livingroom_attic_door/framed_photos.png" id="10_ltdel"]
 [ext_resource type="Texture2D" uid="uid://bd3mw0muh6d64" path="res://Assets/Decorations/CharacterSpriteSheets/dad-Sheet.png" id="11_dicnm"]
+[ext_resource type="PackedScene" uid="uid://d26dwpph6etgm" path="res://Scripts/Taby Scripts/day_counter.tscn" id="12_jp5qv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qp1a4"]
 size = Vector2(102, 82.5)
@@ -279,6 +280,8 @@ theme_override_fonts/font = ExtResource("3_pe3g1")
 theme_override_font_sizes/font_size = 8
 text = "\"Hey 
 son...\""
+
+[node name="DayCounter" parent="." instance=ExtResource("12_jp5qv")]
 
 [connection signal="body_entered" from="Stairs" to="." method="_on_stairs_body_entered"]
 [connection signal="body_exited" from="Stairs" to="." method="_on_stairs_body_exited"]

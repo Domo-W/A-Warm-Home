@@ -3,19 +3,33 @@
 [ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="1_ir5mm"]
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/day_counter.gd" id="1_wowpw"]
 
-[node name="DayCounter" type="ColorRect"]
-offset_top = -3.0
-offset_right = 117.0
-offset_bottom = 20.0
-color = Color(0.571535, 0.387811, 0.262026, 1)
+[node name="DayCounter" type="CanvasLayer"]
 script = ExtResource("1_wowpw")
 
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -54.0
+offset_right = 207.0
+grow_vertical = 0
+color = Color(0.785192, 0.559533, 0.285026, 1)
+
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 117.0
-offset_bottom = 23.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -575.0
+offset_top = 270.0
+offset_right = -369.0
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_ir5mm")
+theme_override_font_sizes/font_size = 32
 text = "Day: X"
 horizontal_alignment = 1
 vertical_alignment = 1
