@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://chks8b2pnxohn"]
+[gd_scene load_steps=4 format=3 uid="uid://chks8b2pnxohn"]
 
-[ext_resource type="Texture2D" uid="uid://cdrm3ks1f10hq" path="res://Assets/GeoffAssets/bin.png" id="1_52y7p"]
-[ext_resource type="Texture2D" uid="uid://bak46m7w8x40b" path="res://Assets/GeoffAssets/recycle_bin.png" id="1_dxq4w"]
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/MainMenu/main_menu.gd" id="1_io3fj"]
 [ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="2_5unqs"]
+[ext_resource type="Texture2D" uid="uid://b456132frr8x0" path="res://Assets/GeoffAssets/pictureFrame.png" id="3_b2iwl"]
 
 [node name="MainMenu" type="MarginContainer"]
 anchors_preset = 15
@@ -26,23 +25,28 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 15
 
-[node name="Logo2" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+[node name="Logo2" type="Label" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_dxq4w")
+theme_override_fonts/font = ExtResource("2_5unqs")
+theme_override_font_sizes/font_size = 48
+text = "A Warm Home"
 
 [node name="New" type="Button" parent="HBoxContainer/VBoxContainer"]
+z_index = 10
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_5unqs")
 theme_override_font_sizes/font_size = 32
 text = "New Game"
 
 [node name="DayPick" type="Button" parent="HBoxContainer/VBoxContainer"]
+z_index = 10
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_5unqs")
 theme_override_font_sizes/font_size = 32
 text = "Day Select"
 
 [node name="Options" type="Button" parent="HBoxContainer/VBoxContainer"]
+z_index = 10
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_5unqs")
 theme_override_font_sizes/font_size = 32
@@ -66,7 +70,7 @@ size_flags_horizontal = 3
 
 [node name="Logo" type="TextureRect" parent="HBoxContainer/CenterContainer"]
 layout_mode = 2
-texture = ExtResource("1_52y7p")
+texture = ExtResource("3_b2iwl")
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/New" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/DayPick" to="." method="_on_day_pick_pressed"]

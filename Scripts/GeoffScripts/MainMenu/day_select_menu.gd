@@ -30,4 +30,4 @@ func _on_day_5_pressed():
 
 
 func _on_return_pressed():
-	get_tree().change_scene_to_file("res://PrototypeLevels/main_menu.tscn")
+	get_tree().change_scene_to_file("res://PrototypeLevels/real_main_menu.tscn")

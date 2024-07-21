@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cw58w2k2i75i3"]
+[gd_scene load_steps=29 format=3 uid="uid://cw58w2k2i75i3"]
 
 [ext_resource type="PackedScene" uid="uid://c08h2lhpkvxht" path="res://Scripts/GeoffScripts/lawn_player.tscn" id="1_j8jey"]
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/lawn_game_manager.gd" id="1_t6kvw"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/LawnEnd.gd" id="7_rcidv"]
 [ext_resource type="Texture2D" uid="uid://bd3mw0muh6d64" path="res://Assets/Decorations/CharacterSpriteSheets/dad-Sheet.png" id="8_6io06"]
 [ext_resource type="Texture2D" uid="uid://dywfphj7i6b5h" path="res://Assets/Decorations/CharacterSpriteSheets/lady-Sheet.png" id="9_cgu3s"]
+[ext_resource type="Texture2D" uid="uid://c7wxsovuv81m4" path="res://Assets/GeoffAssets/heart.png" id="10_djx3m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iog14"]
 texture = ExtResource("7_nufc6")
@@ -107,6 +108,69 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_lf0tu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-158, -21)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Lady/CPUParticles2D:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_o1en0"]
 resource_name = "bad"
 length = 30.0
@@ -158,56 +222,17 @@ tracks/3/keys = {
 "update": 1,
 "values": [false, true]
 }
-
-[sub_resource type="Animation" id="Animation_lf0tu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Lady/CPUParticles2D:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(18, 19),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"default"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-158, -21)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:flip_h")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sv8an"]
@@ -230,6 +255,10 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="Curve" id="Curve_n5pmb"]
+_data = [Vector2(0, 1), 0.0, -0.367881, 0, 1, Vector2(0.820611, 0.698113), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.89161, 0.0, 1, 0]
+point_count = 3
 
 [node name="LawnMowingMinigame" type="Node2D"]
 script = ExtResource("1_t6kvw")
@@ -254,6 +283,7 @@ autostart = true
 script = ExtResource("4_uvx30")
 
 [node name="Label" type="Label" parent="GrassSpawner"]
+z_index = 5
 offset_left = 47.0
 offset_top = -78.0
 offset_right = 170.0
@@ -262,14 +292,14 @@ theme_override_colors/font_color = Color(0.113725, 0.572549, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_tcdom")
 theme_override_font_sizes/font_size = 32
-text = "000"
+text = "0"
 
 [node name="CountdownTimer" type="Node2D" parent="."]
 position = Vector2(-1, -8)
 script = ExtResource("6_sc2lr")
 
 [node name="CountDownLabel" type="Label" parent="CountdownTimer"]
-z_index = 1
+z_index = 5
 offset_left = -137.0
 offset_top = -69.0
 offset_right = 151.0
@@ -380,6 +410,19 @@ scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_lxvgy")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="NPCs/Lady"]
+position = Vector2(-12.5, -16.25)
+emitting = false
+amount = 20
+lifetime = 5.0
+explosiveness = 1.0
+texture = ExtResource("10_djx3m")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+scale_amount_min = 0.1
+scale_amount_max = 0.3
+scale_amount_curve = SubResource("Curve_n5pmb")
 
 [connection signal="timeout" from="GrassSpawner" to="GrassSpawner" method="_on_timeout"]
 [connection signal="timeout" from="CountdownTimer/Timer" to="CountdownTimer" method="_on_timer_timeout"]
