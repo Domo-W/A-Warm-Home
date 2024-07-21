@@ -1,7 +1,7 @@
 extends MarginContainer
 
 func _on_new_game_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://PrototypeLevels/bedroom.tscn")
 
 
 func _on_day_pick_pressed():
