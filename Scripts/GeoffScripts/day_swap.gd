@@ -1,4 +1,7 @@
 extends Timer
 
 func _on_timeout():
-	get_tree().change_scene_to_file("res://PrototypeLevels/bedroom.tscn")
+	if Global.day != 5:
+		get_tree().change_scene_to_file("res://PrototypeLevels/bedroom.tscn")
+	else:
+		get_tree().change_scene_to_file("res://piss shit fuck/mom_boss_fight_day_5.tscn")

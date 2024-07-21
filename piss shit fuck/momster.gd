@@ -74,4 +74,4 @@ func randomize_wander():
 
 func _on_area_2d_body_entered(body):
 	if "player" in body.name:
-		get_tree().change_scene_to_file("res://PrototypeLevels/main_menu.tscn")
+		get_tree().change_scene_to_file("res://PrototypeLevels/real_main_menu.tscn")
