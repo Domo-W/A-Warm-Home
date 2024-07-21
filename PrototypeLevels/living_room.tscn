@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dxbvsk80vjupt"]
+[gd_scene load_steps=30 format=3 uid="uid://dxbvsk80vjupt"]
 
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/living_room.gd" id="1_0hlaw"]
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_gib24"]
@@ -10,8 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://bqo5j5cppejcy" path="res://Assets/Decorations/livingroom_attic_door/rug.png" id="8_mbjh5"]
 [ext_resource type="Texture2D" uid="uid://duqr08xhecs5t" path="res://Assets/Decorations/Assets_1/window.png" id="9_6sat7"]
 [ext_resource type="Texture2D" uid="uid://bpty26etbullq" path="res://Assets/Decorations/livingroom_attic_door/framed_photos.png" id="10_ltdel"]
-[ext_resource type="Texture2D" uid="uid://bd3mw0muh6d64" path="res://Assets/Decorations/CharacterSpriteSheets/dad-Sheet.png" id="11_dicnm"]
+[ext_resource type="Texture2D" uid="uid://cjetesntggqpv" path="res://Assets/Decorations/CharacterSpriteSheets/dadtop-Sheet.png" id="11_fiw6m"]
 [ext_resource type="PackedScene" uid="uid://d26dwpph6etgm" path="res://Scripts/Taby Scripts/day_counter.tscn" id="12_4dfcw"]
+[ext_resource type="Texture2D" uid="uid://da52wrua1tlwq" path="res://Assets/Decorations/CharacterSpriteSheets/dadbottom-Sheet.png" id="12_tg0y4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qp1a4"]
 size = Vector2(102, 82.5)
@@ -74,15 +75,15 @@ normal = Vector2(-1, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8das"]
 size = Vector2(98, 31)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yahqm"]
-atlas = ExtResource("11_dicnm")
-region = Rect2(0, 0, 32, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_utnam"]
+atlas = ExtResource("11_fiw6m")
+region = Rect2(0, 0, 25, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gqrtq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yahqm")
+"texture": SubResource("AtlasTexture_utnam")
 }],
 "loop": true,
 "name": &"default",
@@ -90,10 +91,25 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fc6t"]
-size = Vector2(17.5, 62.5)
+size = Vector2(21.25, 61.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2fndl"]
 size = Vector2(118.75, 78.4375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tnp2"]
+atlas = ExtResource("12_tg0y4")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2o8xu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tnp2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="LivingRoom" type="Node2D"]
 script = ExtResource("1_0hlaw")
@@ -250,15 +266,16 @@ position = Vector2(-84, -1)
 texture = ExtResource("10_ltdel")
 
 [node name="Dad" type="AnimatedSprite2D" parent="Decor"]
-z_index = 4
-position = Vector2(22, 68)
+z_index = 10
+position = Vector2(22, 65)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_gqrtq")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Decor/Dad"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decor/Dad/StaticBody2D"]
-position = Vector2(5.72205e-06, 0)
+position = Vector2(1.875, 11.875)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_5fc6t")
 
 [node name="DadSense" type="Area2D" parent="Decor/Dad"]
@@ -279,6 +296,11 @@ theme_override_fonts/font = ExtResource("3_pe3g1")
 theme_override_font_sizes/font_size = 8
 text = "\"Hey 
 son...\""
+
+[node name="DadBottom" type="AnimatedSprite2D" parent="Decor"]
+z_index = 1
+position = Vector2(24, 68)
+sprite_frames = SubResource("SpriteFrames_2o8xu")
 
 [node name="DayCounter" parent="." instance=ExtResource("12_4dfcw")]
 

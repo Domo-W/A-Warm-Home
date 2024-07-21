@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bi1oqyhj6cn0x"]
+[gd_scene load_steps=25 format=3 uid="uid://bi1oqyhj6cn0x"]
 
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/bedroom.gd" id="1_uv7jl"]
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_wcn88"]
