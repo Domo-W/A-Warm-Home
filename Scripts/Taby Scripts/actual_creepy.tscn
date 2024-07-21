@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://duyxr364rwjm5"]
+
+[ext_resource type="AudioStream" uid="uid://cf8h07xsxgtvu" path="res://Assets/SoundAssets/KiwiJamActualCreepyCutsceneMusic.mp3" id="1_4l0ik"]
+
+[node name="ActualCreepy" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_4l0ik")
+volume_db = -5.0
+bus = &"Music"

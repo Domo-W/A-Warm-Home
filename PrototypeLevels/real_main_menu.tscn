@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://bha8ec0rxbxlk"]
+
+[ext_resource type="PackedScene" uid="uid://chks8b2pnxohn" path="res://PrototypeLevels/main_menu.tscn" id="1_yvxpk"]
+[ext_resource type="Texture2D" uid="uid://dibuvo6xrl88y" path="res://Assets/GeoffAssets/epic.png" id="2_xgfcx"]
+
+[node name="RealMainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = -11.0
+offset_top = -14.0
+offset_right = 1166.0
+offset_bottom = 660.0
+texture = ExtResource("2_xgfcx")
+
+[node name="MainMenu" parent="." instance=ExtResource("1_yvxpk")]
+z_index = 5
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 1
+grow_vertical = 1

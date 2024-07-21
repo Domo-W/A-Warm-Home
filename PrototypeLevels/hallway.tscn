@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dw7isrcpo28gr"]
+[gd_scene load_steps=23 format=3 uid="uid://dw7isrcpo28gr"]
 
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/hallway.gd" id="1_e8e6x"]
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="2_4qndj"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bkal7lr7kyede" path="res://Assets/Decorations/Assets_1/stairs.png" id="6_amb4c"]
 [ext_resource type="Texture2D" uid="uid://div2u7lqiorlc" path="res://Assets/Decorations/Assets_1/wallpaper&flooring.png" id="7_3huq3"]
 [ext_resource type="Texture2D" uid="uid://dnrou4aurrouw" path="res://Assets/Decorations/livingroom_attic_door/ceiling_light.png" id="8_75juo"]
+[ext_resource type="PackedScene" uid="uid://d26dwpph6etgm" path="res://Scripts/Taby Scripts/day_counter.tscn" id="9_tyrqe"]
+[ext_resource type="PackedScene" uid="uid://ildcguyssq7b" path="res://Scripts/Taby Scripts/trash_can.tscn" id="10_vcg84"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u7565"]
 size = Vector2(53, 60.5)
@@ -16,10 +18,10 @@ size = Vector2(53, 60.5)
 size = Vector2(53.5, 59)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xlabb"]
-size = Vector2(99, 84)
+size = Vector2(97, 72)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eojqk"]
-size = Vector2(64, 63)
+size = Vector2(44, 57)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vwjh5"]
 
@@ -69,6 +71,12 @@ texture = ExtResource("7_3huq3")
 
 [sub_resource type="TileSet" id="TileSet_mqlax"]
 sources/0 = SubResource("TileSetAtlasSource_r2mft")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvkkc"]
+size = Vector2(50, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_okmww"]
+size = Vector2(70, 62)
 
 [node name="Hallway" type="Node2D"]
 script = ExtResource("1_e8e6x")
@@ -140,7 +148,7 @@ position = Vector2(7, -65)
 texture = ExtResource("5_qbltg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AtticEntrance"]
-position = Vector2(1.5, 10)
+position = Vector2(2.5, 4)
 shape = SubResource("RectangleShape2D_xlabb")
 
 [node name="AtticLabel" type="Label" parent="AtticEntrance"]
@@ -165,7 +173,7 @@ position = Vector2(32, 47)
 texture = ExtResource("6_amb4c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs"]
-position = Vector2(13, 3.5)
+position = Vector2(3, 6.5)
 shape = SubResource("RectangleShape2D_eojqk")
 
 [node name="StairsLabel" type="Label" parent="Stairs"]
@@ -220,6 +228,26 @@ texture = ExtResource("8_75juo")
 position = Vector2(-158, 5)
 texture = ExtResource("8_75juo")
 
+[node name="DayCounter" parent="." instance=ExtResource("9_tyrqe")]
+
+[node name="TrashCan" parent="." instance=ExtResource("10_vcg84")]
+position = Vector2(103, 64)
+
+[node name="TrashArea" type="Area2D" parent="TrashCan"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashCan/TrashArea"]
+position = Vector2(-7, 1)
+shape = SubResource("RectangleShape2D_bvkkc")
+
+[node name="TrashCan2" parent="." instance=ExtResource("10_vcg84")]
+position = Vector2(-308, 66)
+
+[node name="TrashArea2" type="Area2D" parent="TrashCan2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashCan2/TrashArea2"]
+position = Vector2(5, -3)
+shape = SubResource("RectangleShape2D_okmww")
+
 [connection signal="body_entered" from="BedroomDoor" to="." method="_on_bedroom_door_body_entered"]
 [connection signal="body_exited" from="BedroomDoor" to="." method="_on_bedroom_door_body_exited"]
 [connection signal="body_entered" from="Bedroom2Door" to="." method="_on_bedroom_2_door_body_entered"]
@@ -228,3 +256,7 @@ texture = ExtResource("8_75juo")
 [connection signal="body_exited" from="AtticEntrance" to="." method="_on_attic_entrance_body_exited"]
 [connection signal="body_entered" from="Stairs" to="." method="_on_stairs_body_entered"]
 [connection signal="body_exited" from="Stairs" to="." method="_on_stairs_body_exited"]
+[connection signal="body_entered" from="TrashCan/TrashArea" to="." method="_on_trash_area_body_entered"]
+[connection signal="body_exited" from="TrashCan/TrashArea" to="." method="_on_trash_area_body_exited"]
+[connection signal="body_entered" from="TrashCan2/TrashArea2" to="." method="_on_trash_area_2_body_entered"]
+[connection signal="body_exited" from="TrashCan2/TrashArea2" to="." method="_on_trash_area_2_body_exited"]

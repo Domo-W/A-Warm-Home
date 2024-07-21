@@ -4,7 +4,7 @@ extends Node2D
 var is_dragging_trash = false
 
 var is_dragging_box = false
-#ADD TRASH ARRAY
+
 #taby
 var fresh_start = true
 var prev_room_x = 80

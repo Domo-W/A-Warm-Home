@@ -1,11 +1,266 @@
-[gd_scene load_steps=7 format=3 uid="uid://cw58w2k2i75i3"]
+[gd_scene load_steps=31 format=3 uid="uid://cw58w2k2i75i3"]
 
 [ext_resource type="PackedScene" uid="uid://c08h2lhpkvxht" path="res://Scripts/GeoffScripts/lawn_player.tscn" id="1_j8jey"]
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/lawn_game_manager.gd" id="1_t6kvw"]
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/GrassSpawner.gd" id="4_uvx30"]
 [ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="5_tcdom"]
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/CountdownTimer.gd" id="6_sc2lr"]
+[ext_resource type="Texture2D" uid="uid://2d13hlpg3uqc" path="res://Assets/Decorations/Assets_1/frontlawn/front_lawn.png" id="7_nufc6"]
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/LawnEnd.gd" id="7_rcidv"]
+[ext_resource type="Texture2D" uid="uid://bd3mw0muh6d64" path="res://Assets/Decorations/CharacterSpriteSheets/dad-Sheet.png" id="8_6io06"]
+[ext_resource type="Texture2D" uid="uid://dywfphj7i6b5h" path="res://Assets/Decorations/CharacterSpriteSheets/lady-Sheet.png" id="9_cgu3s"]
+[ext_resource type="Texture2D" uid="uid://c7wxsovuv81m4" path="res://Assets/GeoffAssets/heart.png" id="10_djx3m"]
+[ext_resource type="AudioStream" uid="uid://cq38b34ohmup6" path="res://Assets/SoundAssets/KiwiJamTaskMusicNormal.mp3" id="11_sofr3"]
+[ext_resource type="AudioStream" uid="uid://d02cqu4r1rigr" path="res://Assets/SoundAssets/Sound Effects/LawnMower.mp3" id="12_osmfy"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iog14"]
+texture = ExtResource("7_nufc6")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_d6hrn"]
+sources/0 = SubResource("TileSetAtlasSource_iog14")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4fdot"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qds06"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oxwnc"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g5xtc"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msobh"]
+atlas = ExtResource("8_6io06")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmc4y"]
+atlas = ExtResource("8_6io06")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yjwc"]
+atlas = ExtResource("8_6io06")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq2gu"]
+atlas = ExtResource("8_6io06")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xbjk"]
+atlas = ExtResource("8_6io06")
+region = Rect2(224, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0br3q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msobh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmc4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yjwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vq2gu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xbjk")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_lf0tu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-158, -21)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Lady/CPUParticles2D:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_o1en0"]
+resource_name = "bad"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10, 17, 23),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [&"default", &"walking", &"default", &"walking"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(10, 17, 23, 30),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-162, -21), Vector2(104, -21), Vector2(104, -21), Vector2(-161, -21)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 23),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Lady/CPUParticles2D:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(18, 19),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sv8an"]
+_data = {
+"RESET": SubResource("Animation_lf0tu"),
+"bad": SubResource("Animation_o1en0")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikpee"]
+atlas = ExtResource("9_cgu3s")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lxvgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikpee")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve" id="Curve_n5pmb"]
+_data = [Vector2(0, 1), 0.0, -0.367881, 0, 1, Vector2(0.820611, 0.698113), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.89161, 0.0, 1, 0]
+point_count = 3
 
 [node name="LawnMowingMinigame" type="Node2D"]
 script = ExtResource("1_t6kvw")
@@ -17,8 +272,10 @@ script = ExtResource("1_t6kvw")
 [node name="LawnPlayer" parent="." instance=ExtResource("1_j8jey")]
 unique_name_in_owner = true
 z_index = 10
+position = Vector2(0, 25)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+z_index = 1
 zoom = Vector2(4, 4)
 
 [node name="GrassSpawner" type="Timer" parent="."]
@@ -28,6 +285,7 @@ autostart = true
 script = ExtResource("4_uvx30")
 
 [node name="Label" type="Label" parent="GrassSpawner"]
+z_index = 5
 offset_left = 47.0
 offset_top = -78.0
 offset_right = 170.0
@@ -36,13 +294,14 @@ theme_override_colors/font_color = Color(0.113725, 0.572549, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_tcdom")
 theme_override_font_sizes/font_size = 32
-text = "000"
+text = "0"
 
 [node name="CountdownTimer" type="Node2D" parent="."]
 position = Vector2(-1, -8)
 script = ExtResource("6_sc2lr")
 
 [node name="CountDownLabel" type="Label" parent="CountdownTimer"]
+z_index = 5
 offset_left = -137.0
 offset_top = -69.0
 offset_right = 151.0
@@ -99,6 +358,81 @@ z_index = 25
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_tcdom")
 text = "Go Back Inside"
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(5, -33)
+tile_set = SubResource("TileSet_d6hrn")
+format = 2
+layer_0/tile_data = PackedInt32Array(131062, 0, 3, 196598, 0, 4, 262134, 0, 5, 327670, 0, 6, 393206, 0, 7, 131063, 65536, 3, 196599, 65536, 4, 262135, 65536, 5, 327671, 65536, 6, 393207, 65536, 7, 131064, 131072, 3, 196600, 131072, 4, 262136, 131072, 5, 327672, 131072, 6, 393208, 131072, 7, 131065, 196608, 3, 196601, 196608, 4, 262137, 196608, 5, 327673, 196608, 6, 393209, 196608, 7, 131066, 0, 3, 196602, 0, 4, 262138, 0, 5, 327674, 0, 6, 393210, 0, 7, 131067, 65536, 3, 196603, 65536, 4, 262139, 65536, 5, 327675, 65536, 6, 393211, 65536, 7, 131068, 131072, 3, 196604, 131072, 4, 262140, 131072, 5, 327676, 131072, 6, 393212, 131072, 7, 131069, 196608, 3, 196605, 196608, 4, 262141, 196608, 5, 327677, 196608, 6, 393213, 196608, 7, 131070, 0, 3, 196606, 0, 4, 262142, 0, 5, 327678, 0, 6, 393214, 0, 7, 131071, 65536, 3, 196607, 65536, 4, 262143, 65536, 5, 327679, 65536, 6, 393215, 65536, 7, 65536, 131072, 3, 131072, 131072, 4, 196608, 131072, 5, 262144, 131072, 6, 327680, 131072, 7, 65537, 196608, 3, 131073, 196608, 4, 196609, 196608, 5, 262145, 196608, 6, 327681, 196608, 7, 65538, 0, 3, 131074, 0, 4, 196610, 0, 5, 262146, 0, 6, 327682, 0, 7, 65539, 65536, 3, 131075, 65536, 4, 196611, 65536, 5, 262147, 65536, 6, 327683, 65536, 7, 65540, 131072, 3, 131076, 131072, 4, 196612, 131072, 5, 262148, 131072, 6, 327684, 131072, 7, 65541, 196608, 3, 131077, 196608, 4, 196613, 196608, 5, 262149, 196608, 6, 327685, 196608, 7, 65542, 0, 3, 131078, 0, 4, 196614, 0, 5, 262150, 0, 6, 327686, 0, 7, 65543, 65536, 3, 131079, 65536, 4, 196615, 65536, 5, 262151, 65536, 6, 327687, 65536, 7, 65544, 131072, 3, 131080, 131072, 4, 196616, 131072, 5, 262152, 131072, 6, 327688, 131072, 7, 65545, 196608, 3, 131081, 196608, 4, 196617, 196608, 5, 262153, 196608, 6, 327689, 196608, 7, 65526, 0, 2, 65527, 65536, 2, 65528, 131072, 2, 65529, 196608, 2, 65530, 0, 2, 65531, 65536, 2, 65532, 131072, 2, 65533, 196608, 2, 65534, 0, 2, 65535, 65536, 2, 0, 131072, 2, 1, 196608, 2, 2, 0, 2, 3, 65536, 2, 4, 131072, 2, 5, 196608, 2, 6, 0, 2, 7, 65536, 2, 8, 131072, 2, 9, 196608, 2, -10, 0, 1, -9, 65536, 1, -8, 131072, 1, -7, 196608, 1, -6, 0, 1, -5, 65536, 1, -4, 131072, 1, -3, 196608, 1, -2, 0, 1, -1, 65536, 1, -65536, 131072, 1, -65535, 196608, 1, -65534, 0, 1, -65533, 65536, 1, -65532, 131072, 1, -65531, 196608, 1, -65530, 0, 1, -65529, 65536, 1, -65528, 131072, 1, -65527, 0, 1, -65546, 0, 1, -65545, 65536, 1, -65544, 131072, 1, -65543, 196608, 1, -65542, 0, 1, -65541, 65536, 1, -65540, 131072, 1, -65539, 196608, 1, -65538, 0, 1, -65537, 65536, 1, -131072, 131072, 1, -131071, 196608, 1, -131070, 0, 1, -131069, 65536, 1, -131068, 131072, 1, -131067, 196608, 1, -131066, 0, 1, -131065, 65536, 1, -131064, 131072, 1, -131063, 196608, 1, -131082, 0, 0, -131081, 65536, 0, -131080, 131072, 0, -131079, 196608, 0, -131078, 0, 0, -131077, 65536, 0, -131076, 131072, 0, -131075, 196608, 0, -131074, 0, 0, -131073, 65536, 0, -196608, 131072, 0, -196607, 196608, 0, -196606, 0, 0, -196605, 65536, 0, -196604, 131072, 0, -196603, 196608, 0, -196602, 0, 0, -196601, 65536, 0, -196600, 131072, 0, -196599, 196608, 0, 458742, 0, 4, 458743, 65536, 4, 458744, 131072, 4, 458745, 196608, 4, 524278, 0, 4, 524279, 65536, 4, 524280, 131072, 4, 524281, 196608, 4, 458746, 0, 4, 458747, 65536, 4, 458748, 131072, 4, 458749, 196608, 4, 524282, 0, 4, 524283, 65536, 4, 524284, 131072, 4, 524285, 196608, 4, 458750, 0, 4, 458751, 65536, 4, 393216, 131072, 4, 393217, 196608, 4, 524286, 0, 4, 524287, 65536, 4, 458752, 131072, 4, 458753, 196608, 4, 393218, 0, 4, 393219, 65536, 4, 393220, 131072, 4, 393221, 196608, 4, 458754, 0, 4, 458755, 65536, 4, 458756, 131072, 4, 458757, 196608, 4, 393222, 0, 4, 393223, 65536, 4, 393224, 131072, 4, 393225, 196608, 4, 458758, 0, 4, 458759, 65536, 4, 458760, 131072, 4, 458761, 196608, 4)
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="TopWall" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall"]
+position = Vector2(0, 10)
+shape = SubResource("WorldBoundaryShape2D_4fdot")
+
+[node name="BottomWall" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall"]
+position = Vector2(0, 81)
+shape = SubResource("WorldBoundaryShape2D_qds06")
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall"]
+position = Vector2(-144, 44)
+shape = SubResource("WorldBoundaryShape2D_oxwnc")
+
+[node name="RightWall" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall"]
+position = Vector2(144, 38)
+shape = SubResource("WorldBoundaryShape2D_g5xtc")
+
+[node name="NPCs" type="Node" parent="."]
+
+[node name="Dad" type="AnimatedSprite2D" parent="NPCs"]
+visible = false
+position = Vector2(-158, -21)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_0br3q")
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NPCs/Dad"]
+libraries = {
+"": SubResource("AnimationLibrary_sv8an")
+}
+autoplay = "bad"
+
+[node name="Lady" type="AnimatedSprite2D" parent="NPCs"]
+position = Vector2(126, -21)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_lxvgy")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="NPCs/Lady"]
+position = Vector2(-12.5, -16.25)
+emitting = false
+amount = 20
+lifetime = 5.0
+explosiveness = 1.0
+texture = ExtResource("10_djx3m")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+scale_amount_min = 0.1
+scale_amount_max = 0.3
+scale_amount_curve = SubResource("Curve_n5pmb")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_sofr3")
+autoplay = true
+
+[node name="mower" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_osmfy")
+autoplay = true
 
 [connection signal="timeout" from="GrassSpawner" to="GrassSpawner" method="_on_timeout"]
 [connection signal="timeout" from="CountdownTimer/Timer" to="CountdownTimer" method="_on_timer_timeout"]

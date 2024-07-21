@@ -1,22 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://cksjgadof1e1o"]
+[gd_scene load_steps=6 format=3 uid="uid://cksjgadof1e1o"]
 
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/draggable_recycling.gd" id="1_qa81s"]
-[ext_resource type="Texture2D" uid="uid://dp5yufprvq3af" path="res://Assets/GeoffAssets/big_bottle.png" id="2_ofxk5"]
+[ext_resource type="Texture2D" uid="uid://ugr4gv12tg3f" path="res://Assets/GeoffAssets/stufftothrow-Sheet-Sheet.png" id="2_8f4in"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nj7st"]
-radius = 32.0156
+[sub_resource type="AtlasTexture" id="AtlasTexture_nra30"]
+atlas = ExtResource("2_8f4in")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t8xtg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nra30")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecrgf"]
+size = Vector2(47.3093, 125.49)
 
 [node name="DraggableRecycling" type="Node2D"]
 script = ExtResource("1_qa81s")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_ofxk5")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_t8xtg")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_nj7st")
+position = Vector2(2.5, 1.5)
+rotation = 0.900938
+shape = SubResource("RectangleShape2D_ecrgf")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

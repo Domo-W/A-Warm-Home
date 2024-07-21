@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://ewg53ja2eej5"]
+
+[ext_resource type="Texture2D" uid="uid://b5w1x8hrxpx42" path="res://Assets/GeoffAssets/sun_moon.png" id="1_76pqv"]
+[ext_resource type="Script" path="res://Scripts/GeoffScripts/day_swap.gd" id="1_th6j4"]
+
+[sub_resource type="Animation" id="Animation_3cf3c"]
+resource_name = "day_switch"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nextday:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.5708, 3.14159, 4.71239, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_pmut2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nextday:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_itvra"]
+_data = {
+"RESET": SubResource("Animation_pmut2"),
+"day_switch": SubResource("Animation_3cf3c")
+}
+
+[node name="DaySwitch" type="Node2D"]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+script = ExtResource("1_th6j4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_itvra")
+}
+autoplay = "day_switch"
+
+[node name="Nextday" type="Sprite2D" parent="."]
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("1_76pqv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -216)
+zoom = Vector2(1.5, 1.5)
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

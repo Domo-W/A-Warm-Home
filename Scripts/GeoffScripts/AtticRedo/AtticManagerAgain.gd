@@ -6,9 +6,11 @@ extends Node
 @onready var box_3 = $Box_3
 @onready var box_4 = $Box_4
 @onready var box_5 = $Box_5
+@onready var attic_end_screen = %AtticEndScreen
+@onready var click = $"../Click"
 
-const x_coords = [-390, 0, 390]
-const y_coords = [165, 69, -27, -123, -219]
+const x_coords = [-390, -25, 370]
+const y_coords = [165, 85, 5, -75, -155]
 
 var num_disks = 5
 var towers = [Array(range(num_disks, 0, -1)), [], []]
@@ -22,10 +24,11 @@ func _ready():
 	box_3.position = Vector2(x_coords[0], y_coords[2])
 	box_4.position = Vector2(x_coords[0], y_coords[1])
 	box_5.position = Vector2(x_coords[0], y_coords[0])
+	attic_end_screen.visible  = false
 
 func _process(delta):
 	if towers[2] == [5, 4, 3, 2, 1]:
-		pass 
+		attic_end_screen.visible  = true
 #finish the game!!!!!!!!!!!
 	if len(which) == 2:
 		move_disk(which[0], which[1])
@@ -36,15 +39,15 @@ func _process(delta):
 	elif len(which) == 1:
 		print (str(which[0]))
 		if towers[which[0]][-1] == 1:
-			box_1.modulate = Color(Color.WHITE,0.2)
+			box_1.modulate = Color(Color.WHITE,0.5)
 		elif towers[which[0]][-1] == 2:
-			box_2.modulate = Color(Color.WHITE,0.2)
+			box_2.modulate = Color(Color.WHITE,0.5)
 		elif towers[which[0]][-1] == 3:
-			box_3.modulate = Color(Color.WHITE,0.2)
+			box_3.modulate = Color(Color.WHITE,0.5)
 		elif towers[which[0]][-1] == 4:
-			box_4.modulate = Color(Color.WHITE,0.2)
+			box_4.modulate = Color(Color.WHITE,0.5)
 		elif towers[which[0]][-1] == 5:
-			box_5.modulate = Color(Color.WHITE,0.2)
+			box_5.modulate = Color(Color.WHITE,0.5)
 
 func move_disk(from_tower, to_tower):
 	if not towers[from_tower]:
@@ -67,7 +70,7 @@ func move_disk(from_tower, to_tower):
 			tween.tween_property(box_4, "position", Vector2(x_coords[to_tower], y_coords[len(towers[to_tower])-1]), 0.4).set_ease(Tween.EASE_OUT)
 		else:
 			tween.tween_property(box_5, "position", Vector2(x_coords[to_tower], y_coords[len(towers[to_tower])-1]), 0.4).set_ease(Tween.EASE_OUT)
-
+	
 func reset_color():
 	box_1.modulate = "ffffffff"
 	box_2.modulate = "ffffffff"
@@ -76,12 +79,24 @@ func reset_color():
 	box_5.modulate = "ffffffff"
 
 func _on_button_1_pressed():
-	which.append(0)
+	click.play()
+	if towers[0] == [] and len(which) == 0:
+		pass
+	else:
+		which.append(0)
 
 
 func _on_button_2_pressed():
-	which.append(1)
+	click.play()
+	if towers[1] == [] and len(which) == 0:
+		pass
+	else:
+		which.append(1)
 
 
 func _on_button_3_pressed():
-	which.append(2)
+	click.play()
+	if towers[2] == [] and len(which) == 0:
+		pass
+	else:
+		which.append(2)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmkl86li6star"]
+
+[ext_resource type="AudioStream" uid="uid://x472ckiceuyj" path="res://Assets/SoundAssets/KiwiJamMainMenuMusic.mp3" id="1_yinhk"]
+
+[node name="MenuMusic" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_yinhk")
+bus = &"Music"

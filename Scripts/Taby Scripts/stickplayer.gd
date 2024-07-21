@@ -13,17 +13,22 @@ func _physics_process(_delta):
 	
 	#animations
 	if direction:
+		if not Footsteps.playing:
+			Footsteps.playing = true
 		sprite_2d.animation = "side_walk"
 		if direction > 0:
 			sprite_2d.flip_h = false
 		elif direction < 0:
 			sprite_2d.flip_h = true
 	elif updown:
+		if not Footsteps.playing:
+			Footsteps.playing = true
 		if updown > 0:
 			sprite_2d.animation = "front_walk"
 		elif updown < 0:
 			sprite_2d.animation = "back_walk"
 	else:
+		Footsteps.playing = false
 		if sprite_2d.animation.ends_with("walk"):
 			sprite_2d.animation = sprite_2d.animation.replace("_walk", "")
 	
