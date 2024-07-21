@@ -36,8 +36,7 @@ func _process(_delta):
 
 func _on_homework_body_entered(body):
 	if body == player:
-		if not Global.has_done_task:
-			homework_interact = true
+		homework_interact = true
 		homework_label.visible = true
 
 
