@@ -115,7 +115,7 @@ animations = [{
 script = ExtResource("1_0hlaw")
 
 [node name="stickplayer" parent="." instance=ExtResource("1_gib24")]
-z_index = 3
+z_index = 7
 position = Vector2(18, 10)
 
 [node name="Camera2D" type="Camera2D" parent="stickplayer"]
@@ -287,6 +287,8 @@ shape = SubResource("RectangleShape2D_2fndl")
 
 [node name="DadSpeech" type="Label" parent="Decor/Dad/DadSense"]
 visible = false
+z_index = 1
+z_as_relative = false
 offset_left = 33.75
 offset_top = -18.75
 offset_right = 129.75

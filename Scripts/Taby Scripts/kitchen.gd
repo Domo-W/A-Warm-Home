@@ -16,7 +16,7 @@ func _ready():
 	homework_label.visible = homework_interact
 	if Global.day == 1:
 		if Global.has_done_task == true:
-			homework_label.text = "I'm a failure..."
+			homework_label.text = "I'm a\nfailure..."
 		else:
 			mom.visible = true
 
