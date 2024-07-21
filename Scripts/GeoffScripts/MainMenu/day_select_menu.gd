@@ -1,5 +1,7 @@
 extends MarginContainer
 
+func _ready():
+	ClickSound.play()
 
 func _on_day_1_pressed():
 	Global.day = 1
