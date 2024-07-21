@@ -6,6 +6,10 @@ var pressed = []
 var rng = RandomNumberGenerator.new()
 var current_length = 1
 var started = false
+var over = false
+@onready var correct = $Correct
+@onready var incorrect = $Incorrect
+@onready var task_music = $TaskMusic
 
 @onready var sequence_label = $SequenceLabel
 @onready var button_a = $ButtonContainer/ButtonA
@@ -52,6 +56,7 @@ func game_over():
 	sequence_label.visible = true
 	exit_button.visible = true
 	Global.has_done_task = true
+	over = true
 
 func sequence_input(l):
 	sequence_label.visible = false
@@ -60,6 +65,10 @@ func sequence_input(l):
 		next_level()
 	elif check_fail():
 		game_over()
+	if over == true:
+		incorrect.play()
+	else:
+		correct.play()
 
 func _on_button_a_pressed():
 	sequence_input("A")

@@ -7,6 +7,7 @@ extends Node
 @onready var box_4 = $Box_4
 @onready var box_5 = $Box_5
 @onready var attic_end_screen = %AtticEndScreen
+@onready var click = $"../Click"
 
 const x_coords = [-390, -25, 370]
 const y_coords = [165, 85, 5, -75, -155]
@@ -78,6 +79,7 @@ func reset_color():
 	box_5.modulate = "ffffffff"
 
 func _on_button_1_pressed():
+	click.play()
 	if towers[0] == [] and len(which) == 0:
 		pass
 	else:
@@ -85,6 +87,7 @@ func _on_button_1_pressed():
 
 
 func _on_button_2_pressed():
+	click.play()
 	if towers[1] == [] and len(which) == 0:
 		pass
 	else:
@@ -92,6 +95,7 @@ func _on_button_2_pressed():
 
 
 func _on_button_3_pressed():
+	click.play()
 	if towers[2] == [] and len(which) == 0:
 		pass
 	else:
