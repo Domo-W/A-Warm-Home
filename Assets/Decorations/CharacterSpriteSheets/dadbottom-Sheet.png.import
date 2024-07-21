@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfwerihdc1r83"
-path="res://.godot/imported/book.png-6ea957c1ace27ce1887e2c472c4d67e0.ctex"
+uid="uid://da52wrua1tlwq"
+path="res://.godot/imported/dadbottom-Sheet.png-c937641b749d5e9ad8d88b150e260527.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Decorations/Assets_1/book.png"
-dest_files=["res://.godot/imported/book.png-6ea957c1ace27ce1887e2c472c4d67e0.ctex"]
+source_file="res://Assets/Decorations/CharacterSpriteSheets/dadbottom-Sheet.png"
+dest_files=["res://.godot/imported/dadbottom-Sheet.png-c937641b749d5e9ad8d88b150e260527.ctex"]
 
 [params]
 
