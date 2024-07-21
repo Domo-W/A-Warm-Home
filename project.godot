@@ -22,6 +22,7 @@ HappyEnvironment="*res://Scripts/Taby Scripts/happy_environment.tscn"
 ActualCreepy="*res://Scripts/Taby Scripts/actual_creepy.tscn"
 MenuMusic="*res://Scripts/Taby Scripts/menu_music.tscn"
 DoorClick="*res://Scripts/Taby Scripts/door_click.tscn"
+Footsteps="*res://Scripts/Taby Scripts/footsteps.tscn"
 
 [display]
 
