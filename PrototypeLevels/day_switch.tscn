@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://ewg53ja2eej5"]
+
+[ext_resource type="Texture2D" uid="uid://cclqcx838yyay" path="res://Assets/GeoffAssets/nextday.png" id="1_rggbc"]
+
+[node name="DaySwitch" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Nextday" type="Sprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_rggbc")
+
+[node name="Camera2D" type="Camera2D" parent="."]
