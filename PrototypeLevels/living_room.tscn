@@ -89,7 +89,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fc6t"]
-size = Vector2(17.5, 62.5)
+size = Vector2(25, 87.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2fndl"]
 size = Vector2(118.75, 78.4375)
@@ -249,7 +249,7 @@ position = Vector2(-84, -1)
 texture = ExtResource("10_ltdel")
 
 [node name="Dad" type="AnimatedSprite2D" parent="Decor"]
-z_index = 4
+z_index = 8
 position = Vector2(22, 68)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_gqrtq")
@@ -257,8 +257,8 @@ sprite_frames = SubResource("SpriteFrames_gqrtq")
 [node name="StaticBody2D" type="StaticBody2D" parent="Decor/Dad"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decor/Dad/StaticBody2D"]
-position = Vector2(5.72205e-06, 0)
-scale = Vector2(1, 1)
+position = Vector2(0, 21.25)
+scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_5fc6t")
 
 [node name="DadSense" type="Area2D" parent="Decor/Dad"]

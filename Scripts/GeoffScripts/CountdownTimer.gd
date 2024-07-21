@@ -6,7 +6,7 @@ extends Node2D
 
 func _ready():
 	end_screen.visible  = false
-	timer.start(20)
+	timer.start(30)
 	
 func time_left():
 	var time_left = timer.time_left
