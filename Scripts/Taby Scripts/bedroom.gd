@@ -33,8 +33,6 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("interact") and exitable:
 		print("bye")
-		
-		#change this
 		get_tree().change_scene_to_file("res://PrototypeLevels/hallway.tscn")
 	if Input.is_action_just_pressed("interact") and sleepable:
 		if not Global.has_done_task:

@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="A Warm Home"
-run/main_scene="res://PrototypeLevels/main_menu.tscn"
+run/main_scene="res://PrototypeLevels/real_main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://Scripts/global.gd"
+HappyEnvironment="*res://Scripts/Taby Scripts/happy_environment.tscn"
+ActualCreepy="*res://Scripts/Taby Scripts/actual_creepy.tscn"
+MenuMusic="*res://Scripts/Taby Scripts/menu_music.tscn"
+DoorClick="*res://Scripts/Taby Scripts/door_click.tscn"
+Footsteps="*res://Scripts/Taby Scripts/footsteps.tscn"
 
 [display]
 
