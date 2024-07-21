@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://72ydq62211xt"]
+[gd_scene load_steps=26 format=3 uid="uid://72ydq62211xt"]
 
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_lgsly"]
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/bedroom_2.gd" id="1_vcnu2"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bqo5j5cppejcy" path="res://Assets/Decorations/livingroom_attic_door/rug.png" id="10_r8eyy"]
 [ext_resource type="Texture2D" uid="uid://duqr08xhecs5t" path="res://Assets/Decorations/Assets_1/window.png" id="12_hd4xw"]
 [ext_resource type="PackedScene" uid="uid://d26dwpph6etgm" path="res://Scripts/Taby Scripts/day_counter.tscn" id="13_i0txh"]
+[ext_resource type="PackedScene" uid="uid://ildcguyssq7b" path="res://Scripts/Taby Scripts/trash_can.tscn" id="14_2w857"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lxb5g"]
 normal = Vector2(-1, 0)
@@ -32,7 +33,7 @@ func _process(delta):
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lq1t"]
-size = Vector2(98, 55)
+size = Vector2(75, 55)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gf5dq"]
 
@@ -86,6 +87,9 @@ texture = ExtResource("5_lc8pd")
 [sub_resource type="TileSet" id="TileSet_w167j"]
 sources/0 = SubResource("TileSetAtlasSource_v3q3j")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mg1cl"]
+size = Vector2(40, 62)
+
 [node name="Bedroom2" type="Node2D"]
 script = ExtResource("1_vcnu2")
 
@@ -114,7 +118,7 @@ position = Vector2(0, 68)
 texture = ExtResource("3_t0nvn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HallwayDoor"]
-position = Vector2(-6, 46.5)
+position = Vector2(-17.5, 46.5)
 shape = SubResource("RectangleShape2D_5lq1t")
 
 [node name="InteractHintLabel" type="Label" parent="HallwayDoor"]
@@ -225,5 +229,16 @@ texture = ExtResource("12_hd4xw")
 
 [node name="DayCounter" parent="." instance=ExtResource("13_i0txh")]
 
+[node name="TrashCan" parent="." instance=ExtResource("14_2w857")]
+position = Vector2(350, -6)
+
+[node name="TrashArea" type="Area2D" parent="TrashCan"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashCan/TrashArea"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_mg1cl")
+
 [connection signal="body_entered" from="HallwayDoor" to="." method="_on_hallway_door_body_entered"]
 [connection signal="body_exited" from="HallwayDoor" to="." method="_on_hallway_door_body_exited"]
+[connection signal="body_entered" from="TrashCan/TrashArea" to="." method="_on_trash_area_body_entered"]
+[connection signal="body_exited" from="TrashCan/TrashArea" to="." method="_on_trash_area_body_exited"]

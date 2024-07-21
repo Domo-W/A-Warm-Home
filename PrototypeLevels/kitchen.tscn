@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c5rhaa4de4ebp"]
+[gd_scene load_steps=27 format=3 uid="uid://c5rhaa4de4ebp"]
 
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_8a4ks"]
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/kitchen.gd" id="1_vr8le"]
@@ -14,9 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://da8ibdgnpbvgg" path="res://Assets/Decorations/CharacterSpriteSheets/mom-Sheet.png" id="11_dio0j"]
 [ext_resource type="Texture2D" uid="uid://xrm114p3ix85" path="res://Assets/Decorations/kitchen_furniture/stove.png" id="11_nyqio"]
 [ext_resource type="PackedScene" uid="uid://d26dwpph6etgm" path="res://Scripts/Taby Scripts/day_counter.tscn" id="13_fthc6"]
+[ext_resource type="PackedScene" uid="uid://ildcguyssq7b" path="res://Scripts/Taby Scripts/trash_can.tscn" id="15_cehc8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejkyi"]
-size = Vector2(81, 72)
+size = Vector2(74, 72)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtjag"]
 size = Vector2(104, 66)
@@ -85,6 +86,9 @@ normal = Vector2(-1, 0)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ro8pe"]
 normal = Vector2(1, 0)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j6h4h"]
+size = Vector2(44, 62)
+
 [node name="Kitchen" type="Node2D"]
 script = ExtResource("1_vr8le")
 
@@ -107,7 +111,7 @@ texture = ExtResource("3_73wfx")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LivingRoomDoor"]
-position = Vector2(7.5, 2)
+position = Vector2(11, 2)
 shape = SubResource("RectangleShape2D_ejkyi")
 
 [node name="LivingRoomLabel" type="Label" parent="LivingRoomDoor"]
@@ -210,7 +214,18 @@ shape = SubResource("WorldBoundaryShape2D_ro8pe")
 
 [node name="DayCounter" parent="." instance=ExtResource("13_fthc6")]
 
+[node name="TrashCan" parent="." instance=ExtResource("15_cehc8")]
+position = Vector2(-35, 11)
+
+[node name="TrashArea" type="Area2D" parent="TrashCan"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashCan/TrashArea"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_j6h4h")
+
 [connection signal="body_entered" from="LivingRoomDoor" to="." method="_on_living_room_door_body_entered"]
 [connection signal="body_exited" from="LivingRoomDoor" to="." method="_on_living_room_door_body_exited"]
 [connection signal="body_entered" from="Homework" to="." method="_on_homework_body_entered"]
 [connection signal="body_exited" from="Homework" to="." method="_on_homework_body_exited"]
+[connection signal="body_entered" from="TrashCan/TrashArea" to="." method="_on_trash_area_body_entered"]
+[connection signal="body_exited" from="TrashCan/TrashArea" to="." method="_on_trash_area_body_exited"]

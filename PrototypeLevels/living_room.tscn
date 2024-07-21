@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dxbvsk80vjupt"]
+[gd_scene load_steps=32 format=3 uid="uid://dxbvsk80vjupt"]
 
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/living_room.gd" id="1_0hlaw"]
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_gib24"]
@@ -13,12 +13,13 @@
 [ext_resource type="Texture2D" uid="uid://cjetesntggqpv" path="res://Assets/Decorations/CharacterSpriteSheets/dadtop-Sheet.png" id="11_fiw6m"]
 [ext_resource type="PackedScene" uid="uid://d26dwpph6etgm" path="res://Scripts/Taby Scripts/day_counter.tscn" id="12_4dfcw"]
 [ext_resource type="Texture2D" uid="uid://da52wrua1tlwq" path="res://Assets/Decorations/CharacterSpriteSheets/dadbottom-Sheet.png" id="12_tg0y4"]
+[ext_resource type="PackedScene" uid="uid://ildcguyssq7b" path="res://Scripts/Taby Scripts/trash_can.tscn" id="14_i0yby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qp1a4"]
-size = Vector2(102, 82.5)
+size = Vector2(85, 82.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4l52"]
-size = Vector2(87, 98)
+size = Vector2(82, 98)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rv7v0"]
 size = Vector2(63, 82)
@@ -111,6 +112,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmvbi"]
+size = Vector2(58, 74)
+
 [node name="LivingRoom" type="Node2D"]
 script = ExtResource("1_0hlaw")
 
@@ -134,7 +138,7 @@ position = Vector2(6, -21)
 texture = ExtResource("3_xogwo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs"]
-position = Vector2(1, 0.75)
+position = Vector2(9.5, 0.75)
 shape = SubResource("RectangleShape2D_qp1a4")
 
 [node name="StairsLabel" type="Label" parent="Stairs"]
@@ -157,7 +161,7 @@ position = Vector2(-12, 27)
 texture = ExtResource("5_x3cqw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenDoor"]
-position = Vector2(-20.5, -14)
+position = Vector2(-23, -14)
 shape = SubResource("RectangleShape2D_v4l52")
 
 [node name="KitchenLabel" type="Label" parent="KitchenDoor"]
@@ -262,7 +266,7 @@ position = Vector2(104, -8)
 texture = ExtResource("9_6sat7")
 
 [node name="FramedPhotos" type="Sprite2D" parent="Decor"]
-position = Vector2(-84, -1)
+position = Vector2(-84, -11)
 texture = ExtResource("10_ltdel")
 
 [node name="Dad" type="AnimatedSprite2D" parent="Decor"]
@@ -275,7 +279,6 @@ sprite_frames = SubResource("SpriteFrames_gqrtq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decor/Dad/StaticBody2D"]
 position = Vector2(1.875, 11.875)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_5fc6t")
 
 [node name="DadSense" type="Area2D" parent="Decor/Dad"]
@@ -306,6 +309,15 @@ sprite_frames = SubResource("SpriteFrames_2o8xu")
 
 [node name="DayCounter" parent="." instance=ExtResource("12_4dfcw")]
 
+[node name="TrashCan" parent="." instance=ExtResource("14_i0yby")]
+position = Vector2(-73, 13)
+
+[node name="TrashArea" type="Area2D" parent="TrashCan"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashCan/TrashArea"]
+position = Vector2(1, 9)
+shape = SubResource("RectangleShape2D_gmvbi")
+
 [connection signal="body_entered" from="Stairs" to="." method="_on_stairs_body_entered"]
 [connection signal="body_exited" from="Stairs" to="." method="_on_stairs_body_exited"]
 [connection signal="body_entered" from="KitchenDoor" to="." method="_on_kitchen_door_body_entered"]
@@ -314,3 +326,5 @@ sprite_frames = SubResource("SpriteFrames_2o8xu")
 [connection signal="body_exited" from="Outside" to="." method="_on_outside_body_exited"]
 [connection signal="body_entered" from="Decor/Dad/DadSense" to="." method="_on_dad_sense_body_entered"]
 [connection signal="body_exited" from="Decor/Dad/DadSense" to="." method="_on_dad_sense_body_exited"]
+[connection signal="body_entered" from="TrashCan/TrashArea" to="." method="_on_trash_area_body_entered"]
+[connection signal="body_exited" from="TrashCan/TrashArea" to="." method="_on_trash_area_body_exited"]

@@ -1,18 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://ildcguyssq7b"]
+[gd_scene load_steps=6 format=3 uid="uid://ildcguyssq7b"]
+
+[ext_resource type="Texture2D" uid="uid://rqm57qddk6gm" path="res://Assets/Decorations/CharacterSpriteSheets/trash-Sheet.png" id="1_c8x7k"]
+[ext_resource type="Script" path="res://Scripts/Taby Scripts/trash_can.gd" id="2_ipapn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7yst"]
+atlas = ExtResource("1_c8x7k")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4x74"]
+atlas = ExtResource("1_c8x7k")
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5lh5m"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7yst")
+}],
 "loop": true,
 "name": &"empty",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4x74")
+}],
 "loop": true,
 "name": &"full",
 "speed": 5.0
 }]
 
 [node name="TrashCan" type="AnimatedSprite2D"]
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_5lh5m")
-animation = &"empty"
+animation = &"full"
+autoplay = "full"
+script = ExtResource("2_ipapn")
