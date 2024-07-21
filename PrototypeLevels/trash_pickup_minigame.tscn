@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dnxuytr08pr54" path="res://Assets/GeoffAssets/binsMinigame-Sheet.png" id="2_3hjg4"]
 [ext_resource type="PackedScene" uid="uid://c5wly7ft6wgh5" path="res://Scripts/GeoffScripts/droppable_area.tscn" id="2_thcmf"]
 [ext_resource type="Texture2D" uid="uid://2d13hlpg3uqc" path="res://Assets/Decorations/Assets_1/frontlawn/front_lawn.png" id="4_gh54c"]
-[ext_resource type="AudioStream" uid="uid://cq38b34ohmup6" path="res://Assets/SoundAssets/KiwiJamTaskMusicNormal.mp3" id="5_7sq85"]
+[ext_resource type="AudioStream" uid="uid://q264iws3vwkh" path="res://Assets/SoundAssets/KiwiJamGarbageSong.mp3" id="5_w0kx5"]
 [ext_resource type="AudioStream" uid="uid://d1yt0jngah4ob" path="res://Assets/SoundAssets/Sound Effects/SuccessSound.mp3" id="6_svt03"]
 [ext_resource type="AudioStream" uid="uid://dbrjbksequdh3" path="res://Assets/SoundAssets/Sound Effects/FailSound.mp3" id="7_afp06"]
 [ext_resource type="AudioStream" uid="uid://da71rt8pt184s" path="res://Assets/SoundAssets/Sound Effects/GlassPickUp.mp3" id="8_rwbp1"]
@@ -82,7 +82,7 @@ scale = Vector2(18.7539, 18.7539)
 texture = ExtResource("4_gh54c")
 
 [node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_7sq85")
+stream = ExtResource("5_w0kx5")
 autoplay = true
 
 [node name="TCorrect" type="AudioStreamPlayer2D" parent="."]

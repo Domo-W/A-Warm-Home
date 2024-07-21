@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c5rhaa4de4ebp"]
+[gd_scene load_steps=30 format=3 uid="uid://c5rhaa4de4ebp"]
 
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_8a4ks"]
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/kitchen.gd" id="1_vr8le"]
@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="3_m14ld"]
 [ext_resource type="Texture2D" uid="uid://d3a1k1gg7sofk" path="res://Assets/Decorations/Assets_1/bedside_table.png" id="5_gtsbw"]
 [ext_resource type="Texture2D" uid="uid://div2u7lqiorlc" path="res://Assets/Decorations/Assets_1/wallpaper&flooring.png" id="6_khv4v"]
-[ext_resource type="Texture2D" uid="uid://cfwerihdc1r83" path="res://Assets/Decorations/Assets_1/book.png" id="6_q1c2g"]
+[ext_resource type="Texture2D" uid="uid://bbi4qoaa7njvj" path="res://Assets/Decorations/Assets_1/book.png" id="6_q1c2g"]
 [ext_resource type="Texture2D" uid="uid://wustjokekyas" path="res://Assets/Decorations/kitchen_furniture/fridge.png" id="7_q1kbg"]
 [ext_resource type="Texture2D" uid="uid://bkmravxd0qjg6" path="res://Assets/Decorations/kitchen_furniture/knife_holder.png" id="8_n2tci"]
 [ext_resource type="Texture2D" uid="uid://dtil4kqo7meag" path="res://Assets/Decorations/kitchen_furniture/sink_counter.png" id="9_pdtne"]
@@ -14,7 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://da8ibdgnpbvgg" path="res://Assets/Decorations/CharacterSpriteSheets/mom-Sheet.png" id="11_dio0j"]
 [ext_resource type="Texture2D" uid="uid://xrm114p3ix85" path="res://Assets/Decorations/kitchen_furniture/stove.png" id="11_nyqio"]
 [ext_resource type="PackedScene" uid="uid://d26dwpph6etgm" path="res://Scripts/Taby Scripts/day_counter.tscn" id="13_fthc6"]
-[ext_resource type="PackedScene" uid="uid://ildcguyssq7b" path="res://Scripts/Taby Scripts/trash_can.tscn" id="15_cehc8"]
+[ext_resource type="PackedScene" path="res://Scripts/Taby Scripts/trash_can.tscn" id="15_cehc8"]
+[ext_resource type="Texture2D" uid="uid://fv01pymh0sh3" path="res://Assets/Decorations/Assets_1/window_w__curtain.png" id="16_7bt4t"]
+[ext_resource type="Texture2D" uid="uid://biesgr8vg24m1" path="res://Assets/Decorations/Deco/ppeeasdasdasdee.png" id="17_mt4ub"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejkyi"]
 size = Vector2(74, 72)
@@ -74,6 +76,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3nrq7"]
+size = Vector2(109, 31)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hkqds"]
 
@@ -160,7 +165,7 @@ layer_0/tile_data = PackedInt32Array(131059, 196608, 5, 131060, 0, 5, 131061, 65
 [node name="Decor" type="Node" parent="."]
 
 [node name="Fridge" type="Sprite2D" parent="Decor"]
-position = Vector2(-66, 8)
+position = Vector2(-66, 22)
 texture = ExtResource("7_q1kbg")
 
 [node name="KnifeHolder" type="Sprite2D" parent="Decor"]
@@ -168,7 +173,7 @@ position = Vector2(-86, -3)
 texture = ExtResource("8_n2tci")
 
 [node name="SinkCounter" type="Sprite2D" parent="Decor"]
-position = Vector2(-115, -7)
+position = Vector2(-115, 7)
 texture = ExtResource("9_pdtne")
 
 [node name="Clock" type="Sprite2D" parent="Decor"]
@@ -182,8 +187,14 @@ scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_a560w")
 
 [node name="Stove" type="Sprite2D" parent="Decor"]
-position = Vector2(-143, 2)
+position = Vector2(-143, 16)
 texture = ExtResource("11_nyqio")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decor/StaticBody2D"]
+position = Vector2(-112.5, 18.5)
+shape = SubResource("RectangleShape2D_3nrq7")
 
 [node name="Walls" type="Node" parent="."]
 
@@ -191,7 +202,7 @@ texture = ExtResource("11_nyqio")
 z_index = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Ground"]
-position = Vector2(0, 40)
+position = Vector2(0, 58)
 shape = SubResource("WorldBoundaryShape2D_hkqds")
 
 [node name="TopGround" type="StaticBody2D" parent="Walls"]
@@ -222,6 +233,23 @@ position = Vector2(-35, 11)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrashCan/TrashArea"]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_j6h4h")
+
+[node name="WindowWCurtain" type="Sprite2D" parent="."]
+position = Vector2(-222, -37)
+texture = ExtResource("16_7bt4t")
+
+[node name="WindowWCurtain2" type="Sprite2D" parent="."]
+position = Vector2(-150, -37)
+texture = ExtResource("16_7bt4t")
+
+[node name="WindowWCurtain3" type="Sprite2D" parent="."]
+position = Vector2(-33, -37)
+texture = ExtResource("16_7bt4t")
+
+[node name="Ppeeasdasdasdee" type="Sprite2D" parent="."]
+position = Vector2(-95, -65)
+scale = Vector2(0.765625, 0.765625)
+texture = ExtResource("17_mt4ub")
 
 [connection signal="body_entered" from="LivingRoomDoor" to="." method="_on_living_room_door_body_entered"]
 [connection signal="body_exited" from="LivingRoomDoor" to="." method="_on_living_room_door_body_exited"]
