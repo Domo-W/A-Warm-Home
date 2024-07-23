@@ -1,0 +1,177 @@
+[gd_scene load_steps=22 format=3 uid="uid://dkoaycpofp2y0"]
+
+[ext_resource type="Script" path="res://Scripts/Taby Scripts/stickplayer.gd" id="1_q5wbk"]
+[ext_resource type="Texture2D" uid="uid://d1knfovdbcm8g" path="res://Assets/Decorations/CharacterSpriteSheets/playerFinal-Sheet.png" id="2_lx5is"]
+[ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="3_naasd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agnx6"]
+atlas = ExtResource("2_lx5is")
+region = Rect2(384, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngax0"]
+atlas = ExtResource("2_lx5is")
+region = Rect2(416, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_as5bj"]
+atlas = ExtResource("2_lx5is")
+region = Rect2(448, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53kdm"]
+atlas = ExtResource("2_lx5is")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fm8gd"]
+atlas = ExtResource("2_lx5is")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lq3a"]
+atlas = ExtResource("2_lx5is")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fvbc"]
+atlas = ExtResource("2_lx5is")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7jgv"]
+atlas = ExtResource("2_lx5is")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5in5"]
+atlas = ExtResource("2_lx5is")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfns8"]
+atlas = ExtResource("2_lx5is")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4org"]
+atlas = ExtResource("2_lx5is")
+region = Rect2(224, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd7bb"]
+atlas = ExtResource("2_lx5is")
+region = Rect2(256, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ej7j"]
+atlas = ExtResource("2_lx5is")
+region = Rect2(288, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jks4i"]
+atlas = ExtResource("2_lx5is")
+region = Rect2(320, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g55gv"]
+atlas = ExtResource("2_lx5is")
+region = Rect2(352, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8jd1c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agnx6")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngax0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_as5bj")
+}],
+"loop": true,
+"name": &"back_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53kdm")
+}],
+"loop": true,
+"name": &"front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fm8gd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lq3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fvbc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7jgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5in5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfns8")
+}],
+"loop": true,
+"name": &"front_walk",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4org")
+}],
+"loop": true,
+"name": &"side",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gd7bb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ej7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jks4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g55gv")
+}],
+"loop": true,
+"name": &"side_walk",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ow216"]
+size = Vector2(11, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jus5d"]
+font = ExtResource("3_naasd")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+
+[node name="stickplayer" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_q5wbk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 3
+position = Vector2(9.53674e-07, -7)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_8jd1c")
+animation = &"front"
+autoplay = "front"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12.5)
+shape = SubResource("RectangleShape2D_ow216")
+
+[node name="InteractLabel" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = -38.0
+offset_top = 16.0
+offset_right = 2.0
+offset_bottom = 39.0
+text = "Some stuff"
+label_settings = SubResource("LabelSettings_jus5d")
