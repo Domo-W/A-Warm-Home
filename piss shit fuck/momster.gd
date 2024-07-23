@@ -7,7 +7,7 @@ extends CharacterBody2D
 @onready var leave_room_timer := $LeaveRoomTimer
 
 var leave_room := false
-var speed := 120.0
+var speed := 160.0
 var accel := 7
 var move_direction = Vector2.ZERO
 var wander_time = 0
