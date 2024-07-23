@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cjetesntggqpv" path="res://Assets/Decorations/CharacterSpriteSheets/dadtop-Sheet.png" id="11_fiw6m"]
 [ext_resource type="PackedScene" uid="uid://d26dwpph6etgm" path="res://Scripts/Taby Scripts/day_counter.tscn" id="12_4dfcw"]
 [ext_resource type="Texture2D" uid="uid://da52wrua1tlwq" path="res://Assets/Decorations/CharacterSpriteSheets/dadbottom-Sheet.png" id="12_tg0y4"]
-[ext_resource type="PackedScene" path="res://Scripts/Taby Scripts/trash_can.tscn" id="14_i0yby"]
+[ext_resource type="PackedScene" uid="uid://ildcguyssq7b" path="res://Scripts/Taby Scripts/trash_can.tscn" id="14_i0yby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qp1a4"]
 size = Vector2(85, 82.5)
@@ -279,7 +279,6 @@ sprite_frames = SubResource("SpriteFrames_gqrtq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decor/Dad/StaticBody2D"]
 position = Vector2(1.875, 5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_5fc6t")
 
 [node name="DadSense" type="Area2D" parent="Decor/Dad"]

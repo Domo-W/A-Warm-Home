@@ -1,0 +1,110 @@
+[gd_scene load_steps=13 format=3 uid="uid://4youjblhk4x1"]
+
+[ext_resource type="Texture2D" uid="uid://div2u7lqiorlc" path="res://Assets/Decorations/Assets_1/wallpaper&flooring.png" id="1_ug5wx"]
+[ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="2_x04jf"]
+[ext_resource type="Texture2D" uid="uid://d3a1k1gg7sofk" path="res://Assets/Decorations/Assets_1/bedside_table.png" id="3_dgpco"]
+[ext_resource type="Texture2D" uid="uid://bq8egwy6jkxde" path="res://Assets/Decorations/Assets_1/bedbottom.png" id="4_u3r3h"]
+[ext_resource type="Texture2D" uid="uid://2b1pwpwk8wwv" path="res://Assets/Decorations/Assets_1/bedtop.png" id="5_f4kwg"]
+[ext_resource type="Texture2D" uid="uid://c67075wfrtmlv" path="res://Assets/Decorations/Assets_1/bookshelf_against_wall.png" id="6_accle"]
+[ext_resource type="Texture2D" uid="uid://cvacvgcl1au6v" path="res://Assets/Decorations/Assets_1/posters_boys_room.png" id="7_terx6"]
+[ext_resource type="Texture2D" uid="uid://dvdspn071mmo1" path="res://Assets/Decorations/Assets_1/football.png" id="8_jmqde"]
+[ext_resource type="Texture2D" uid="uid://fv01pymh0sh3" path="res://Assets/Decorations/Assets_1/window_w__curtain.png" id="9_3wh1p"]
+[ext_resource type="Texture2D" uid="uid://03vacajjurw7" path="res://Assets/Decorations/Deco/blue_rug.png" id="10_j1qkg"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ie3tj"]
+texture = ExtResource("1_ug5wx")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_plvoo"]
+sources/0 = SubResource("TileSetAtlasSource_ie3tj")
+
+[node name="mom boss fight i hope i dont fuck it up this time" type="Node2D"]
+
+[node name="stickplayer" parent="." instance=ExtResource("2_x04jf")]
+position = Vector2(-212, -24)
+
+[node name="Camera2D" type="Camera2D" parent="stickplayer"]
+z_index = 1
+position = Vector2(5, -24)
+offset = Vector2(5, 0)
+zoom = Vector2(6, 6)
+limit_left = -225
+limit_top = 29
+limit_right = 65
+limit_bottom = 137
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_plvoo")
+format = 2
+layer_0/tile_data = PackedInt32Array(-458754, 0, 0, -393218, 0, 1, -327682, 0, 2, -262146, 0, 3, -196610, 0, 4, -131074, 0, 5, -65538, 0, 6, -2, 0, 7, -458753, 0, 0, -393217, 0, 1, -327681, 0, 2, -262145, 0, 3, -196609, 0, 4, -131073, 0, 5, -65537, 0, 6, -1, 0, 7, -524288, 0, 0, -458752, 0, 1, -393216, 0, 2, -327680, 0, 3, -262144, 0, 4, -196608, 0, 5, -131072, 0, 6, -65536, 0, 7, -524287, 0, 0, -458751, 0, 1, -393215, 0, 2, -327679, 0, 3, -262143, 0, 4, -196607, 0, 5, -131071, 0, 6, -65535, 0, 7, -458758, 0, 0, -393222, 0, 1, -327686, 0, 2, -262150, 0, 3, -196614, 0, 4, -131078, 0, 5, -65542, 0, 6, -6, 0, 7, -458757, 0, 0, -393221, 0, 1, -327685, 0, 2, -262149, 0, 3, -196613, 0, 4, -131077, 0, 5, -65541, 0, 6, -5, 0, 7, -458756, 0, 0, -393220, 0, 1, -327684, 0, 2, -262148, 0, 3, -196612, 0, 4, -131076, 0, 5, -65540, 0, 6, -4, 0, 7, -458755, 0, 0, -393219, 0, 1, -327683, 0, 2, -262147, 0, 3, -196611, 0, 4, -131075, 0, 5, -65539, 0, 6, -3, 0, 7, -458762, 0, 0, -393226, 0, 1, -327690, 0, 2, -262154, 0, 3, -196618, 0, 4, -131082, 0, 5, -65546, 0, 6, -10, 0, 7, -458761, 0, 0, -393225, 0, 1, -327689, 0, 2, -262153, 0, 3, -196617, 0, 4, -131081, 0, 5, -65545, 0, 6, -9, 0, 7, -458760, 0, 0, -393224, 0, 1, -327688, 0, 2, -262152, 0, 3, -196616, 0, 4, -131080, 0, 5, -65544, 0, 6, -8, 0, 7, -458759, 0, 0, -393223, 0, 1, -327687, 0, 2, -262151, 0, 3, -196615, 0, 4, -131079, 0, 5, -65543, 0, 6, -7, 0, 7, -458767, 0, 0, -393231, 0, 1, -327695, 0, 2, -262159, 0, 3, -196623, 0, 4, -131087, 0, 5, -65551, 0, 6, -15, 0, 7, -458766, 0, 0, -393230, 0, 1, -327694, 0, 2, -262158, 0, 3, -196622, 0, 4, -131086, 0, 5, -65550, 0, 6, -14, 0, 7, -458765, 0, 0, -393229, 0, 1, -327693, 0, 2, -262157, 0, 3, -196621, 0, 4, -131085, 0, 5, -65549, 0, 6, -13, 0, 7, -458764, 0, 0, -393228, 0, 1, -327692, 0, 2, -262156, 0, 3, -196620, 0, 4, -131084, 0, 5, -65548, 0, 6, -12, 0, 7, -458763, 0, 0, -393227, 0, 1, -327691, 0, 2, -262155, 0, 3, -196619, 0, 4, -131083, 0, 5, -65547, 0, 6, -11, 0, 7, -524286, 0, 0, -458750, 0, 1, -393214, 0, 2, -327678, 0, 3, -262142, 0, 4, -196606, 0, 5, -131070, 0, 6, -65534, 0, 7, -524285, 0, 0, -458749, 0, 1, -393213, 0, 2, -327677, 0, 3, -262141, 0, 4, -196605, 0, 5, -131069, 0, 6, -65533, 0, 7, -524284, 0, 0, -458748, 0, 1, -393212, 0, 2, -327676, 0, 3, -262140, 0, 4, -196604, 0, 5, -131068, 0, 6, -65532, 0, 7, -524283, 0, 0, -458747, 0, 1, -393211, 0, 2, -327675, 0, 3, -262139, 0, 4, -196603, 0, 5, -131067, 0, 6, -65531, 0, 7, -524282, 0, 0, -458746, 0, 1, -393210, 0, 2, -327674, 0, 3, -262138, 0, 4, -196602, 0, 5, -131066, 0, 6, -65530, 0, 7, -524281, 0, 0, -458745, 0, 1, -393209, 0, 2, -327673, 0, 3, -262137, 0, 4, -196601, 0, 5, -131065, 0, 6, -65529, 0, 7, -524280, 0, 0, -458744, 0, 1, -393208, 0, 2, -327672, 0, 3, -262136, 0, 4, -196600, 0, 5, -131064, 0, 6, -65528, 0, 7, -524279, 0, 0, -458743, 0, 1, -393207, 0, 2, -327671, 0, 3, -262135, 0, 4, -196599, 0, 5, -131063, 0, 6, -65527, 0, 7, -524278, 0, 0, -458742, 0, 1, -393206, 0, 2, -327670, 0, 3, -262134, 0, 4, -196598, 0, 5, -131062, 0, 6, -65526, 0, 7, -524277, 0, 0, -458741, 0, 1, -393205, 0, 2, -327669, 0, 3, -262133, 0, 4, -196597, 0, 5, -131061, 0, 6, -65525, 0, 7, -524276, 0, 0, -458740, 0, 1, -393204, 0, 2, -327668, 0, 3, -262132, 0, 4, -196596, 0, 5, -131060, 0, 6, -65524, 0, 7, -524275, 0, 0, -458739, 0, 1, -393203, 0, 2, -327667, 0, 3, -262131, 0, 4, -196595, 0, 5, -131059, 0, 6, -65523, 0, 7, -524274, 0, 0, -458738, 0, 1, -393202, 0, 2, -327666, 0, 3, -262130, 0, 4, -196594, 0, 5, -131058, 0, 6, -65522, 0, 7, -524273, 0, 0, -458737, 0, 1, -393201, 0, 2, -327665, 0, 3, -262129, 0, 4, -196593, 0, 5, -131057, 0, 6, -65521, 0, 7, -524272, 0, 0, -458736, 0, 1, -393200, 0, 2, -327664, 0, 3, -262128, 0, 4, -196592, 0, 5, -131056, 0, 6, -65520, 0, 7, -524271, 0, 0, -458735, 0, 1, -393199, 0, 2, -327663, 0, 3, -262127, 0, 4, -196591, 0, 5, -131055, 0, 6, -65519, 0, 7, -524270, 0, 0, -458734, 0, 1, -393198, 0, 2, -327662, 0, 3, -262126, 0, 4, -196590, 0, 5, -131054, 0, 6, -65518, 0, 7, -524269, 0, 0, -458733, 0, 1, -393197, 0, 2, -327661, 0, 3, -262125, 0, 4, -196589, 0, 5, -131053, 0, 6, -65517, 0, 7, -524268, 0, 0, -458732, 0, 1, -393196, 0, 2, -327660, 0, 3, -262124, 0, 4, -196588, 0, 5, -131052, 0, 6, -65516, 0, 7, -524267, 0, 0, -458731, 0, 1, -393195, 0, 2, -327659, 0, 3, -262123, 0, 4, -196587, 0, 5, -131051, 0, 6, -65515, 0, 7, -524266, 0, 0, -458730, 0, 1, -393194, 0, 2, -327658, 0, 3, -262122, 0, 4, -196586, 0, 5, -131050, 0, 6, -65514, 0, 7)
+
+[node name="Decor" type="Node2D" parent="."]
+
+[node name="BedsideTable" type="Sprite2D" parent="Decor"]
+position = Vector2(-223, -28)
+texture = ExtResource("3_dgpco")
+
+[node name="Bed" type="Sprite2D" parent="Decor"]
+position = Vector2(-213, -21)
+texture = ExtResource("4_u3r3h")
+
+[node name="Sprite2D" type="Sprite2D" parent="Decor/Bed"]
+z_index = 5
+texture = ExtResource("5_f4kwg")
+
+[node name="Bookshelf" type="Sprite2D" parent="Decor"]
+position = Vector2(-158, -39)
+texture = ExtResource("6_accle")
+
+[node name="PostersBoysRoom" type="Sprite2D" parent="Decor"]
+position = Vector2(-152, -65)
+texture = ExtResource("7_terx6")
+flip_h = true
+
+[node name="Football" type="Sprite2D" parent="Decor"]
+position = Vector2(-115, -39)
+rotation = 0.00188798
+texture = ExtResource("8_jmqde")
+
+[node name="WindowWCurtain" type="Sprite2D" parent="."]
+position = Vector2(-100, -62)
+texture = ExtResource("9_3wh1p")
+
+[node name="WindowWCurtain2" type="Sprite2D" parent="."]
+position = Vector2(-54, -61)
+texture = ExtResource("9_3wh1p")
+
+[node name="BlueRug" type="Sprite2D" parent="."]
+position = Vector2(-73, -9)
+texture = ExtResource("10_j1qkg")

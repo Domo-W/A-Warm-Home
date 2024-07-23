@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://dkoaycpofp2y0"]
+[gd_scene load_steps=22 format=3 uid="uid://dkoaycpofp2y0"]
 
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/stickplayer.gd" id="1_q5wbk"]
 [ext_resource type="Texture2D" uid="uid://d1knfovdbcm8g" path="res://Assets/Decorations/CharacterSpriteSheets/playerFinal-Sheet.png" id="2_lx5is"]
+[ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="3_naasd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_agnx6"]
 atlas = ExtResource("2_lx5is")
@@ -144,7 +145,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ow216"]
 size = Vector2(11, 5)
 
+[sub_resource type="LabelSettings" id="LabelSettings_jus5d"]
+font = ExtResource("3_naasd")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+
 [node name="stickplayer" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_q5wbk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -158,3 +166,12 @@ autoplay = "front"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12.5)
 shape = SubResource("RectangleShape2D_ow216")
+
+[node name="InteractLabel" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = -38.0
+offset_top = 16.0
+offset_right = 2.0
+offset_bottom = 39.0
+text = "Some stuff"
+label_settings = SubResource("LabelSettings_jus5d")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://84a3408teltd"]
+
+[ext_resource type="Texture2D" uid="uid://bgyab0qqneo3s" path="res://Assets/Decorations/livingroom_attic_door/Door.png" id="1_56mod"]
+[ext_resource type="Script" path="res://piss shit fuck/piss shit fuck pt 2/door.gd" id="1_hmvm5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tw4dk"]
+size = Vector2(24, 46)
+
+[node name="Door" type="Node2D"]
+script = ExtResource("1_hmvm5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_56mod")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4, -24)
+shape = SubResource("RectangleShape2D_tw4dk")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-4, 41)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

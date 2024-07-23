@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://c06ltddb6oafb"]
 
-[ext_resource type="PackedScene" uid="uid://c08h2lhpkvxht" path="res://Assets/JeremyAssets/player.tscn" id="1_w1xc5"]
+[ext_resource type="PackedScene" uid="uid://c08h2lhpkvxht" path="res://Scripts/GeoffScripts/lawn_player.tscn" id="1_w1xc5"]
 [ext_resource type="PackedScene" uid="uid://b88hj3jx7jg33" path="res://Assets/JeremyAssets/objects_for_hiding.tscn" id="2_bg7kl"]
 [ext_resource type="PackedScene" uid="uid://duiq0ihwaivdj" path="res://Assets/JeremyAssets/mom_boss_char.tscn" id="3_oek4w"]
 [ext_resource type="Texture2D" uid="uid://chkvv4pcjbste" path="res://Assets/Taby Assets/door.png" id="4_dfat4"]
