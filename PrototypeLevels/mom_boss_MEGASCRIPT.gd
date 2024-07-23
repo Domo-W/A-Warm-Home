@@ -19,7 +19,7 @@ extends Node2D
 func _ready():
 	HappyEnvironment.stop()
 	MenuMusic.stop()
-	ActualCreepy.play()
+	ActualCreepy.stop()
 
 
 func _physics_process(delta):
