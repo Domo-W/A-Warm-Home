@@ -17,9 +17,9 @@ extends Node2D
 @onready var stairs_to_hallway_collision = $"Door Transportation Management/Downstairs To Upstairs/Stairs To Hallway Collision"
 
 func _ready():
-	if MenuMusic.playing:
-		MenuMusic.stop()
-	ActualCreepy.play
+	HappyEnvironment.stop()
+	MenuMusic.stop()
+	ActualCreepy.play()
 
 
 func _physics_process(delta):

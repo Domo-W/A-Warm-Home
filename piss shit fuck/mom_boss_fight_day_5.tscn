@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://bjsliq7cf7p7e"]
+[gd_scene load_steps=106 format=3 uid="uid://bjsliq7cf7p7e"]
 
 [ext_resource type="Script" path="res://PrototypeLevels/mom_boss_MEGASCRIPT.gd" id="1_j4bib"]
 [ext_resource type="Shader" path="res://piss shit fuck/piss shit fuck pt 2/monochrome.gdshader" id="2_a6t5g"]
@@ -271,6 +271,9 @@ size = Vector2(384, 193)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2fvne"]
 size = Vector2(1870, 207)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlhjn"]
+size = Vector2(168, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d123c"]
 size = Vector2(533, 6)
@@ -746,7 +749,6 @@ zoom = Vector2(0.5, 0.5)
 editor_draw_limits = true
 
 [node name="Room Area Management" type="Node2D" parent="."]
-visible = false
 script = ExtResource("24_opj7f")
 
 [node name="Bedroom Area" type="Area2D" parent="Room Area Management"]
@@ -789,6 +791,13 @@ position = Vector2(7, 1230)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room Area Management/Nightmare Area"]
 position = Vector2(49, -21.5)
 shape = SubResource("RectangleShape2D_2fvne")
+
+[node name="Area2D" type="Area2D" parent="Room Area Management"]
+position = Vector2(-641, 677)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room Area Management/Area2D"]
+position = Vector2(3, 2)
+shape = SubResource("RectangleShape2D_vlhjn")
 
 [node name="Collision Walls" type="Node2D" parent="."]
 
@@ -880,7 +889,7 @@ position = Vector2(-726, 697)
 rotation = -1.57079
 shape = SubResource("RectangleShape2D_odmdm")
 
-[node name="CollisionShape2D29" type="CollisionShape2D" parent="Collision Walls/StaticBody2D10"]
+[node name="Blocking Momster" type="CollisionShape2D" parent="Collision Walls/StaticBody2D10"]
 position = Vector2(-661, 697)
 rotation = -1.57079
 shape = SubResource("RectangleShape2D_odmdm")
@@ -929,6 +938,13 @@ shape = SubResource("RectangleShape2D_pcnld")
 
 [node name="Momster2" parent="Momster Management" node_paths=PackedStringArray("player") instance=ExtResource("29_8343g")]
 position = Vector2(-696, 662)
+player = NodePath("../../stickplayer")
+
+[node name="Momster4" parent="Momster Management" node_paths=PackedStringArray("player") instance=ExtResource("29_8343g")]
+visible = false
+position = Vector2(465, 749)
+collision_layer = 0
+collision_mask = 0
 player = NodePath("../../stickplayer")
 
 [node name="Momster3" parent="Momster Management" node_paths=PackedStringArray("player") instance=ExtResource("29_8343g")]
@@ -983,3 +999,4 @@ navigation_polygon = SubResource("NavigationPolygon_tbg8x")
 [connection signal="body_exited" from="Room Area Management/Kitchen Area" to="Room Area Management" method="_on_kitchen_area_body_exited"]
 [connection signal="body_entered" from="Room Area Management/Nightmare Area" to="Room Area Management" method="_on_nightmare_area_body_entered"]
 [connection signal="body_exited" from="Room Area Management/Nightmare Area" to="Room Area Management" method="_on_nightmare_area_body_exited"]
+[connection signal="body_entered" from="Room Area Management/Area2D" to="Room Area Management" method="_on_area_2d_body_entered"]
