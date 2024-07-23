@@ -940,13 +940,6 @@ shape = SubResource("RectangleShape2D_pcnld")
 position = Vector2(-696, 662)
 player = NodePath("../../stickplayer")
 
-[node name="Momster4" parent="Momster Management" node_paths=PackedStringArray("player") instance=ExtResource("29_8343g")]
-visible = false
-position = Vector2(465, 749)
-collision_layer = 0
-collision_mask = 0
-player = NodePath("../../stickplayer")
-
 [node name="Momster3" parent="Momster Management" node_paths=PackedStringArray("player") instance=ExtResource("29_8343g")]
 position = Vector2(731, 1266)
 player = NodePath("../../stickplayer")
