@@ -16,7 +16,6 @@ var trash1 = false
 var trash2 = false
 
 func _ready():
-	DoorClick.play()
 	if (Global.day < 3 or (Global.day == 3 and not Global.has_done_task)) and not HappyEnvironment.playing:
 		HappyEnvironment.playing = true
 	elif Global.day >= 3 and not ActualCreepy.playing:
@@ -35,9 +34,11 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("interact") and bedroom_interact:
+		DoorClick.play()
 		Global.prev_room_x = 80
 		get_tree().change_scene_to_file("res://PrototypeLevels/bedroom.tscn")
 	if Input.is_action_just_pressed("interact") and bedroom2_interact:
+		DoorClick.play()
 		Global.prev_room_x = -60
 		get_tree().change_scene_to_file("res://PrototypeLevels/bedroom_2.tscn")
 	if Input.is_action_just_pressed("interact") and attic_interact:
@@ -48,6 +49,7 @@ func _process(delta):
 		else:
 			get_tree().change_scene_to_file("res://PrototypeLevels/attic_redo.tscn")
 	if Input.is_action_just_pressed("interact") and stairs_interact:
+		DoorClick.play()
 		Global.prev_room_x = 0
 		print("fell off")
 		get_tree().change_scene_to_file("res://PrototypeLevels/living_room.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://beex0paj73cv5"]
+[gd_scene load_steps=13 format=3 uid="uid://beex0paj73cv5"]
 
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/AtticRedo/AtticManagerAgain.gd" id="1_woab1"]
 [ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="2_6jj5o"]
@@ -7,7 +7,45 @@
 [ext_resource type="Texture2D" uid="uid://bn7mee37sw257" path="res://Assets/GeoffAssets/silly_wet.png" id="5_6pawc"]
 [ext_resource type="Texture2D" uid="uid://24lo8bnkt16s" path="res://Assets/GeoffAssets/new_attic_backdrop.png" id="6_nt1r4"]
 [ext_resource type="AudioStream" uid="uid://ceqi3h30xk3l1" path="res://Assets/SoundAssets/KiwiJamAtticMusic.mp3" id="7_hkaih"]
-[ext_resource type="AudioStream" uid="uid://be0x1mf3drykw" path="res://Assets/SoundAssets/Sound Effects/HanoiClick.mp3" id="8_unux6"]
+[ext_resource type="AudioStream" uid="uid://cw1n2wcjcvsp7" path="res://Assets/SoundAssets/Sound Effects/HanoiClick.mp3" id="8_unux6"]
+[ext_resource type="AudioStream" uid="uid://cw0ndru36icp7" path="res://Assets/SoundAssets/Sound Effects/AtticOpen.mp3" id="9_yr2g1"]
+
+[sub_resource type="Animation" id="Animation_4h8sf"]
+resource_name = "bgmusicdelay"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_j5kb4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lkar5"]
+_data = {
+"RESET": SubResource("Animation_j5kb4"),
+"bgmusicdelay": SubResource("Animation_4h8sf")
+}
 
 [node name="AtticRedo" type="Node2D"]
 
@@ -159,10 +197,19 @@ texture = ExtResource("6_nt1r4")
 
 [node name="BGSong" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_hkaih")
-autoplay = true
+
+[node name="MusicDelayer" type="AnimationPlayer" parent="BGSong"]
+libraries = {
+"": SubResource("AnimationLibrary_lkar5")
+}
+autoplay = "bgmusicdelay"
 
 [node name="Click" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_unux6")
+
+[node name="AtticOpen" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_yr2g1")
+bus = &"SFX"
 
 [connection signal="pressed" from="AtticManager/HBoxContainer/Button" to="AtticManager" method="_on_button_1_pressed"]
 [connection signal="pressed" from="AtticManager/HBoxContainer/Button2" to="AtticManager" method="_on_button_2_pressed"]

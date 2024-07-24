@@ -21,6 +21,7 @@ var over = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	HappyEnvironment.playing = false
+	ActualCreepy.playing = false
 	exit_button.visible = false
 	create_new_sequence(current_length)
 	update_sequence_label()

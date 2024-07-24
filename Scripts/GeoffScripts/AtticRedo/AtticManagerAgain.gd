@@ -8,6 +8,7 @@ extends Node
 @onready var box_5 = $Box_5
 @onready var attic_end_screen = %AtticEndScreen
 @onready var click = $"../Click"
+@onready var attic_open = $"../AtticOpen"
 
 const x_coords = [-390, -25, 370]
 const y_coords = [165, 85, 5, -75, -155]
@@ -18,6 +19,7 @@ var move_count = 0
 var which = []
 
 func _ready():
+	attic_open.play()
 	label.text = "Moves: 0"
 	box_1.position = Vector2(x_coords[0], y_coords[4])
 	box_2.position = Vector2(x_coords[0], y_coords[3])
