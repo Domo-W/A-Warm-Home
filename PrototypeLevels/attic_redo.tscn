@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://beex0paj73cv5"]
+[gd_scene load_steps=19 format=3 uid="uid://beex0paj73cv5"]
 
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/AtticRedo/AtticManagerAgain.gd" id="1_woab1"]
 [ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="2_6jj5o"]
@@ -9,22 +9,8 @@
 [ext_resource type="AudioStream" uid="uid://ceqi3h30xk3l1" path="res://Assets/SoundAssets/KiwiJamAtticMusic.mp3" id="7_hkaih"]
 [ext_resource type="AudioStream" uid="uid://cw1n2wcjcvsp7" path="res://Assets/SoundAssets/Sound Effects/HanoiClick.mp3" id="8_unux6"]
 [ext_resource type="AudioStream" uid="uid://cw0ndru36icp7" path="res://Assets/SoundAssets/Sound Effects/AtticOpen.mp3" id="9_yr2g1"]
-
-[sub_resource type="Animation" id="Animation_4h8sf"]
-resource_name = "bgmusicdelay"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:playing")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
+[ext_resource type="AudioStream" uid="uid://dmpf5m37o3rrc" path="res://Assets/SoundAssets/Voices/DadVoiceAngry.mp3" id="10_ssgnm"]
+[ext_resource type="AudioStream" uid="uid://cr8fopuwnolh" path="res://Assets/SoundAssets/Voices/MomVoiceCrying.mp3" id="11_hpkhq"]
 
 [sub_resource type="Animation" id="Animation_j5kb4"]
 length = 0.001
@@ -40,11 +26,143 @@ tracks/0/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Cryer/DadMad:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Cryer/MumSad:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_4h8sf"]
+resource_name = "bgmusicdelay"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_87f64"]
+resource_name = "argue"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Cryer/DadMad:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-1, 8.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Cryer/MumSad:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lkar5"]
 _data = {
 "RESET": SubResource("Animation_j5kb4"),
+"argue": SubResource("Animation_87f64"),
 "bgmusicdelay": SubResource("Animation_4h8sf")
+}
+
+[sub_resource type="Animation" id="Animation_yqh15"]
+resource_name = "waaah"
+length = 25.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cryer/DadMad:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-1, 0, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cryer/MumSad:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_b5i1i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cryer/DadMad:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cryer/MumSad:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_msiy4"]
+_data = {
+"RESET": SubResource("Animation_b5i1i"),
+"waaah": SubResource("Animation_yqh15")
 }
 
 [node name="AtticRedo" type="Node2D"]
@@ -86,6 +204,17 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_6jj5o")
 theme_override_font_sizes/font_size = 32
 text = "Pile Three"
+
+[node name="GiveUpButton" type="Button" parent="AtticManager"]
+visible = false
+offset_left = 236.0
+offset_top = -263.0
+offset_right = 500.0
+offset_bottom = -223.0
+theme_override_colors/font_color = Color(0.886275, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_6jj5o")
+theme_override_font_sizes/font_size = 32
+text = "Give Up?"
 
 [node name="Label" type="Label" parent="AtticManager"]
 offset_left = 238.0
@@ -197,6 +326,7 @@ texture = ExtResource("6_nt1r4")
 
 [node name="BGSong" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_hkaih")
+bus = &"Music"
 
 [node name="MusicDelayer" type="AnimationPlayer" parent="BGSong"]
 libraries = {
@@ -206,12 +336,29 @@ autoplay = "bgmusicdelay"
 
 [node name="Click" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_unux6")
+bus = &"SFX"
 
 [node name="AtticOpen" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_yr2g1")
 bus = &"SFX"
 
+[node name="Cryer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_msiy4")
+}
+
+[node name="DadMad" type="AudioStreamPlayer2D" parent="Cryer"]
+stream = ExtResource("10_ssgnm")
+pitch_scale = 0.8
+bus = &"SFX"
+
+[node name="MumSad" type="AudioStreamPlayer2D" parent="Cryer"]
+stream = ExtResource("11_hpkhq")
+pitch_scale = 0.8
+bus = &"SFX"
+
 [connection signal="pressed" from="AtticManager/HBoxContainer/Button" to="AtticManager" method="_on_button_1_pressed"]
 [connection signal="pressed" from="AtticManager/HBoxContainer/Button2" to="AtticManager" method="_on_button_2_pressed"]
 [connection signal="pressed" from="AtticManager/HBoxContainer/Button3" to="AtticManager" method="_on_button_3_pressed"]
+[connection signal="pressed" from="AtticManager/GiveUpButton" to="AtticManager" method="_on_give_up_button_pressed"]
 [connection signal="pressed" from="AtticEndScreen/MarginContainer/VBoxContainer/Button" to="AtticEndScreen/MarginContainer" method="_on_button_pressed"]

@@ -4,4 +4,5 @@
 
 [node name="DoorClick" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_g8reh")
+volume_db = 5.0
 bus = &"SFX"

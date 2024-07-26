@@ -9,6 +9,7 @@ extends Node
 @onready var attic_end_screen = %AtticEndScreen
 @onready var click = $"../Click"
 @onready var attic_open = $"../AtticOpen"
+@onready var give_up_button = $GiveUpButton
 
 const x_coords = [-390, -25, 370]
 const y_coords = [165, 85, 5, -75, -155]
@@ -20,6 +21,8 @@ var which = []
 
 func _ready():
 	attic_open.play()
+	HappyEnvironment.stop()
+	ActualCreepy.stop()
 	label.text = "Moves: 0"
 	box_1.position = Vector2(x_coords[0], y_coords[4])
 	box_2.position = Vector2(x_coords[0], y_coords[3])
@@ -29,6 +32,8 @@ func _ready():
 	attic_end_screen.visible  = false
 
 func _process(delta):
+	if Input.is_action_just_pressed("dev"):
+		give_up_button.visible = true
 	if towers[2] == [5, 4, 3, 2, 1]:
 		attic_end_screen.visible  = true
 #finish the game!!!!!!!!!!!
@@ -72,6 +77,8 @@ func move_disk(from_tower, to_tower):
 			tween.tween_property(box_4, "position", Vector2(x_coords[to_tower], y_coords[len(towers[to_tower])-1]), 0.4).set_ease(Tween.EASE_OUT)
 		else:
 			tween.tween_property(box_5, "position", Vector2(x_coords[to_tower], y_coords[len(towers[to_tower])-1]), 0.4).set_ease(Tween.EASE_OUT)
+		if move_count >= 50:
+			give_up_button.visible = true
 	
 func reset_color():
 	box_1.modulate = "ffffffff"
@@ -102,3 +109,8 @@ func _on_button_3_pressed():
 		pass
 	else:
 		which.append(2)
+
+
+func _on_give_up_button_pressed():
+	move_count = -1
+	towers[2] = [5, 4, 3, 2, 1]

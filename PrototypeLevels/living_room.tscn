@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dxbvsk80vjupt"]
+[gd_scene load_steps=33 format=3 uid="uid://dxbvsk80vjupt"]
 
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/living_room.gd" id="1_0hlaw"]
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_gib24"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bpty26etbullq" path="res://Assets/Decorations/livingroom_attic_door/framed_photos.png" id="10_ltdel"]
 [ext_resource type="Texture2D" uid="uid://cjetesntggqpv" path="res://Assets/Decorations/CharacterSpriteSheets/dadtop-Sheet.png" id="11_fiw6m"]
 [ext_resource type="PackedScene" uid="uid://d26dwpph6etgm" path="res://Scripts/Taby Scripts/day_counter.tscn" id="12_4dfcw"]
+[ext_resource type="AudioStream" uid="uid://cntrbitspy8px" path="res://Assets/SoundAssets/Voices/DadVoiceAngryShort.mp3" id="12_cy7pa"]
 [ext_resource type="Texture2D" uid="uid://da52wrua1tlwq" path="res://Assets/Decorations/CharacterSpriteSheets/dadbottom-Sheet.png" id="12_tg0y4"]
 [ext_resource type="PackedScene" uid="uid://ildcguyssq7b" path="res://Scripts/Taby Scripts/trash_can.tscn" id="14_i0yby"]
 
@@ -303,6 +304,8 @@ text = "\"Hey
 son...\""
 
 [node name="DadMad" type="AudioStreamPlayer2D" parent="Decor/Dad/DadSense"]
+stream = ExtResource("12_cy7pa")
+pitch_scale = 0.6
 
 [node name="DadBottom" type="AnimatedSprite2D" parent="Decor"]
 z_index = 1

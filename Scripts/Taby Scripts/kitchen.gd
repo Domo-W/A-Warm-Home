@@ -4,6 +4,7 @@ extends Node2D
 
 @onready var living_room_label = $LivingRoomDoor/LivingRoomLabel
 @onready var homework_label = $Homework/HomeworkLabel
+@onready var mom_talk = $Homework/MomTalk
 @onready var mom = $Decor/Mom
 @onready var trash_can = $TrashCan
 
@@ -49,6 +50,8 @@ func _process(_delta):
 
 func _on_homework_body_entered(body):
 	if body == player:
+		if Global.day == 1 and not Global.has_done_task:
+			mom_talk.play()
 		homework_interact = true
 		homework_label.visible = true
 

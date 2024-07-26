@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c5rhaa4de4ebp"]
+[gd_scene load_steps=31 format=3 uid="uid://c5rhaa4de4ebp"]
 
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_8a4ks"]
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/kitchen.gd" id="1_vr8le"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d3a1k1gg7sofk" path="res://Assets/Decorations/Assets_1/bedside_table.png" id="5_gtsbw"]
 [ext_resource type="Texture2D" uid="uid://div2u7lqiorlc" path="res://Assets/Decorations/Assets_1/wallpaper&flooring.png" id="6_khv4v"]
 [ext_resource type="Texture2D" uid="uid://cfwerihdc1r83" path="res://Assets/Decorations/Assets_1/book.png" id="6_q1c2g"]
+[ext_resource type="AudioStream" uid="uid://drp45rkqen336" path="res://Assets/SoundAssets/Voices/MomVoiceShort.mp3" id="7_c3q0h"]
 [ext_resource type="Texture2D" uid="uid://wustjokekyas" path="res://Assets/Decorations/kitchen_furniture/fridge.png" id="7_q1kbg"]
 [ext_resource type="Texture2D" uid="uid://bkmravxd0qjg6" path="res://Assets/Decorations/kitchen_furniture/knife_holder.png" id="8_n2tci"]
 [ext_resource type="Texture2D" uid="uid://dtil4kqo7meag" path="res://Assets/Decorations/kitchen_furniture/sink_counter.png" id="9_pdtne"]
@@ -156,6 +157,10 @@ texture = ExtResource("5_gtsbw")
 [node name="Homework" type="Sprite2D" parent="Homework"]
 position = Vector2(-22, 4)
 texture = ExtResource("6_q1c2g")
+
+[node name="MomTalk" type="AudioStreamPlayer2D" parent="Homework"]
+stream = ExtResource("7_c3q0h")
+pitch_scale = 1.5
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_1d6ge")

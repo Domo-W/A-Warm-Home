@@ -7,6 +7,7 @@ extends Node2D
 @onready var outside_label = $Outside/OutsideLabel
 @onready var dad_speech = $Decor/Dad/DadSense/DadSpeech
 @onready var trash_can = $TrashCan
+@onready var dad_mad = $Decor/Dad/DadSense/DadMad
 
 var stairs_interact = (Global.prev_room_x == 0)
 var kitchen_interact = (Global.prev_room_x == -130)
@@ -56,6 +57,7 @@ func _process(_delta):
 			DoorClick.play()
 			get_tree().change_scene_to_file("res://PrototypeLevels/lawn_mowing_minigame.tscn")
 	if Input.is_action_just_pressed("interact") and dad_interact:
+		dad_mad.play()
 		dad_speech.text = "\"Not now,\nI'm busy.\""
 	if Input.is_action_just_pressed("interact") and trash and Global.day == 4:
 		Global.trash_collected[4] = true
