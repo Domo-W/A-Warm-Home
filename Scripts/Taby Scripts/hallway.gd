@@ -53,11 +53,11 @@ func _process(delta):
 		Global.prev_room_x = 0
 		print("fell off")
 		get_tree().change_scene_to_file("res://PrototypeLevels/living_room.tscn")
-	if Input.is_action_just_pressed("interact") and trash1:
+	if Input.is_action_just_pressed("interact") and trash1 and Global.day == 4:
 		Global.trash_collected[1] = true
 		print(Global.trash_collected)
 		trash_can.empty()
-	if Input.is_action_just_pressed("interact") and trash2:
+	if Input.is_action_just_pressed("interact") and trash2 and Global.day == 4:
 		Global.trash_collected[2] = true
 		print(Global.trash_collected)
 		trash_can_2.empty()

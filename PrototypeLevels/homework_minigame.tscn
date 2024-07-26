@@ -137,12 +137,17 @@ text = "Exit in shame"
 
 [node name="TaskMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_172li")
+autoplay = true
+bus = &"Music"
 
 [node name="Correct" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_yvm3y")
+volume_db = -5.0
+bus = &"SFX"
 
 [node name="Incorrect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_nu7qg")
+bus = &"SFX"
 
 [connection signal="pressed" from="ButtonContainer/ButtonA" to="." method="_on_button_a_pressed"]
 [connection signal="pressed" from="ButtonContainer/ButtonB" to="." method="_on_button_b_pressed"]

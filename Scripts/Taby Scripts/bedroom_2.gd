@@ -15,8 +15,9 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("interact") and hallway_interact:
+		DoorClick.play()
 		get_tree().change_scene_to_file("res://PrototypeLevels/hallway.tscn")
-	if Input.is_action_just_pressed("interact") and trash:
+	if Input.is_action_just_pressed("interact") and trash and Global.day == 4:
 		Global.trash_collected[3] = true
 		print(Global.trash_collected)
 		trash_can.empty()

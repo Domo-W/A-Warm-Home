@@ -33,6 +33,7 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("interact") and exitable:
 		print("bye")
+		DoorClick.play()
 		get_tree().change_scene_to_file("res://PrototypeLevels/hallway.tscn")
 	if Input.is_action_just_pressed("interact") and sleepable:
 		if not Global.has_done_task:
@@ -43,7 +44,7 @@ func _process(_delta):
 			Global.fresh_start = true
 			Global.day += 1
 			get_tree().change_scene_to_file("res://PrototypeLevels/day_switch.tscn")
-	if Input.is_action_just_pressed("interact") and trashable:
+	if Input.is_action_just_pressed("interact") and trashable and Global.day == 4:
 		Global.trash_collected[0] = true
 		print(Global.trash_collected)
 		trash_can.empty()
@@ -68,7 +69,9 @@ func _on_sleep_check_body_exited(body):
 		bed_label.visible = false
 
 func _on_trash_area_body_entered(body):
-	trashable = true
+	if body == player:
+		trashable = true
 
 func _on_trash_area_body_exited(body):
-	trashable = false
+	if body == player:
+		trashable = false

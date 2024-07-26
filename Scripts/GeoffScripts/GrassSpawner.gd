@@ -4,7 +4,9 @@ var score = 0
 @onready var label = $Label
 @onready var cpu_particles_2d = $"../LawnPlayer/CPUParticles2D"
 
-
+func _ready():
+	HappyEnvironment.playing = false
+	ActualCreepy.playing = false
 
 func add_point():
 	score += 1

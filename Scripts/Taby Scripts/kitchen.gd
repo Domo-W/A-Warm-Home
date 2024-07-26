@@ -34,6 +34,7 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("interact") and living_interact:
 		Global.prev_room_x = -130
+		DoorClick.play()
 		get_tree().change_scene_to_file("res://PrototypeLevels/living_room.tscn")
 	if Input.is_action_just_pressed("interact") and homework_interact:
 		Global.prev_room_x = -226
@@ -41,7 +42,7 @@ func _process(_delta):
 			homework_label.text = "I'll do it\nanother day..."
 		else:
 			get_tree().change_scene_to_file("res://PrototypeLevels/homework_minigame.tscn")
-	if Input.is_action_just_pressed("interact") and trash:
+	if Input.is_action_just_pressed("interact") and trash and Global.day == 4:
 		Global.trash_collected[5] = true
 		print(Global.trash_collected)
 		trash_can.empty()

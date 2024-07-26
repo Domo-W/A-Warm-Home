@@ -302,6 +302,8 @@ theme_override_font_sizes/font_size = 8
 text = "\"Hey 
 son...\""
 
+[node name="DadMad" type="AudioStreamPlayer2D" parent="Decor/Dad/DadSense"]
+
 [node name="DadBottom" type="AnimatedSprite2D" parent="Decor"]
 z_index = 1
 position = Vector2(24, 68)

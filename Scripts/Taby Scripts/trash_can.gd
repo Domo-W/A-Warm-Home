@@ -6,4 +6,6 @@ func _ready():
 	else:
 		visible = false
 func empty():
+	if animation != "empty":
+		TrashCollectSound.play()
 	animation = "empty"

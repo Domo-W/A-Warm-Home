@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://1vd7b82rhi6d"]
+
+[ext_resource type="AudioStream" uid="uid://ck3x0rv6gfmaq" path="res://Assets/SoundAssets/Sound Effects/PaperPickUp.mp3" id="1_a8ys3"]
+
+[node name="TrashCollectSound" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_a8ys3")
+bus = &"SFX"

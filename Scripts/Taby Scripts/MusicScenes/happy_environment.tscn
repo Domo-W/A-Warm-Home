@@ -4,5 +4,4 @@
 
 [node name="HappyEnvironment" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_glsqe")
-volume_db = -5.0
 bus = &"Music"

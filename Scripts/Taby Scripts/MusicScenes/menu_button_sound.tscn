@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://l40ix5157mrf"]
+
+[ext_resource type="AudioStream" uid="uid://cxgh6qo8ktor7" path="res://Assets/SoundAssets/Sound Effects/ButtonMainMenu.mp3" id="1_wfdtu"]
+
+[node name="MenuButtonSound" type="AudioStreamPlayer"]
+stream = ExtResource("1_wfdtu")
+bus = &"SFX"

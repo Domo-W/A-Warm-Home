@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c88vpd5p4h3q7"]
+
+[ext_resource type="AudioStream" uid="uid://bd0s46jb8xm87" path="res://Assets/SoundAssets/Sound Effects/Footsteps.mp3" id="1_ny7i6"]
+
+[node name="Footsteps" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_ny7i6")
+pitch_scale = 2.0
+bus = &"SFX"
