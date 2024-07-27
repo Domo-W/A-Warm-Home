@@ -290,7 +290,6 @@ sprite_frames = SubResource("SpriteFrames_gqrtq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decor/Dad/StaticBody2D"]
 position = Vector2(1.875, 3.75)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_5fc6t")
 
 [node name="DadSense" type="Area2D" parent="Decor/Dad"]

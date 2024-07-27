@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dw7isrcpo28gr"]
+[gd_scene load_steps=27 format=3 uid="uid://dw7isrcpo28gr"]
 
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/hallway.gd" id="1_e8e6x"]
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="2_4qndj"]
