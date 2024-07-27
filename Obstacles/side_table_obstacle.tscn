@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://de4qyqllhqd44"]
+
+[ext_resource type="Material" uid="uid://ctmpby5d8efx4" path="res://mom_boss_fight_day_5.tres" id="1_mr2he"]
+[ext_resource type="Texture2D" uid="uid://hcdognxa0d24" path="res://Assets/Decorations/Deco/sidetable.png" id="2_h3dj3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxlrm"]
+size = Vector2(14, 16)
+
+[node name="SideTableObstacle" type="Sprite2D"]
+material = ExtResource("1_mr2he")
+position = Vector2(9, 6)
+texture = ExtResource("2_h3dj3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-9, -7)
+shape = SubResource("RectangleShape2D_kxlrm")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=3 uid="uid://bjsliq7cf7p7e"]
+[gd_scene load_steps=115 format=3 uid="uid://bjsliq7cf7p7e"]
 
 [ext_resource type="Script" path="res://PrototypeLevels/mom_boss_MEGASCRIPT.gd" id="1_j4bib"]
 [ext_resource type="Shader" path="res://piss shit fuck/piss shit fuck pt 2/monochrome.gdshader" id="2_a6t5g"]
@@ -30,8 +30,12 @@
 [ext_resource type="Texture2D" uid="uid://c4xi83w7ir3i8" path="res://Assets/Decorations/livingroom_attic_door/Couch.png" id="23_ciiga"]
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="24_iphgy"]
 [ext_resource type="Script" path="res://piss shit fuck/Room Area Management.gd" id="24_opj7f"]
+[ext_resource type="Texture2D" uid="uid://03vacajjurw7" path="res://Assets/Decorations/Deco/blue_rug.png" id="29_46ymv"]
 [ext_resource type="PackedScene" uid="uid://begymf74ytw6g" path="res://piss shit fuck/momster.tscn" id="29_8343g"]
 [ext_resource type="AudioStream" uid="uid://cv1oqmcp3csce" path="res://Assets/SoundAssets/KiwiJamMomChaseMusic.mp3" id="30_00ycy"]
+[ext_resource type="Texture2D" uid="uid://dklva13r4xh2x" path="res://Assets/Decorations/Deco/coffee_table.png" id="30_hoe0g"]
+[ext_resource type="Texture2D" uid="uid://hcdognxa0d24" path="res://Assets/Decorations/Deco/sidetable.png" id="31_47ru1"]
+[ext_resource type="PackedScene" uid="uid://de4qyqllhqd44" path="res://Obstacles/side_table_obstacle.tscn" id="32_gotsu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wvgxo"]
 shader = ExtResource("2_a6t5g")
@@ -235,6 +239,15 @@ shader = ExtResource("2_a6t5g")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hfgq5"]
 shader = ExtResource("2_a6t5g")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7idb4"]
+size = Vector2(49, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8oyn"]
+size = Vector2(57, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xiqwu"]
+size = Vector2(18, 13)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4c20b"]
 shader = ExtResource("2_a6t5g")
@@ -685,6 +698,7 @@ texture = ExtResource("10_tuo13")
 [node name="Living Room" type="Node2D" parent="ROOMS"]
 
 [node name="StairsSprite" type="Sprite2D" parent="ROOMS/Living Room"]
+z_index = 1
 material = SubResource("ShaderMaterial_o7tx0")
 position = Vector2(287, 608)
 texture = ExtResource("12_x5ad6")
@@ -717,15 +731,78 @@ material = SubResource("ShaderMaterial_lmf1j")
 position = Vector2(279, 758)
 texture = ExtResource("16_mxhbu")
 
+[node name="Window2" type="Sprite2D" parent="ROOMS/Living Room/Decor"]
+material = SubResource("ShaderMaterial_drjhx")
+position = Vector2(330, 632)
+texture = ExtResource("10_tuo13")
+
 [node name="Window" type="Sprite2D" parent="ROOMS/Living Room/Decor"]
 material = SubResource("ShaderMaterial_drjhx")
-position = Vector2(385, 632)
-texture = ExtResource("18_e0f42")
+position = Vector2(392, 632)
+texture = ExtResource("10_tuo13")
 
 [node name="FramedPhotos" type="Sprite2D" parent="ROOMS/Living Room/Decor"]
 material = SubResource("ShaderMaterial_hfgq5")
-position = Vector2(197, 639)
+position = Vector2(268, 605)
 texture = ExtResource("17_lhogb")
+
+[node name="BlueRug" type="Sprite2D" parent="ROOMS/Living Room/Decor"]
+material = ExtResource("14_ayawl")
+position = Vector2(438, 675)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("29_46ymv")
+
+[node name="Bookshelf" type="Node" parent="ROOMS/Living Room/Decor"]
+
+[node name="BookshelfAgainstWall" type="Sprite2D" parent="ROOMS/Living Room/Decor/Bookshelf"]
+z_index = 2
+material = ExtResource("14_ayawl")
+position = Vector2(208, 667)
+texture = ExtResource("8_ekg42")
+
+[node name="BookshelfAgainstWall2" type="Sprite2D" parent="ROOMS/Living Room/Decor/Bookshelf"]
+z_index = 2
+material = ExtResource("14_ayawl")
+position = Vector2(208, 650)
+texture = ExtResource("8_ekg42")
+
+[node name="BookshelfAgainstWall3" type="Sprite2D" parent="ROOMS/Living Room/Decor/Bookshelf"]
+z_index = 2
+material = ExtResource("14_ayawl")
+position = Vector2(208, 633)
+texture = ExtResource("8_ekg42")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ROOMS/Living Room/Decor/Bookshelf"]
+material = ExtResource("14_ayawl")
+position = Vector2(276, 638)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ROOMS/Living Room/Decor/Bookshelf/StaticBody2D"]
+material = ExtResource("14_ayawl")
+position = Vector2(-75.5, 23.5)
+shape = SubResource("RectangleShape2D_7idb4")
+
+[node name="CoffeeTable" type="Sprite2D" parent="ROOMS/Living Room/Decor"]
+z_index = 2
+material = ExtResource("14_ayawl")
+position = Vector2(284, 751)
+texture = ExtResource("30_hoe0g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ROOMS/Living Room/Decor/CoffeeTable"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ROOMS/Living Room/Decor/CoffeeTable/StaticBody2D"]
+position = Vector2(-4.5, -0.5)
+shape = SubResource("RectangleShape2D_t8oyn")
+
+[node name="Sidetable" type="Sprite2D" parent="ROOMS/Living Room/Decor/CoffeeTable"]
+material = ExtResource("14_ayawl")
+position = Vector2(-58, -27)
+texture = ExtResource("31_47ru1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ROOMS/Living Room/Decor/CoffeeTable/Sidetable"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ROOMS/Living Room/Decor/CoffeeTable/Sidetable/StaticBody2D"]
+position = Vector2(-7, -5.5)
+shape = SubResource("RectangleShape2D_xiqwu")
 
 [node name="Nightmare Room" type="Node2D" parent="ROOMS"]
 
@@ -742,23 +819,28 @@ texture = ExtResource("11_7t4qy")
 
 [node name="Door2" type="Sprite2D" parent="ROOMS/Nightmare Room"]
 material = SubResource("ShaderMaterial_ixjek")
-position = Vector2(377, 1268)
+position = Vector2(377, 1267)
 texture = ExtResource("11_7t4qy")
 
 [node name="Door3" type="Sprite2D" parent="ROOMS/Nightmare Room"]
 material = SubResource("ShaderMaterial_cxcsq")
-position = Vector2(-170, 1268)
+position = Vector2(-170, 1267)
 texture = ExtResource("11_7t4qy")
 
 [node name="Door4" type="Sprite2D" parent="ROOMS/Nightmare Room"]
 material = SubResource("ShaderMaterial_o4qik")
-position = Vector2(-652, 1268)
+position = Vector2(-652, 1267)
 texture = ExtResource("11_7t4qy")
 
 [node name="Sprite2D" type="Sprite2D" parent="ROOMS/Nightmare Room"]
 material = SubResource("ShaderMaterial_qaewa")
 position = Vector2(-838, 1167)
 texture = ExtResource("14_6kbl7")
+
+[node name="Obstacles" type="Node2D" parent="ROOMS/Nightmare Room"]
+
+[node name="SideTableObstacle" parent="ROOMS/Nightmare Room/Obstacles" instance=ExtResource("32_gotsu")]
+position = Vector2(498, 1301)
 
 [node name="stickplayer" parent="." instance=ExtResource("24_iphgy")]
 unique_name_in_owner = true
