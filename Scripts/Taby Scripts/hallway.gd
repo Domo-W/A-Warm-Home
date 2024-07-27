@@ -8,6 +8,7 @@ extends Node2D
 @onready var trash_can = $TrashCan
 @onready var trash_can_2 = $TrashCan2
 @onready var crybaby = $Crybaby
+@onready var cry_collider = $Bedroom2Door/CollisionShape2D
 
 var bedroom_interact = (Global.prev_room_x == 80)
 var bedroom2_interact = (Global.prev_room_x == -60)
@@ -23,6 +24,9 @@ func _ready():
 	elif Global.day >= 3 and not ActualCreepy.playing:
 		HappyEnvironment.stop()
 		ActualCreepy.playing = true
+	if (Global.day == 2 and Global.has_done_task) or Global.day == 3:
+		cry_collider.scale.x = 1
+		cry_collider.scale.y = 3
 	player.position.x = Global.prev_room_x
 	bedroom_label.visible = bedroom_interact
 	bedroom2_label.visible = bedroom2_interact
