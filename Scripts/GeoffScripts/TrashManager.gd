@@ -6,6 +6,9 @@ var trash_scene = preload("res://Scripts/GeoffScripts/draggable_trash.tscn")
 var remaining_trash = 10
 
 func _ready():
+	ActualCreepy.stop()
+	HappyEnvironment.stop()
+	Footsteps.stop()
 	for i in range(remaining_trash):
 		var trash
 		if i % 2 == 0:

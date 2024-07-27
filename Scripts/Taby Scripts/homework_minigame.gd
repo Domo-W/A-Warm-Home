@@ -10,7 +10,6 @@ var over = false
 @onready var correct = $Correct
 @onready var incorrect = $Incorrect
 @onready var task_music = $TaskMusic
-
 @onready var sequence_label = $SequenceLabel
 @onready var button_a = $ButtonContainer/ButtonA
 @onready var button_b = $ButtonContainer/ButtonB
@@ -20,6 +19,7 @@ var over = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Footsteps.stop()
 	HappyEnvironment.playing = false
 	ActualCreepy.playing = false
 	exit_button.visible = false

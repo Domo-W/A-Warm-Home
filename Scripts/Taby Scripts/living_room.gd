@@ -17,9 +17,11 @@ var trash = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if (Global.day < 3 or (Global.day == 3 and not Global.has_done_task)) and not HappyEnvironment.playing:
+	if Global.day < 3 and not HappyEnvironment.playing:
 		HappyEnvironment.playing = true
+		ActualCreepy.stop()
 	elif Global.day >= 3 and not ActualCreepy.playing:
+		HappyEnvironment.stop()
 		ActualCreepy.playing = true
 	player.position.x = Global.prev_room_x
 	stairs_label.visible = stairs_interact
@@ -49,9 +51,11 @@ func _process(_delta):
 		if Global.day == 4 and Global.trash_collected == [true, true, true, true, true, true] and not Global.has_done_task:
 			DoorClick.play()
 			get_tree().change_scene_to_file("res://PrototypeLevels/trash_pickup_minigame.tscn")
-		elif Global.day == 4:
+		elif Global.day == 4 and not Global.has_done_task:
+			FailSound.play()
 			outside_label.text = "I need all\nthe trash.."
-		elif Global.day != 2:
+		elif Global.day != 2 and Global.day != 4:
+			FailSound.play()
 			outside_label.text = "I don't feel\nlike it..."
 		elif not Global.has_done_task:
 			DoorClick.play()

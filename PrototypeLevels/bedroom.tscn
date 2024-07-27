@@ -199,6 +199,11 @@ texture = ExtResource("10_1wnig")
 position = Vector2(-35, 98)
 texture = ExtResource("12_aevv8")
 
+[node name="BlueRug" type="Sprite2D" parent="Decor"]
+position = Vector2(-94, 119)
+scale = Vector2(0.78125, 0.78125)
+texture = ExtResource("15_nsqbr")
+
 [node name="ControlsHint" type="Label" parent="."]
 visible = false
 z_index = 1
@@ -211,6 +216,19 @@ theme_override_fonts/font = ExtResource("3_1mrvb")
 theme_override_font_sizes/font_size = 8
 text = "WASD to Move
 E to Interact"
+horizontal_alignment = 1
+
+[node name="Quest" type="Label" parent="."]
+z_index = 10
+offset_left = -151.0
+offset_top = 33.0
+offset_right = -39.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_1mrvb")
+theme_override_font_sizes/font_size = 8
+text = "I should do my
+homework..."
 horizontal_alignment = 1
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -266,11 +284,6 @@ position = Vector2(-147, 84)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrashCan/TrashArea"]
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_qj161")
-
-[node name="BlueRug" type="Sprite2D" parent="."]
-position = Vector2(-94, 119)
-scale = Vector2(0.78125, 0.78125)
-texture = ExtResource("15_nsqbr")
 
 [connection signal="body_entered" from="HallwayDoor" to="." method="_on_hallway_door_body_entered"]
 [connection signal="body_exited" from="HallwayDoor" to="." method="_on_hallway_door_body_exited"]

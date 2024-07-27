@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dw7isrcpo28gr"]
+[gd_scene load_steps=24 format=3 uid="uid://dw7isrcpo28gr"]
 
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/hallway.gd" id="1_e8e6x"]
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="2_4qndj"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dnrou4aurrouw" path="res://Assets/Decorations/livingroom_attic_door/ceiling_light.png" id="8_75juo"]
 [ext_resource type="PackedScene" uid="uid://d26dwpph6etgm" path="res://Scripts/Taby Scripts/day_counter.tscn" id="9_tyrqe"]
 [ext_resource type="PackedScene" uid="uid://ildcguyssq7b" path="res://Scripts/Taby Scripts/trash_can.tscn" id="10_vcg84"]
+[ext_resource type="AudioStream" uid="uid://cr8fopuwnolh" path="res://Assets/SoundAssets/Voices/MomVoiceCrying.mp3" id="11_cb037"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u7565"]
 size = Vector2(53, 60.5)
@@ -247,6 +248,12 @@ position = Vector2(-308, 66)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrashCan2/TrashArea2"]
 position = Vector2(5, -3)
 shape = SubResource("RectangleShape2D_okmww")
+
+[node name="Crybaby" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_cb037")
+volume_db = -5.945
+pitch_scale = 0.8
+bus = &"SFX"
 
 [connection signal="body_entered" from="BedroomDoor" to="." method="_on_bedroom_door_body_entered"]
 [connection signal="body_exited" from="BedroomDoor" to="." method="_on_bedroom_door_body_exited"]

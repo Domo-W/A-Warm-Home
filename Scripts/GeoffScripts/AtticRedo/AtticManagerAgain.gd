@@ -23,6 +23,7 @@ func _ready():
 	attic_open.play()
 	HappyEnvironment.stop()
 	ActualCreepy.stop()
+	Footsteps.stop()
 	label.text = "Moves: 0"
 	box_1.position = Vector2(x_coords[0], y_coords[4])
 	box_2.position = Vector2(x_coords[0], y_coords[3])
@@ -36,6 +37,7 @@ func _process(delta):
 		give_up_button.visible = true
 	if towers[2] == [5, 4, 3, 2, 1]:
 		attic_end_screen.visible  = true
+		Global.has_done_task = true
 #finish the game!!!!!!!!!!!
 	if len(which) == 2:
 		move_disk(which[0], which[1])

@@ -33,15 +33,17 @@ var can_hide = false
 var can_win = false
 
 func reset_game():
+	print(fresh_start)
 	is_dragging_trash = false
 	is_dragging_box = false
-	var fresh_start = true
-	var prev_room_x = 80
-	var day = 1
-	var has_done_task = false
-	var trash_collected = [false, false, false, false, false, false]
-	var is_in_room = null
-	var is_day_five = false
-	var met_momster = false
-	var can_hide = false
-	var can_win = false
+	fresh_start = true
+	print(fresh_start)
+	prev_room_x = 80
+	day = 1
+	has_done_task = false
+	trash_collected = [false, false, false, false, false, false]
+	is_in_room = null
+	is_day_five = false
+	met_momster = false
+	can_hide = false
+	can_win = false

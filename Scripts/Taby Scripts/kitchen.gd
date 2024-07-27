@@ -16,9 +16,11 @@ var trash = false
 func _ready():
 	if not homework_interact:
 		DoorClick.play()
-	if (Global.day < 3 or (Global.day == 3 and not Global.has_done_task)) and not HappyEnvironment.playing:
+	if Global.day < 3 and not HappyEnvironment.playing:
 		HappyEnvironment.playing = true
+		ActualCreepy.stop()
 	elif Global.day >= 3 and not ActualCreepy.playing:
+		HappyEnvironment.stop()
 		ActualCreepy.playing = true
 	if Global.trash_collected[5]:
 		trash_can.empty()
@@ -40,9 +42,13 @@ func _process(_delta):
 	if Input.is_action_just_pressed("interact") and homework_interact:
 		Global.prev_room_x = -226
 		if Global.day != 1:
+			FailSound.play()
 			homework_label.text = "I'll do it\nanother day..."
 		else:
-			get_tree().change_scene_to_file("res://PrototypeLevels/homework_minigame.tscn")
+			if Global.has_done_task:
+				FailSound.play()
+			else:
+				get_tree().change_scene_to_file("res://PrototypeLevels/homework_minigame.tscn")
 	if Input.is_action_just_pressed("interact") and trash and Global.day == 4:
 		Global.trash_collected[5] = true
 		print(Global.trash_collected)

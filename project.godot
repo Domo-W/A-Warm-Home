@@ -25,6 +25,7 @@ DoorClick="*res://Scripts/Taby Scripts/MusicScenes/door_click.tscn"
 Footsteps="*res://Scripts/Taby Scripts/MusicScenes/footsteps.tscn"
 MenuButtonSound="*res://Scripts/Taby Scripts/MusicScenes/menu_button_sound.tscn"
 TrashCollectSound="*res://Scripts/Taby Scripts/MusicScenes/trash_collect_sound.tscn"
+FailSound="*res://Scripts/Taby Scripts/MusicScenes/fail_sound.tscn"
 
 [display]
 

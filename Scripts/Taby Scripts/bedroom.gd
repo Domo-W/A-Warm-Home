@@ -6,29 +6,45 @@ extends Node2D
 @onready var controls_hint = $ControlsHint
 @onready var player = $stickplayer
 @onready var trash_can = $TrashCan
+@onready var quest = $Quest
 
 var exitable = false
 var sleepable = true
 var trashable = false
 
 func _ready():
+	print("fresh start is " + str(Global.fresh_start))
 	MenuMusic.playing = false
-	if (Global.day < 3 or (Global.day == 3 and not Global.has_done_task)) and not HappyEnvironment.playing:
+	if Global.day < 3 and not HappyEnvironment.playing:
 		HappyEnvironment.playing = true
+		ActualCreepy.stop()
 	elif Global.day >= 3 and not ActualCreepy.playing:
+		HappyEnvironment.stop()
 		ActualCreepy.playing = true
 	player.position.y = 114
 	if Global.trash_collected[0]:
 		trash_can.empty()
 	if not Global.fresh_start:
+		print("old")
 		DoorClick.play()
 		player.position.x = -180
 	else:
+		Global.fresh_start = false
 		Global.has_done_task = false
 		if Global.day != 1:
 			controls_hint.text = "A new day!"
 		controls_hint.visible = true
-	Global.fresh_start = false
+	
+	if Global.has_done_task:
+		quest.text = "Time to sleep!"
+	elif Global.day == 1:
+		quest.text = "I should do\nmy homework..."
+	elif Global.day == 2:
+		quest.text = "The lawn \nneeds mowing"
+	elif Global.day == 3:
+		quest.text = "The attic is\n a bit dusty"
+	elif Global.day == 4:
+		quest.text = "I need to take\nout the trash"
 
 func _process(_delta):
 	if Input.is_action_just_pressed("interact") and exitable:
@@ -37,6 +53,7 @@ func _process(_delta):
 		get_tree().change_scene_to_file("res://PrototypeLevels/hallway.tscn")
 	if Input.is_action_just_pressed("interact") and sleepable:
 		if not Global.has_done_task:
+			FailSound.play()
 			bed_label.visible = true
 			controls_hint.visible = false
 		else:

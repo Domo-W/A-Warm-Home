@@ -7,6 +7,7 @@ extends Node2D
 @onready var stairs_label = $Stairs/StairsLabel
 @onready var trash_can = $TrashCan
 @onready var trash_can_2 = $TrashCan2
+@onready var crybaby = $Crybaby
 
 var bedroom_interact = (Global.prev_room_x == 80)
 var bedroom2_interact = (Global.prev_room_x == -60)
@@ -16,9 +17,11 @@ var trash1 = false
 var trash2 = false
 
 func _ready():
-	if (Global.day < 3 or (Global.day == 3 and not Global.has_done_task)) and not HappyEnvironment.playing:
+	if Global.day < 3 and not HappyEnvironment.playing:
 		HappyEnvironment.playing = true
+		ActualCreepy.stop()
 	elif Global.day >= 3 and not ActualCreepy.playing:
+		HappyEnvironment.stop()
 		ActualCreepy.playing = true
 	player.position.x = Global.prev_room_x
 	bedroom_label.visible = bedroom_interact
@@ -29,7 +32,7 @@ func _ready():
 		trash_can.empty()
 	if Global.trash_collected[2]:
 		trash_can_2.empty()
-	if Global.day == 4 and Global.has_done_task:
+	if Global.day == 3 and Global.has_done_task:
 		attic_label.text = "Good work!"
 
 func _process(delta):
@@ -45,9 +48,11 @@ func _process(delta):
 		Global.prev_room_x = -250
 		print("dusty")
 		if Global.day != 3:
+			FailSound.play()
 			attic_label.text = "I don't think\n I need to do \nthat today..."
 		else:
-			get_tree().change_scene_to_file("res://PrototypeLevels/attic_redo.tscn")
+			if not Global.has_done_task:
+				get_tree().change_scene_to_file("res://PrototypeLevels/attic_redo.tscn")
 	if Input.is_action_just_pressed("interact") and stairs_interact:
 		DoorClick.play()
 		Global.prev_room_x = 0
@@ -74,7 +79,13 @@ func _on_bedroom_door_body_entered(body):
 
 func _on_bedroom_2_door_body_entered(body):
 	if body == player:
-		bedroom2_interact = true
+		if (Global.day == 3) or (Global.day == 2 and Global.has_done_task):
+			if not crybaby.playing:
+				crybaby.play()
+			bedroom2_label.text = "Oh no..."
+			bedroom2_label.position.x = -30
+		else:
+			bedroom2_interact = true
 		bedroom2_label.visible = true
 
 func _on_bedroom_2_door_body_exited(body):

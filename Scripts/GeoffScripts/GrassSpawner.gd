@@ -5,6 +5,7 @@ var score = 0
 @onready var cpu_particles_2d = $"../LawnPlayer/CPUParticles2D"
 
 func _ready():
+	Footsteps.stop()
 	HappyEnvironment.playing = false
 	ActualCreepy.playing = false
 
