@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dxbvsk80vjupt"]
+[gd_scene load_steps=40 format=3 uid="uid://dxbvsk80vjupt"]
 
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/living_room.gd" id="1_0hlaw"]
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_gib24"]
@@ -8,13 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://div2u7lqiorlc" path="res://Assets/Decorations/Assets_1/wallpaper&flooring.png" id="6_waljw"]
 [ext_resource type="Texture2D" uid="uid://c4xi83w7ir3i8" path="res://Assets/Decorations/livingroom_attic_door/Couch.png" id="7_6ojsh"]
 [ext_resource type="Texture2D" uid="uid://bqo5j5cppejcy" path="res://Assets/Decorations/livingroom_attic_door/rug.png" id="8_mbjh5"]
-[ext_resource type="Texture2D" uid="uid://duqr08xhecs5t" path="res://Assets/Decorations/Assets_1/window.png" id="9_6sat7"]
 [ext_resource type="Texture2D" uid="uid://bpty26etbullq" path="res://Assets/Decorations/livingroom_attic_door/framed_photos.png" id="10_ltdel"]
 [ext_resource type="Texture2D" uid="uid://cjetesntggqpv" path="res://Assets/Decorations/CharacterSpriteSheets/dadtop-Sheet.png" id="11_fiw6m"]
 [ext_resource type="PackedScene" uid="uid://d26dwpph6etgm" path="res://Scripts/Taby Scripts/day_counter.tscn" id="12_4dfcw"]
 [ext_resource type="AudioStream" uid="uid://cntrbitspy8px" path="res://Assets/SoundAssets/Voices/DadVoiceAngryShort.mp3" id="12_cy7pa"]
 [ext_resource type="Texture2D" uid="uid://da52wrua1tlwq" path="res://Assets/Decorations/CharacterSpriteSheets/dadbottom-Sheet.png" id="12_tg0y4"]
 [ext_resource type="PackedScene" uid="uid://ildcguyssq7b" path="res://Scripts/Taby Scripts/trash_can.tscn" id="14_i0yby"]
+[ext_resource type="Texture2D" uid="uid://dklva13r4xh2x" path="res://Assets/Decorations/Deco/coffee_table.png" id="16_aj1w3"]
+[ext_resource type="Texture2D" uid="uid://hcdognxa0d24" path="res://Assets/Decorations/Deco/sidetable.png" id="16_eiche"]
+[ext_resource type="Texture2D" uid="uid://03vacajjurw7" path="res://Assets/Decorations/Deco/blue_rug.png" id="17_4xemc"]
+[ext_resource type="Texture2D" uid="uid://fv01pymh0sh3" path="res://Assets/Decorations/Assets_1/window_w__curtain.png" id="17_m8vyy"]
+[ext_resource type="Texture2D" uid="uid://c67075wfrtmlv" path="res://Assets/Decorations/Assets_1/bookshelf_against_wall.png" id="19_wi3y3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qp1a4"]
 size = Vector2(85, 82.5)
@@ -93,7 +97,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fc6t"]
-size = Vector2(21.25, 47.5)
+size = Vector2(21.25, 45)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2fndl"]
 size = Vector2(118.75, 78.4375)
@@ -116,6 +120,15 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmvbi"]
 size = Vector2(58, 74)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ky7lg"]
+size = Vector2(57, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1xh7"]
+size = Vector2(18, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4nlk"]
+size = Vector2(49, 11)
+
 [node name="LivingRoom" type="Node2D"]
 script = ExtResource("1_0hlaw")
 
@@ -135,6 +148,7 @@ z_index = 1
 position = Vector2(0, -11)
 
 [node name="Sprite2D" type="Sprite2D" parent="Stairs"]
+z_index = 1
 position = Vector2(6, -21)
 texture = ExtResource("3_xogwo")
 
@@ -262,12 +276,8 @@ texture = ExtResource("7_6ojsh")
 position = Vector2(-2, 118)
 texture = ExtResource("8_mbjh5")
 
-[node name="Window" type="Sprite2D" parent="Decor"]
-position = Vector2(104, -8)
-texture = ExtResource("9_6sat7")
-
 [node name="FramedPhotos" type="Sprite2D" parent="Decor"]
-position = Vector2(-84, -11)
+position = Vector2(0, -27)
 texture = ExtResource("10_ltdel")
 
 [node name="Dad" type="AnimatedSprite2D" parent="Decor"]
@@ -279,7 +289,8 @@ sprite_frames = SubResource("SpriteFrames_gqrtq")
 [node name="StaticBody2D" type="StaticBody2D" parent="Decor/Dad"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decor/Dad/StaticBody2D"]
-position = Vector2(1.875, 5)
+position = Vector2(1.875, 3.75)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_5fc6t")
 
 [node name="DadSense" type="Area2D" parent="Decor/Dad"]
@@ -315,13 +326,72 @@ sprite_frames = SubResource("SpriteFrames_2o8xu")
 [node name="DayCounter" parent="." instance=ExtResource("12_4dfcw")]
 
 [node name="TrashCan" parent="." instance=ExtResource("14_i0yby")]
-position = Vector2(-73, 13)
+position = Vector2(-151, 15)
 
 [node name="TrashArea" type="Area2D" parent="TrashCan"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrashCan/TrashArea"]
 position = Vector2(1, 9)
 shape = SubResource("RectangleShape2D_gmvbi")
+
+[node name="Decorations" type="Node" parent="."]
+
+[node name="CoffeeTable" type="Sprite2D" parent="Decorations"]
+z_index = 2
+position = Vector2(2, 109)
+texture = ExtResource("16_aj1w3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/CoffeeTable"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/CoffeeTable/StaticBody2D"]
+position = Vector2(-4.5, -0.5)
+shape = SubResource("RectangleShape2D_ky7lg")
+
+[node name="Sidetable" type="Sprite2D" parent="Decorations"]
+position = Vector2(-55, 80)
+texture = ExtResource("16_eiche")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/Sidetable"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/Sidetable/StaticBody2D"]
+position = Vector2(-7, -5.5)
+shape = SubResource("RectangleShape2D_s1xh7")
+
+[node name="WindowWCurtain2" type="Sprite2D" parent="Decorations"]
+position = Vector2(63, -1)
+texture = ExtResource("17_m8vyy")
+
+[node name="WindowWCurtain" type="Sprite2D" parent="Decorations"]
+position = Vector2(121, -1)
+texture = ExtResource("17_m8vyy")
+
+[node name="BlueRug" type="Sprite2D" parent="Decorations"]
+position = Vector2(162, 36)
+scale = Vector2(0.546875, 0.546875)
+texture = ExtResource("17_4xemc")
+
+[node name="Bookshelf" type="Node" parent="Decorations"]
+
+[node name="BookshelfAgainstWall" type="Sprite2D" parent="Decorations/Bookshelf"]
+z_index = 2
+position = Vector2(-68, 29)
+texture = ExtResource("19_wi3y3")
+
+[node name="BookshelfAgainstWall2" type="Sprite2D" parent="Decorations/Bookshelf"]
+z_index = 2
+position = Vector2(-68, 12)
+texture = ExtResource("19_wi3y3")
+
+[node name="BookshelfAgainstWall3" type="Sprite2D" parent="Decorations/Bookshelf"]
+z_index = 2
+position = Vector2(-68, -5)
+texture = ExtResource("19_wi3y3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/Bookshelf"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/Bookshelf/StaticBody2D"]
+position = Vector2(-75.5, 23.5)
+shape = SubResource("RectangleShape2D_v4nlk")
 
 [node name="Hitboxes" type="Node" parent="."]
 

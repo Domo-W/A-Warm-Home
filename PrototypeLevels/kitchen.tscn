@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c5rhaa4de4ebp"]
+[gd_scene load_steps=32 format=3 uid="uid://c5rhaa4de4ebp"]
 
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_8a4ks"]
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/kitchen.gd" id="1_vr8le"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://ildcguyssq7b" path="res://Scripts/Taby Scripts/trash_can.tscn" id="15_cehc8"]
 [ext_resource type="Texture2D" uid="uid://fv01pymh0sh3" path="res://Assets/Decorations/Assets_1/window_w__curtain.png" id="16_7bt4t"]
 [ext_resource type="Texture2D" uid="uid://biesgr8vg24m1" path="res://Assets/Decorations/Deco/ppeeasdasdasdee.png" id="17_mt4ub"]
+[ext_resource type="Texture2D" uid="uid://bpty26etbullq" path="res://Assets/Decorations/livingroom_attic_door/framed_photos.png" id="19_blemw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejkyi"]
 size = Vector2(74, 72)
@@ -79,7 +80,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3nrq7"]
-size = Vector2(109, 31)
+size = Vector2(112, 31)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hkqds"]
 
@@ -105,7 +106,7 @@ position = Vector2(-3, 12)
 zoom = Vector2(6, 6)
 limit_left = -290
 limit_right = 72
-limit_bottom = 40
+limit_bottom = 60
 
 [node name="LivingRoomDoor" type="Area2D" parent="."]
 z_index = 1
@@ -187,6 +188,7 @@ texture = ExtResource("10_giotm")
 
 [node name="Mom" type="AnimatedSprite2D" parent="Decor"]
 visible = false
+z_index = 1
 position = Vector2(-269, -5)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_a560w")
@@ -198,7 +200,7 @@ texture = ExtResource("11_nyqio")
 [node name="StaticBody2D" type="StaticBody2D" parent="Decor"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decor/StaticBody2D"]
-position = Vector2(-112.5, 18.5)
+position = Vector2(-111, 18.5)
 shape = SubResource("RectangleShape2D_3nrq7")
 
 [node name="Walls" type="Node" parent="."]
@@ -207,7 +209,7 @@ shape = SubResource("RectangleShape2D_3nrq7")
 z_index = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Ground"]
-position = Vector2(0, 58)
+position = Vector2(0, 62)
 shape = SubResource("WorldBoundaryShape2D_hkqds")
 
 [node name="TopGround" type="StaticBody2D" parent="Walls"]
@@ -239,22 +241,28 @@ position = Vector2(-35, 11)
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_j6h4h")
 
-[node name="WindowWCurtain" type="Sprite2D" parent="."]
-position = Vector2(-222, -37)
+[node name="Decorations" type="Node" parent="."]
+
+[node name="WindowWCurtain" type="Sprite2D" parent="Decorations"]
+position = Vector2(-188, -14)
 texture = ExtResource("16_7bt4t")
 
-[node name="WindowWCurtain2" type="Sprite2D" parent="."]
-position = Vector2(-150, -37)
+[node name="WindowWCurtain2" type="Sprite2D" parent="Decorations"]
+position = Vector2(-151, -14)
 texture = ExtResource("16_7bt4t")
 
-[node name="WindowWCurtain3" type="Sprite2D" parent="."]
-position = Vector2(-33, -37)
+[node name="WindowWCurtain3" type="Sprite2D" parent="Decorations"]
+position = Vector2(-34, -14)
 texture = ExtResource("16_7bt4t")
 
-[node name="Ppeeasdasdasdee" type="Sprite2D" parent="."]
-position = Vector2(-95, -65)
-scale = Vector2(0.765625, 0.765625)
+[node name="Ppeeasdasdasdee" type="Sprite2D" parent="Decorations"]
+position = Vector2(-280, -17)
+scale = Vector2(0.429687, 0.429687)
 texture = ExtResource("17_mt4ub")
+
+[node name="FramedPhotos" type="Sprite2D" parent="."]
+position = Vector2(-261, -11)
+texture = ExtResource("19_blemw")
 
 [connection signal="body_entered" from="LivingRoomDoor" to="." method="_on_living_room_door_body_entered"]
 [connection signal="body_exited" from="LivingRoomDoor" to="." method="_on_living_room_door_body_exited"]

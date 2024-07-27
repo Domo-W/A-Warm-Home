@@ -22,6 +22,7 @@ func _on_day_3_pressed():
 func _on_day_4_pressed():
 	MenuButtonSound.play()
 	Global.day = 4
+	Global.trash_collected = [false, false, false, false, false, false]
 	get_tree().change_scene_to_file("res://PrototypeLevels/bedroom.tscn")
 
 
