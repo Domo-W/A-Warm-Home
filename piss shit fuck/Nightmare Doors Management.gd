@@ -66,7 +66,14 @@ func _on_door_6_body_exited(body):
 		Global.can_win = false
 
 
+func _on_door_7_body_entered(body):
+	if "player" in body.name:
+		player.can_hide = true
 
+
+func _on_door_7_body_exited(body):
+	if "player" in body.name:
+		Global.can_win = false
 
 
 

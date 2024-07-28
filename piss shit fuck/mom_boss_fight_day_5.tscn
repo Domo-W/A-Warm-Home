@@ -406,16 +406,23 @@ position = Vector2(3, 2)
 shape = SubResource("RectangleShape2D_hnfig")
 
 [node name="Door5" type="Area2D" parent="Door Transportation Management/Nightmare Doors Management"]
-position = Vector2(-1522, 1256)
+position = Vector2(-1322, 1255)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door Transportation Management/Nightmare Doors Management/Door5"]
 position = Vector2(-3, -10)
 shape = SubResource("RectangleShape2D_c7dhc")
 
 [node name="Door6" type="Area2D" parent="Door Transportation Management/Nightmare Doors Management"]
-position = Vector2(-2427, 1250)
+position = Vector2(-1845, 1256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door Transportation Management/Nightmare Doors Management/Door6"]
+position = Vector2(-3, -10)
+shape = SubResource("RectangleShape2D_c7dhc")
+
+[node name="Door7" type="Area2D" parent="Door Transportation Management/Nightmare Doors Management"]
+position = Vector2(-2427, 1250)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door Transportation Management/Nightmare Doors Management/Door7"]
 position = Vector2(6, -4)
 shape = SubResource("RectangleShape2D_x4jae")
 
@@ -921,10 +928,15 @@ texture = ExtResource("11_7t4qy")
 
 [node name="Door5" type="Sprite2D" parent="ROOMS/Nightmare Room"]
 material = SubResource("ShaderMaterial_o4qik")
-position = Vector2(-1521, 1267)
+position = Vector2(-1321, 1267)
 texture = ExtResource("11_7t4qy")
 
 [node name="Door6" type="Sprite2D" parent="ROOMS/Nightmare Room"]
+material = SubResource("ShaderMaterial_o4qik")
+position = Vector2(-1843, 1267)
+texture = ExtResource("11_7t4qy")
+
+[node name="Door7" type="Sprite2D" parent="ROOMS/Nightmare Room"]
 material = SubResource("ShaderMaterial_o4qik")
 position = Vector2(-2417, 1267)
 texture = ExtResource("11_7t4qy")
@@ -1615,6 +1627,8 @@ navigation_polygon = SubResource("NavigationPolygon_tbg8x")
 [connection signal="body_exited" from="Door Transportation Management/Nightmare Doors Management/Door5" to="Door Transportation Management/Nightmare Doors Management" method="_on_door_5_body_exited"]
 [connection signal="body_entered" from="Door Transportation Management/Nightmare Doors Management/Door6" to="Door Transportation Management/Nightmare Doors Management" method="_on_door_6_body_entered"]
 [connection signal="body_exited" from="Door Transportation Management/Nightmare Doors Management/Door6" to="Door Transportation Management/Nightmare Doors Management" method="_on_door_6_body_exited"]
+[connection signal="body_entered" from="Door Transportation Management/Nightmare Doors Management/Door7" to="Door Transportation Management/Nightmare Doors Management" method="_on_door_7_body_entered"]
+[connection signal="body_exited" from="Door Transportation Management/Nightmare Doors Management/Door7" to="Door Transportation Management/Nightmare Doors Management" method="_on_door_7_body_exited"]
 [connection signal="body_entered" from="Door Transportation Management/Nightmare Doors Management/Win!!" to="Door Transportation Management/Nightmare Doors Management" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Door Transportation Management/Nightmare Doors Management/Win!!" to="Door Transportation Management/Nightmare Doors Management" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Door Transportation Management/Bedroom To Hallway" to="Door Transportation Management" method="_on_bedroom_to_hallway_body_entered"]
