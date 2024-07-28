@@ -5,6 +5,7 @@ extends Node2D
 func _physics_process(delta):
 	if Input.is_action_just_pressed("interact") and Global.can_win:
 		get_tree().change_scene_to_file("res://piss shit fuck/piss shit fuck pt 2/win_screen.tscn")
+		Global.reset_game()
 
 func _on_door_1_body_entered(body):
 	if "player" in body.name:
@@ -53,7 +54,7 @@ func _on_door_5_body_entered(body):
 
 func _on_door_5_body_exited(body):
 	if "player" in body.name:
-		Global.can_win = false
+		player.can_hide = false
 
 
 func _on_door_6_body_entered(body):
@@ -63,7 +64,7 @@ func _on_door_6_body_entered(body):
 
 func _on_door_6_body_exited(body):
 	if "player" in body.name:
-		Global.can_win = false
+		player.can_hide = false
 
 
 func _on_door_7_body_entered(body):
@@ -73,7 +74,7 @@ func _on_door_7_body_entered(body):
 
 func _on_door_7_body_exited(body):
 	if "player" in body.name:
-		Global.can_win = false
+		player.can_hide = false
 
 
 

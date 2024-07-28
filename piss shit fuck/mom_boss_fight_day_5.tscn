@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bkal7lr7kyede" path="res://Assets/Decorations/Assets_1/stairs.png" id="12_x5ad6"]
 [ext_resource type="Texture2D" uid="uid://dnrou4aurrouw" path="res://Assets/Decorations/livingroom_attic_door/ceiling_light.png" id="13_k67v0"]
 [ext_resource type="Texture2D" uid="uid://yhc72obxve3h" path="res://Assets/Decorations/livingroom_attic_door/attic_wire.png" id="14_6kbl7"]
-[ext_resource type="Material" uid="uid://ctmpby5d8efx4" path="res://mom_boss_fight_day_5.tres" id="14_ayawl"]
+[ext_resource type="Material" path="res://mom_boss_fight_day_5.tres" id="14_ayawl"]
 [ext_resource type="Texture2D" uid="uid://5ed6nt2lvcbf" path="res://Assets/Decorations/kitchen_furniture/clock.png" id="15_xvswv"]
 [ext_resource type="Texture2D" uid="uid://bqo5j5cppejcy" path="res://Assets/Decorations/livingroom_attic_door/rug.png" id="16_mxhbu"]
 [ext_resource type="Texture2D" uid="uid://bpty26etbullq" path="res://Assets/Decorations/livingroom_attic_door/framed_photos.png" id="17_lhogb"]
@@ -344,7 +344,7 @@ size = Vector2(384, 193)
 size = Vector2(1870, 207)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vlhjn"]
-size = Vector2(168, 48)
+size = Vector2(279, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d123c"]
 size = Vector2(533, 6)
@@ -1459,7 +1459,6 @@ position_smoothing_speed = 4.0
 editor_draw_limits = true
 
 [node name="Room Area Management" type="Node2D" parent="."]
-visible = false
 script = ExtResource("24_opj7f")
 
 [node name="Bedroom Area" type="Area2D" parent="Room Area Management"]
@@ -1507,7 +1506,7 @@ shape = SubResource("RectangleShape2D_2fvne")
 position = Vector2(-641, 677)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room Area Management/Area2D"]
-position = Vector2(3, 2)
+position = Vector2(58.5, 2)
 shape = SubResource("RectangleShape2D_vlhjn")
 
 [node name="Collision Walls" type="Node2D" parent="."]

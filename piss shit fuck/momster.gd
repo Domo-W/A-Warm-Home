@@ -5,6 +5,8 @@ extends CharacterBody2D
 
 @onready var nav := $NavigationAgent2D
 @onready var wait_around_timer = $WaitAroundTimer
+@onready var lose_screen = $"../../stickplayer/Camera2D/Lose Screen"
+
 
 var leave_room := false
 var chasing_speed := 190.0
@@ -55,3 +57,4 @@ func randomize_wander():
 func _on_area_2d_body_entered(body):
 	if "player" in body.name and !player.is_hidden:
 		get_tree().change_scene_to_file("res://piss shit fuck/piss shit fuck pt 2/lose_screen.tscn")
+		Global.reset_game()
