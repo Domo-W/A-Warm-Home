@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://fx03k1wa7vs2"]
 
-[ext_resource type="PackedScene" path="res://PrototypeLevels/main_menu.tscn" id="1_yvxpk"]
+[ext_resource type="PackedScene" uid="uid://chks8b2pnxohn" path="res://PrototypeLevels/main_menu.tscn" id="1_yvxpk"]
 [ext_resource type="Texture2D" uid="uid://dibuvo6xrl88y" path="res://Assets/GeoffAssets/epic.png" id="2_xgfcx"]
 [ext_resource type="AudioStream" uid="uid://dgvja8pdopobq" path="res://Assets/SoundAssets/Sound Effects/FailSound.mp3" id="3_yqepa"]
 

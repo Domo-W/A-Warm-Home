@@ -1,4 +1,4 @@
-[gd_scene load_steps=135 format=3 uid="uid://bjsliq7cf7p7e"]
+[gd_scene load_steps=136 format=3 uid="uid://bjsliq7cf7p7e"]
 
 [ext_resource type="Script" path="res://PrototypeLevels/mom_boss_MEGASCRIPT.gd" id="1_j4bib"]
 [ext_resource type="Shader" path="res://piss shit fuck/piss shit fuck pt 2/monochrome.gdshader" id="2_a6t5g"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bkal7lr7kyede" path="res://Assets/Decorations/Assets_1/stairs.png" id="12_x5ad6"]
 [ext_resource type="Texture2D" uid="uid://dnrou4aurrouw" path="res://Assets/Decorations/livingroom_attic_door/ceiling_light.png" id="13_k67v0"]
 [ext_resource type="Texture2D" uid="uid://yhc72obxve3h" path="res://Assets/Decorations/livingroom_attic_door/attic_wire.png" id="14_6kbl7"]
-[ext_resource type="Material" path="res://mom_boss_fight_day_5.tres" id="14_ayawl"]
+[ext_resource type="Material" uid="uid://ctmpby5d8efx4" path="res://mom_boss_fight_day_5.tres" id="14_ayawl"]
 [ext_resource type="Texture2D" uid="uid://5ed6nt2lvcbf" path="res://Assets/Decorations/kitchen_furniture/clock.png" id="15_xvswv"]
 [ext_resource type="Texture2D" uid="uid://bqo5j5cppejcy" path="res://Assets/Decorations/livingroom_attic_door/rug.png" id="16_mxhbu"]
 [ext_resource type="Texture2D" uid="uid://bpty26etbullq" path="res://Assets/Decorations/livingroom_attic_door/framed_photos.png" id="17_lhogb"]
@@ -36,6 +36,7 @@
 [ext_resource type="AudioStream" uid="uid://cv1oqmcp3csce" path="res://Assets/SoundAssets/KiwiJamMomChaseMusic.mp3" id="30_00ycy"]
 [ext_resource type="Texture2D" uid="uid://dklva13r4xh2x" path="res://Assets/Decorations/Deco/coffee_table.png" id="30_hoe0g"]
 [ext_resource type="Texture2D" uid="uid://hcdognxa0d24" path="res://Assets/Decorations/Deco/sidetable.png" id="31_47ru1"]
+[ext_resource type="Script" path="res://piss shit fuck/meet_mom_text.gd" id="33_51yel"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wvgxo"]
 shader = ExtResource("2_a6t5g")
@@ -789,6 +790,18 @@ use_parent_material = true
 position = Vector2(-511, 629)
 texture = ExtResource("10_tuo13")
 
+[node name="Label" type="RichTextLabel" parent="ROOMS/Kitchen"]
+z_index = 3
+offset_left = -585.0
+offset_top = 613.0
+offset_right = -329.0
+offset_bottom = 636.0
+theme_override_fonts/normal_font = ExtResource("5_87nev")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
+  [shake rate=20.0 level=10 connected=1]GET TO THE ATTIC[/shake]"
+
 [node name="Living Room" type="Node2D" parent="ROOMS"]
 
 [node name="StairsSprite" type="Sprite2D" parent="ROOMS/Living Room"]
@@ -897,6 +910,20 @@ texture = ExtResource("31_47ru1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ROOMS/Living Room/Decor/CoffeeTable/Sidetable/StaticBody2D"]
 position = Vector2(-7, -5.5)
 shape = SubResource("RectangleShape2D_xiqwu")
+
+[node name="Label" type="RichTextLabel" parent="ROOMS/Living Room"]
+visible = false
+z_index = 3
+offset_left = 148.0
+offset_top = 625.0
+offset_right = 404.0
+offset_bottom = 648.0
+theme_override_fonts/normal_font = ExtResource("5_87nev")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
+  [shake rate=20.0 level=10 connected=1]GET TO THE ATTIC[/shake]"
+script = ExtResource("33_51yel")
 
 [node name="Nightmare Room" type="Node2D" parent="ROOMS"]
 
@@ -1391,6 +1418,30 @@ visible = false
 position = Vector2(-9, -7)
 shape = SubResource("RectangleShape2D_8mbf6")
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ROOMS/Nightmare Room"]
+position = Vector2(1039, 1240)
+amount = 100
+lifetime = 90.0
+emission_shape = 3
+emission_rect_extents = Vector2(1, 10)
+direction = Vector2(-1, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.4
+initial_velocity_max = 40.4
+
+[node name="Label" type="RichTextLabel" parent="ROOMS/Nightmare Room"]
+z_index = 3
+offset_left = 667.0
+offset_top = 1225.0
+offset_right = 923.0
+offset_bottom = 1248.0
+theme_override_fonts/normal_font = ExtResource("5_87nev")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
+  [shake rate=20.0 level=10 connected=1]GET TO THE ATTIC[/shake]"
+
 [node name="stickplayer" parent="." instance=ExtResource("24_iphgy")]
 unique_name_in_owner = true
 position = Vector2(557, 152)
@@ -1611,6 +1662,7 @@ player = NodePath("../../stickplayer")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("30_00ycy")
+volume_db = 15.0
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_tbg8x")
