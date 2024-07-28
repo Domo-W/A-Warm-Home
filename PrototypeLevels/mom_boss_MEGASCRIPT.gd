@@ -67,9 +67,9 @@ func _physics_process(delta):
 		camera_2d.zoom.x = 6
 		camera_2d.zoom.y = 6
 		
-		camera_2d.limit_left = -885
+		camera_2d.limit_left = -2990
 		camera_2d.limit_top = 1105
-		camera_2d.limit_right = 980
+		camera_2d.limit_right = 1199
 		camera_2d.limit_bottom = 1312
 	
 	if Global.met_momster == false:

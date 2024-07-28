@@ -46,6 +46,30 @@ func _on_door_4_body_exited(body):
 	if "player" in body.name:
 		player.can_hide = false
 
+func _on_door_5_body_entered(body):
+	if "player" in body.name:
+		player.can_hide = true
+
+
+func _on_door_5_body_exited(body):
+	if "player" in body.name:
+		Global.can_win = false
+
+
+func _on_door_6_body_entered(body):
+	if "player" in body.name:
+		player.can_hide = true
+
+
+func _on_door_6_body_exited(body):
+	if "player" in body.name:
+		Global.can_win = false
+
+
+
+
+
+
 
 func _on_area_2d_body_entered(body):
 	if "player" in body.name:

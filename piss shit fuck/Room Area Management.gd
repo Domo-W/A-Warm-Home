@@ -3,6 +3,7 @@ extends Node2D
 @onready var player = %stickplayer
 @onready var audio_stream_player_2d = $"../AudioStreamPlayer2D"
 @onready var blocking_momster = $"../Collision Walls/StaticBody2D10/Blocking Momster"
+@onready var momster_blocking_collision = $"../Collision Walls/StaticBody2D10/MomsterBlockingCollision"
 
 func _on_bedroom_area_body_entered(body):
 	if "player" in body.name:
@@ -59,7 +60,8 @@ func _on_kitchen_area_body_exited(body):
 func _on_nightmare_area_body_entered(body):
 		if "player" in body.name:
 			Global.is_in_room = Global.room_states["IS_IN_NIGHTMARE_ROOM"]
-
+			if momster_blocking_collision != null:
+				momster_blocking_collision.queue_free()
 
 func _on_nightmare_area_body_exited(body):
 	if "player" in body.name:
