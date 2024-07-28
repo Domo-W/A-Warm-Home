@@ -4,7 +4,7 @@ extends Node
 
 var rec_scene = preload("res://Scripts/GeoffScripts/draggable_recycling.tscn")
 var trash_scene = preload("res://Scripts/GeoffScripts/draggable_trash.tscn")
-var remaining_trash = 10
+var remaining_trash = 20
 
 func _ready():
 	ActualCreepy.stop()
