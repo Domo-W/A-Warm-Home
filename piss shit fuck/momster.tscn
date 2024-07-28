@@ -68,7 +68,6 @@ shape = SubResource("RectangleShape2D_uijya")
 one_shot = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, -35)

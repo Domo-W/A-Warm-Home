@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://piss shit fuck/Nightmare Doors Management.gd" id="3_jpn6f"]
 [ext_resource type="Texture2D" uid="uid://div2u7lqiorlc" path="res://Assets/Decorations/Assets_1/wallpaper&flooring.png" id="3_k5h2y"]
 [ext_resource type="Texture2D" uid="uid://bq8egwy6jkxde" path="res://Assets/Decorations/Assets_1/bedbottom.png" id="4_3ax4v"]
-[ext_resource type="FontFile" path="res://ascii-sector-16x16-tileset.ttf" id="5_87nev"]
+[ext_resource type="FontFile" uid="uid://cjgtqv4nsp8pj" path="res://ascii-sector-16x16-tileset.ttf" id="5_87nev"]
 [ext_resource type="Texture2D" uid="uid://2b1pwpwk8wwv" path="res://Assets/Decorations/Assets_1/bedtop.png" id="6_4urpx"]
 [ext_resource type="Texture2D" uid="uid://d3a1k1gg7sofk" path="res://Assets/Decorations/Assets_1/bedside_table.png" id="7_e1wiw"]
 [ext_resource type="Texture2D" uid="uid://c67075wfrtmlv" path="res://Assets/Decorations/Assets_1/bookshelf_against_wall.png" id="8_ekg42"]
@@ -33,7 +33,7 @@
 [ext_resource type="Script" path="res://piss shit fuck/Room Area Management.gd" id="24_opj7f"]
 [ext_resource type="Texture2D" uid="uid://03vacajjurw7" path="res://Assets/Decorations/Deco/blue_rug.png" id="29_46ymv"]
 [ext_resource type="PackedScene" uid="uid://begymf74ytw6g" path="res://piss shit fuck/momster.tscn" id="29_8343g"]
-[ext_resource type="AudioStream" path="res://Assets/SoundAssets/KiwiJamMomChaseMusic.mp3" id="30_00ycy"]
+[ext_resource type="AudioStream" uid="uid://cv1oqmcp3csce" path="res://Assets/SoundAssets/KiwiJamMomChaseMusic.mp3" id="30_00ycy"]
 [ext_resource type="Texture2D" uid="uid://dklva13r4xh2x" path="res://Assets/Decorations/Deco/coffee_table.png" id="30_hoe0g"]
 [ext_resource type="Texture2D" uid="uid://hcdognxa0d24" path="res://Assets/Decorations/Deco/sidetable.png" id="31_47ru1"]
 
@@ -1392,7 +1392,6 @@ limit_left = -2990
 limit_top = 1105
 limit_right = 1199
 limit_bottom = 1312
-position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 editor_draw_limits = true
 
