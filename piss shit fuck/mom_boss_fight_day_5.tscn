@@ -1381,7 +1381,7 @@ shape = SubResource("RectangleShape2D_8mbf6")
 
 [node name="stickplayer" parent="." instance=ExtResource("24_iphgy")]
 unique_name_in_owner = true
-position = Vector2(831, 1281)
+position = Vector2(557, 152)
 
 [node name="Camera2D" type="Camera2D" parent="stickplayer"]
 unique_name_in_owner = true

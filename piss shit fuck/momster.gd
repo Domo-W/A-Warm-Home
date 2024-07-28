@@ -53,5 +53,5 @@ func randomize_wander():
 
 
 func _on_area_2d_body_entered(body):
-		if "player" in body.name and !player.is_hidden:
+	if "player" in body.name and !player.is_hidden:
 		get_tree().change_scene_to_file("res://piss shit fuck/piss shit fuck pt 2/lose_screen.tscn")
