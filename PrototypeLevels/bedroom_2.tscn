@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://72ydq62211xt"]
+[gd_scene load_steps=27 format=3 uid="uid://72ydq62211xt"]
 
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="1_lgsly"]
 [ext_resource type="Script" path="res://Scripts/Taby Scripts/bedroom_2.gd" id="1_vcnu2"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://duqr08xhecs5t" path="res://Assets/Decorations/Assets_1/window.png" id="12_hd4xw"]
 [ext_resource type="PackedScene" uid="uid://d26dwpph6etgm" path="res://Scripts/Taby Scripts/day_counter.tscn" id="13_i0txh"]
 [ext_resource type="PackedScene" uid="uid://ildcguyssq7b" path="res://Scripts/Taby Scripts/trash_can.tscn" id="14_2w857"]
+[ext_resource type="Texture2D" uid="uid://vqo6ly5fq0h6" path="res://Assets/Decorations/Deco/bottles_floor.png" id="15_b5mpw"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lxb5g"]
 normal = Vector2(-1, 0)
@@ -238,6 +239,11 @@ position = Vector2(350, -6)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrashCan/TrashArea"]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_mg1cl")
+
+[node name="BottlesFloor" type="Sprite2D" parent="TrashCan"]
+position = Vector2(-6, -2)
+scale = Vector2(0.9375, 0.9375)
+texture = ExtResource("15_b5mpw")
 
 [connection signal="body_entered" from="HallwayDoor" to="." method="_on_hallway_door_body_entered"]
 [connection signal="body_exited" from="HallwayDoor" to="." method="_on_hallway_door_body_exited"]

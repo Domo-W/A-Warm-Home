@@ -4,6 +4,7 @@ extends Node2D
 @onready var hallway_door = $HallwayDoor
 @onready var player = $stickplayer
 @onready var trash_can = $TrashCan
+@onready var bottles_floor = $TrashCan/BottlesFloor
 
 var hallway_interact = true
 var trash = false
@@ -12,6 +13,7 @@ func _ready():
 	DoorClick.play()
 	if Global.trash_collected[3]:
 		trash_can.empty()
+		bottles_floor.visible = false
 
 func _process(_delta):
 	if Input.is_action_just_pressed("interact") and hallway_interact:
@@ -21,6 +23,7 @@ func _process(_delta):
 		Global.trash_collected[3] = true
 		print(Global.trash_collected)
 		trash_can.empty()
+		bottles_floor.visible = false
 
 func _on_hallway_door_body_entered(body):
 	if body == player:
