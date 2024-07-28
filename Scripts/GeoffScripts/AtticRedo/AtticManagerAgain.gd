@@ -10,6 +10,7 @@ extends Node
 @onready var click = $"../Click"
 @onready var attic_open = $"../AtticOpen"
 @onready var give_up_button = $GiveUpButton
+@onready var divorce_papers = $"../DivorcePapers"
 
 const x_coords = [-390, -25, 370]
 const y_coords = [165, 85, 5, -75, -155]
@@ -18,6 +19,7 @@ var num_disks = 5
 var towers = [Array(range(num_disks, 0, -1)), [], []]
 var move_count = 0
 var which = []
+var divorce_picked_up = false
 
 func _ready():
 	attic_open.play()
@@ -91,6 +93,9 @@ func reset_color():
 
 func _on_button_1_pressed():
 	click.play()
+	if towers[0] == [] and divorce_picked_up == false and len(which) == 0:
+		divorce_papers.visible = false
+		divorce_picked_up = true
 	if towers[0] == [] and len(which) == 0:
 		pass
 	else:

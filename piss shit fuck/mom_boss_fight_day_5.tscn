@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://dtil4kqo7meag" path="res://Assets/Decorations/kitchen_furniture/sink_counter.png" id="21_0743m"]
 [ext_resource type="Texture2D" uid="uid://xrm114p3ix85" path="res://Assets/Decorations/kitchen_furniture/stove.png" id="22_gp6k7"]
 [ext_resource type="Texture2D" uid="uid://c4xi83w7ir3i8" path="res://Assets/Decorations/livingroom_attic_door/Couch.png" id="23_ciiga"]
+[ext_resource type="Texture2D" uid="uid://vqo6ly5fq0h6" path="res://Assets/Decorations/Deco/bottles_floor.png" id="24_evuaf"]
 [ext_resource type="PackedScene" uid="uid://dkoaycpofp2y0" path="res://Scripts/Taby Scripts/stickplayer.tscn" id="24_iphgy"]
 [ext_resource type="Script" path="res://piss shit fuck/Room Area Management.gd" id="24_opj7f"]
 [ext_resource type="Texture2D" uid="uid://03vacajjurw7" path="res://Assets/Decorations/Deco/blue_rug.png" id="29_46ymv"]
@@ -35,7 +36,6 @@
 [ext_resource type="AudioStream" uid="uid://cv1oqmcp3csce" path="res://Assets/SoundAssets/KiwiJamMomChaseMusic.mp3" id="30_00ycy"]
 [ext_resource type="Texture2D" uid="uid://dklva13r4xh2x" path="res://Assets/Decorations/Deco/coffee_table.png" id="30_hoe0g"]
 [ext_resource type="Texture2D" uid="uid://hcdognxa0d24" path="res://Assets/Decorations/Deco/sidetable.png" id="31_47ru1"]
-[ext_resource type="PackedScene" uid="uid://de4qyqllhqd44" path="res://Obstacles/side_table_obstacle.tscn" id="32_gotsu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wvgxo"]
 shader = ExtResource("2_a6t5g")
@@ -653,6 +653,19 @@ material = SubResource("ShaderMaterial_4824b")
 position = Vector2(-790, 109)
 texture = ExtResource("18_e0f42")
 
+[node name="BottlesFloor" type="Sprite2D" parent="ROOMS/ParentsBedroom/Decor"]
+material = ExtResource("14_ayawl")
+position = Vector2(-663, 128)
+scale = Vector2(0.390625, 0.390625)
+texture = ExtResource("24_evuaf")
+
+[node name="BottlesFloor2" type="Sprite2D" parent="ROOMS/ParentsBedroom/Decor"]
+material = ExtResource("14_ayawl")
+position = Vector2(-683, 124)
+scale = Vector2(0.390625, 0.390625)
+texture = ExtResource("24_evuaf")
+flip_h = true
+
 [node name="Kitchen" type="Node2D" parent="ROOMS"]
 material = ExtResource("14_ayawl")
 
@@ -837,10 +850,18 @@ material = SubResource("ShaderMaterial_qaewa")
 position = Vector2(-838, 1167)
 texture = ExtResource("14_6kbl7")
 
-[node name="Obstacles" type="Node2D" parent="ROOMS/Nightmare Room"]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ROOMS/Nightmare Room/Sprite2D"]
+position = Vector2(-7, 9)
+amount = 16
+lifetime = 5.0
+direction = Vector2(0, 1)
+spread = 25.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+color = Color(1, 1, 0.529412, 1)
 
-[node name="SideTableObstacle" parent="ROOMS/Nightmare Room/Obstacles" instance=ExtResource("32_gotsu")]
-position = Vector2(498, 1301)
+[node name="Obstacles" type="Node2D" parent="ROOMS/Nightmare Room"]
 
 [node name="stickplayer" parent="." instance=ExtResource("24_iphgy")]
 unique_name_in_owner = true
